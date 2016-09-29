@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>嵌套路由 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "router"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Vue.js v2.0.0-rc.8</span>
+  </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与翻译:427447379
+  </span>
+  <ul id="nav">
+    <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/router/" class="nav-link current">vue-router</a></li>
+<li><a href="/ssr/" class="nav-link">SSR</a></li>
+<li><a href="/changelog/" class="nav-link">更新日志</a></li>
+<li><a href="/about/" class="nav-link">关于翻译</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+        
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/router/" class="nav-link current">vue-router</a></li>
+<li><a href="/ssr/" class="nav-link">SSR</a></li>
+<li><a href="/changelog/" class="nav-link">更新日志</a></li>
+<li><a href="/about/" class="nav-link">关于翻译</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/images/patreon.png">
+              <a href="/support-vuejs">支持 Vue.js</a>
+            </span>
+        </div>
+        <h2>
+            
+            
+            <select class="version-select">
+                <option value="rc" selected>2.0</option>
+                <!-- !!TODO: Update value to subdomain when 2.0 is released -->
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+             
+                
+                
+                
+                
+                <li>
+                    <a href="/router/index.html" class="sidebar-link">目录</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/installation.html" class="sidebar-link">安装</a>
+                </li>
+            
+                
+                
+                  <li><h3>基础</h3></li>
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/getting-started.html" class="sidebar-link">起步</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">匹配动态路由</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/nested-routes.html" class="sidebar-link current">嵌套路由</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/navigation.html" class="sidebar-link">应用导航</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/named-routes.html" class="sidebar-link">具名路由</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/named-views.html" class="sidebar-link">具名视图</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向和链接</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/history-mode.html" class="sidebar-link">History模式</a>
+                </li>
+            
+                
+                
+                
+                  <li><h3>进阶</h3></li>
+                
+                
+                <li>
+                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">Navigation Guards</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/meta.html" class="sidebar-link">Route Meta Fields</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/data-fetching.html" class="sidebar-link">数据获取</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">异步加载</a>
+                </li>
+            
+                
+                
+                
+                
+                  <li><h3>API</h3></li>
+                
+                <li>
+                    <a href="/router/api/router-link.html" class="sidebar-link">router-link</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/router-view.html" class="sidebar-link">router-view</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/route-object.html" class="sidebar-link">路由对象</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/options.html" class="sidebar-link">路由构造选项</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/router-instance.html" class="sidebar-link">路由实例</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/component-injections.html" class="sidebar-link">组件注入</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content router with-sidebar ">
+    	
+    <h1>嵌套路由</h1>
+    <h1 id="Nested-Routes"><a href="#Nested-Routes" class="headerlink" title="Nested Routes"></a>Nested Routes</h1><p>Real app UIs are usually composed of components that are nested multiple levels deep. It is also very common that the segments of a URL corresponds to a certain structure of nested components, for example:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/user/foo/profile                     /user/foo/posts</div><div class="line">+------------------+                  +-----------------+</div><div class="line">| User             |                  | User            |</div><div class="line">| +--------------+ |                  | +-------------+ |</div><div class="line">| | Profile      | |  +------------&gt;  | | Posts       | |</div><div class="line">| |              | |                  | |             | |</div><div class="line">| +--------------+ |                  | +-------------+ |</div><div class="line">+------------------+                  +-----------------+</div></pre></td></tr></table></figure>
+<p>With <code>vue-router</code>, it is very simple to express this relationship using nested route configurations.</p>
+<p>Given the app we created in the last chapter:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> User = &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;div&gt;User &#123;&#123; $route.params.id &#125;&#125;&lt;/div&gt;'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/user/:id'</span>, <span class="attr">component</span>: User &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>The <code>&lt;router-view&gt;</code> here is a top-level outlet. It renders the component matched by a top level route. Similarly, a rendered component can also contain its own, nested <code>&lt;router-view&gt;</code>. For example, if we add one inside the <code>User</code> component’s template:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> User = &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">`</span></div><div class="line">    &lt;div class="user"&gt;</div><div class="line">      &lt;h2&gt;User &#123;&#123; $route.params.id &#125;&#125;&lt;/h2&gt;</div><div class="line">      &lt;router-view&gt;&lt;/router-view&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  `</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>To render components into this nested outlet, we need to use the <code>children</code><br>option in <code>VueRouter</code> constructor config:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/user/:id'</span>, <span class="attr">component</span>: User,</div><div class="line">      <span class="attr">children</span>: [</div><div class="line">        &#123;</div><div class="line">          <span class="comment">// UserProfile will be rendered inside User's &lt;router-view&gt;</span></div><div class="line">          <span class="comment">// when /user/:id/profile is matched</span></div><div class="line">          path: <span class="string">'profile'</span>,</div><div class="line">          <span class="attr">component</span>: UserProfile</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          <span class="comment">// UserPosts will be rendered inside User's &lt;router-view&gt;</span></div><div class="line">          <span class="comment">// when /user/:id/posts is matched</span></div><div class="line">          path: <span class="string">'posts'</span>,</div><div class="line">          <span class="attr">component</span>: UserPosts</div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><strong>Note that nested paths that start with <code>/</code> will be treated as a root path. This allows you to leverage the component nesting without having to use a nested URL.</strong></p>
+<p>As you can see the <code>children</code> option is just another Array of route configuration objects like <code>routes</code> itself. Therefore, you can keep nesting views as much as you need.</p>
+<p>At this point, with the above configuration, when you visit <code>/user/foo</code>, nothing will be rendered inside <code>User</code>‘s outlet, because no sub route is matched. Maybe you do want to render something there. In such case you can provide an empty subroute path:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">path</span>: <span class="string">'/user/:id'</span>, <span class="attr">component</span>: User,</div><div class="line">      <span class="attr">children</span>: [</div><div class="line">        <span class="comment">// UserHome will be rendered inside User's &lt;router-view&gt;</span></div><div class="line">        <span class="comment">// when /user/:id is matched</span></div><div class="line">        &#123; <span class="attr">path</span>: <span class="string">''</span>, <span class="attr">component</span>: UserHome &#125;,</div><div class="line"></div><div class="line">        <span class="comment">// ...other sub routes</span></div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>A working demo of this example can be found <a href="http://jsfiddle.net/yyx990803/L7hscd8h/" target="_blank" rel="external">here</a>.</p>
+
+    
+    <div class="footer">
+      发现错误？想参与编辑？
+      <a href="https://github.com/dingyiming/vuejs.org/tree/2.0-cn/src/router/essentials/nested-routes.md" target="_blank">
+        在 Github 上编辑此页！
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>异步加载 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "router"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Vue.js v2.0.0-rc.8</span>
+  </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与翻译:427447379
+  </span>
+  <ul id="nav">
+    <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/router/" class="nav-link current">vue-router</a></li>
+<li><a href="/ssr/" class="nav-link">SSR</a></li>
+<li><a href="/changelog/" class="nav-link">更新日志</a></li>
+<li><a href="/about/" class="nav-link">关于翻译</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+        
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/router/" class="nav-link current">vue-router</a></li>
+<li><a href="/ssr/" class="nav-link">SSR</a></li>
+<li><a href="/changelog/" class="nav-link">更新日志</a></li>
+<li><a href="/about/" class="nav-link">关于翻译</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/images/patreon.png">
+              <a href="/support-vuejs">支持 Vue.js</a>
+            </span>
+        </div>
+        <h2>
+            
+            
+            <select class="version-select">
+                <option value="rc" selected>2.0</option>
+                <!-- !!TODO: Update value to subdomain when 2.0 is released -->
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+             
+                
+                
+                
+                
+                <li>
+                    <a href="/router/index.html" class="sidebar-link">目录</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/installation.html" class="sidebar-link">安装</a>
+                </li>
+            
+                
+                
+                  <li><h3>基础</h3></li>
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/getting-started.html" class="sidebar-link">起步</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">匹配动态路由</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/nested-routes.html" class="sidebar-link">嵌套路由</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/navigation.html" class="sidebar-link">应用导航</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/named-routes.html" class="sidebar-link">具名路由</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/named-views.html" class="sidebar-link">具名视图</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向和链接</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/history-mode.html" class="sidebar-link">History模式</a>
+                </li>
+            
+                
+                
+                
+                  <li><h3>进阶</h3></li>
+                
+                
+                <li>
+                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">Navigation Guards</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/meta.html" class="sidebar-link">Route Meta Fields</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/data-fetching.html" class="sidebar-link">数据获取</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link current">异步加载</a>
+                </li>
+            
+                
+                
+                
+                
+                  <li><h3>API</h3></li>
+                
+                <li>
+                    <a href="/router/api/router-link.html" class="sidebar-link">router-link</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/router-view.html" class="sidebar-link">router-view</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/route-object.html" class="sidebar-link">路由对象</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/options.html" class="sidebar-link">路由构造选项</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/router-instance.html" class="sidebar-link">路由实例</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/component-injections.html" class="sidebar-link">组件注入</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content router with-sidebar ">
+    	
+    <h1>异步加载</h1>
+    <h1 id="Lazy-Loading-Routes"><a href="#Lazy-Loading-Routes" class="headerlink" title="Lazy Loading Routes"></a>Lazy Loading Routes</h1><p>When building apps with a bundler, the JavaScript bundle can become quite large and thus affecting page load time. It would be more efficient if we can split each route’s components into a separate chunk, and only load them when the route is visited.</p>
+<p>Combining Vue’s <a href="http://vuejs.org/guide/components.html#Async-Components" target="_blank" rel="external">async component feature</a> and Webpack’s <a href="https://webpack.github.io/docs/code-splitting.html" target="_blank" rel="external">code splitting feature</a>, it’s trivially easy to<br>lazy-load route components.</p>
+<p>All we need to do is defining our route components as async components:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> Foo = <span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</div><div class="line">  <span class="comment">// require.ensure is Webpack's special syntax for a code-split point.</span></div><div class="line">  <span class="built_in">require</span>.ensure([<span class="string">'./Foo.vue'</span>], () =&gt; &#123;</div><div class="line">    resolve(<span class="built_in">require</span>(<span class="string">'./Foo.vue'</span>))</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>There’s also an alternative code-split syntax using AMD style require, so this can be simplified to:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> Foo = <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'./Foo.vue'</span>], resolve)</div></pre></td></tr></table></figure>
+<p>Nothing needs to change in the route config, just use <code>Foo</code> as usual:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/foo'</span>, <span class="attr">component</span>: Foo &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="Grouping-Components-in-the-Same-Chunk"><a href="#Grouping-Components-in-the-Same-Chunk" class="headerlink" title="Grouping Components in the Same Chunk"></a>Grouping Components in the Same Chunk</h3><p>Sometimes we may want to group all the components nested under the same route into the same async chunk. To achieve that we need to use <a href="https://webpack.github.io/docs/code-splitting.html#named-chunks" target="_blank" rel="external">named chunks</a> by providing a chunk name to <code>require.ensure</code> as the 3rd argument:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> Foo = <span class="function"><span class="params">r</span> =&gt;</span> <span class="built_in">require</span>.ensure([], () =&gt; r(<span class="built_in">require</span>(<span class="string">'./Foo.vue'</span>)), <span class="string">'group-foo'</span>)</div><div class="line"><span class="keyword">const</span> Bar = <span class="function"><span class="params">r</span> =&gt;</span> <span class="built_in">require</span>.ensure([], () =&gt; r(<span class="built_in">require</span>(<span class="string">'./Bar.vue'</span>)), <span class="string">'group-foo'</span>)</div><div class="line"><span class="keyword">const</span> Baz = <span class="function"><span class="params">r</span> =&gt;</span> <span class="built_in">require</span>.ensure([], () =&gt; r(<span class="built_in">require</span>(<span class="string">'./Baz.vue'</span>)), <span class="string">'group-foo'</span>)</div></pre></td></tr></table></figure>
+<p>Webpack will group any async module with the same chunk name into the same async chunk - this also means we don’t need to explicitly list dependencies for <code>require.ensure</code> anymore (thus passing an empty array).</p>
+
+    
+    <div class="footer">
+      发现错误？想参与编辑？
+      <a href="https://github.com/dingyiming/vuejs.org/tree/2.0-cn/src/router/advanced/lazy-loading.md" target="_blank">
+        在 Github 上编辑此页！
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>

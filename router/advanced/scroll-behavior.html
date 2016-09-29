@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>滚动 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "router"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Vue.js v2.0.0-rc.8</span>
+  </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与翻译:427447379
+  </span>
+  <ul id="nav">
+    <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/router/" class="nav-link current">vue-router</a></li>
+<li><a href="/ssr/" class="nav-link">SSR</a></li>
+<li><a href="/changelog/" class="nav-link">更新日志</a></li>
+<li><a href="/about/" class="nav-link">关于翻译</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+        
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/router/" class="nav-link current">vue-router</a></li>
+<li><a href="/ssr/" class="nav-link">SSR</a></li>
+<li><a href="/changelog/" class="nav-link">更新日志</a></li>
+<li><a href="/about/" class="nav-link">关于翻译</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/images/patreon.png">
+              <a href="/support-vuejs">支持 Vue.js</a>
+            </span>
+        </div>
+        <h2>
+            
+            
+            <select class="version-select">
+                <option value="rc" selected>2.0</option>
+                <!-- !!TODO: Update value to subdomain when 2.0 is released -->
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+             
+                
+                
+                
+                
+                <li>
+                    <a href="/router/index.html" class="sidebar-link">目录</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/installation.html" class="sidebar-link">安装</a>
+                </li>
+            
+                
+                
+                  <li><h3>基础</h3></li>
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/getting-started.html" class="sidebar-link">起步</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">匹配动态路由</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/nested-routes.html" class="sidebar-link">嵌套路由</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/navigation.html" class="sidebar-link">应用导航</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/named-routes.html" class="sidebar-link">具名路由</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/named-views.html" class="sidebar-link">具名视图</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向和链接</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/essentials/history-mode.html" class="sidebar-link">History模式</a>
+                </li>
+            
+                
+                
+                
+                  <li><h3>进阶</h3></li>
+                
+                
+                <li>
+                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">Navigation Guards</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/meta.html" class="sidebar-link">Route Meta Fields</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/data-fetching.html" class="sidebar-link">数据获取</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link current">滚动</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">异步加载</a>
+                </li>
+            
+                
+                
+                
+                
+                  <li><h3>API</h3></li>
+                
+                <li>
+                    <a href="/router/api/router-link.html" class="sidebar-link">router-link</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/router-view.html" class="sidebar-link">router-view</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/route-object.html" class="sidebar-link">路由对象</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/options.html" class="sidebar-link">路由构造选项</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/router-instance.html" class="sidebar-link">路由实例</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/router/api/component-injections.html" class="sidebar-link">组件注入</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content router with-sidebar ">
+    	
+    <h1>滚动</h1>
+    <h1 id="Scroll-Behavior"><a href="#Scroll-Behavior" class="headerlink" title="Scroll Behavior"></a>Scroll Behavior</h1><p>When using client-side routing, we may want to scroll to top when navigating to a new route, or preserve the scrolling position of history entries just like real page reload does. <code>vue-router</code> allows you to achieve these and even better, allows you to completely customize the scroll behavior on route navigation.</p>
+<p><strong>Note: this feature only works in HTML5 history mode.</strong></p>
+<p>When creating the router instance, you can provide the <code>scrollBehavior</code> function:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [...],</div><div class="line">  scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</div><div class="line">    <span class="comment">// return desired position</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>The <code>scrollBehavior</code> function receives the <code>to</code> and <code>from</code> route objects. The third argument, <code>savedPosition</code>, is only available if this is a <code>popstate</code> navigation (triggered by the browser’s back/forward buttons).</p>
+<p>The function can return a scroll position object. The object could be in the form of:</p>
+<ul>
+<li><code>{ x: number, y: number }</code></li>
+<li><code>{ selector: string }</code></li>
+</ul>
+<p>If a falsy value or an empty object is returned, no scrolling will happen.</p>
+<p>For example:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</div><div class="line">  <span class="keyword">return</span> &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>This will simply make the page scroll to top for all route navigations.</p>
+<p>Returning the <code>savedPosition</code> will result in a native-like behavior when navigating with back/forward buttons:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</div><div class="line">  <span class="keyword">if</span> (savedPosition) &#123;</div><div class="line">    <span class="keyword">return</span> savedPosition</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">return</span> &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>If you want to simulate the “scroll to anchor” behavior:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</div><div class="line">  <span class="keyword">if</span> (to.hash) &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">selector</span>: to.hash</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>We can also use <a href="meta.md">route meta fields</a> to implement fine-grained scroll behavior control. Check out a full example <a href="https://github.com/vuejs/vue-router/blob/next/examples/scroll-behavior/app.js" target="_blank" rel="external">here</a>.</p>
+
+    
+    <div class="footer">
+      发现错误？想参与编辑？
+      <a href="https://github.com/dingyiming/vuejs.org/tree/2.0-cn/src/router/advanced/scroll-behavior.md" target="_blank">
+        在 Github 上编辑此页！
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>
