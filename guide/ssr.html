@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>服务端渲染 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "guide"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Vue.js v2.0.0-rc.8</span>
+  </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与翻译:427447379
+  </span>
+  <ul id="nav">
+    <li><a href="/guide/" class="nav-link current">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/ssr/" class="nav-link current">SSR</a></li>
+<li><a href="/changelog/" class="nav-link">更新日志</a></li>
+<li><a href="/about/" class="nav-link">关于翻译</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+        
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link current">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/ssr/" class="nav-link current">SSR</a></li>
+<li><a href="/changelog/" class="nav-link">更新日志</a></li>
+<li><a href="/about/" class="nav-link">关于翻译</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/images/patreon.png">
+              <a href="/support-vuejs">支持 Vue.js</a>
+            </span>
+        </div>
+        <h2>
+            
+            教程
+            <select class="version-select">
+                <option value="rc" selected>2.0</option>
+                <!-- !!TODO: Update value to subdomain when 2.0 is released -->
+                <option value="">1.0</option>
+                <option>0.12</option>
+                <option>0.11</option> -->
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+                
+                
+                  <li><h3>基础</h3></li>
+                
+                
+                
+                <li>
+                    <a href="/guide/installation.html" class="sidebar-link">安装</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/index.html" class="sidebar-link">起步</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/instance.html" class="sidebar-link">Vue 实例</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/syntax.html" class="sidebar-link">模板语法</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/computed.html" class="sidebar-link">计算属性</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/class-and-style.html" class="sidebar-link">Class 与 Style 绑定</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/conditional.html" class="sidebar-link">条件渲染</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/list.html" class="sidebar-link">列表渲染</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/events.html" class="sidebar-link">事件处理器</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/forms.html" class="sidebar-link">表单控件绑定</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/components.html" class="sidebar-link">组件</a>
+                </li>
+            
+                
+                
+                
+                  <li><h3>进阶</h3></li>
+                
+                
+                <li>
+                    <a href="/guide/transitions.html" class="sidebar-link">过渡: 进入, 离开, 和 列表</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/transitioning-state.html" class="sidebar-link">过渡状态</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/render-function.html" class="sidebar-link">Render 函数</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/reactivity.html" class="sidebar-link">深入响应式原理</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/custom-directive.html" class="sidebar-link">自定义指令</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/mixins.html" class="sidebar-link">混合</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/plugins.html" class="sidebar-link">插件</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/single-file-components.html" class="sidebar-link">单文件组件</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/routing.html" class="sidebar-link">路由</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/state-management.html" class="sidebar-link">状态管理</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/unit-testing.html" class="sidebar-link">单元测试</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/ssr.html" class="sidebar-link current">服务端渲染</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/migration.html" class="sidebar-link">1.x迁移</a>
+                </li>
+            
+                
+                
+                
+                
+                  <li><h3>更多</h3></li>
+                
+                <li>
+                    <a href="/guide/comparison.html" class="sidebar-link">对比其他框架</a>
+                </li>
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/guide/join.html" class="sidebar-link">加入Vue.js社区</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content guide with-sidebar ssr-guide">
+    	
+    <h1>服务端渲染</h1>
+    <h2 id="需要服务端渲染（SSR）吗？"><a href="#需要服务端渲染（SSR）吗？" class="headerlink" title="需要服务端渲染（SSR）吗？"></a>需要服务端渲染（SSR）吗？</h2><p>在开始服务端渲染前，我们先看看它能给我们带来什么，以及什么时候需要用它。</p>
+<h3 id="SEO（搜索引擎优化）"><a href="#SEO（搜索引擎优化）" class="headerlink" title="SEO（搜索引擎优化）"></a>SEO（搜索引擎优化）</h3><p>谷歌和Bing可以很好地索引同步的JavaScript应用。<em>同步</em>在这里是个关键词。如果应用启动时有一个加载动画，然后内容通过ajax获取，那爬虫不会等待他们加载完成。</p>
+<p>这意味着在异步获取内容的页面上很需要进行搜索引擎优化的时候，服务端渲染就很重要。</p>
+<h3 id="客户端的网络比较慢"><a href="#客户端的网络比较慢" class="headerlink" title="客户端的网络比较慢"></a>客户端的网络比较慢</h3><p>用户可能在网络比较慢的情况下从远处访问网站 - 或者通过比较差的连接。 这些情况下，你需要最小化必要请求使用户看的基本的内容。</p>
+<p>可以用 <a href="https://webpack.github.io/docs/code-splitting.html" target="_blank" rel="external">Webpack的代码拆分</a> 避免强制用户下载整个单页面应用，不过它也不会下载单个预先渲染过的HTML文件。</p>
+<h3 id="客户端运行在老的-或者直接没有-JavaScript引擎上"><a href="#客户端运行在老的-或者直接没有-JavaScript引擎上" class="headerlink" title="客户端运行在老的(或者直接没有)JavaScript引擎上"></a>客户端运行在老的(或者直接没有)JavaScript引擎上</h3><p>对于世界上的一些地区人口，通过1998年访问互联网的方式使用计算机可能是唯一途径。当Vue只能运行在IE9以上的浏览器时，你可以也想为那些老式浏览器提供基础内容 - 或者是在命令行中使用 <a href="http://lynx.browser.org/" target="_blank" rel="external">Lynx</a>的时髦的黑客。</p>
+<h3 id="服务端渲染-对比-预先渲染"><a href="#服务端渲染-对比-预先渲染" class="headerlink" title="服务端渲染 对比 预先渲染"></a>服务端渲染 对比 预先渲染</h3><p>如果你只是用服务端渲染来改善一个少数的营销页面（如 首页，关于，联系 等等）的SEO，然后你可能想用<strong>预先渲染</strong>取代。然而用一个网站服务即时编译HTML,在构建时预先渲染出静态页面给特定的路由。其有点事设置预先渲染更加简单，可以保持前端是一个完整的静态站。</p>
+<p>用webpack可以很简单地添加预先渲染通过<a href="https://github.com/chrisvfritz/prerender-spa-plugin" target="_blank" rel="external">prerender-spa-plugin</a>它被广泛地用在Vue应用上 - 事实上，创建者也是Vue核心团队成员之一。</p>
+<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>准备在行动中体验服务端渲染吧。服务端渲染(即SSR)听起来很复杂, 不过一个简单的Node脚本只需要3步就可以实现这个功能:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 步骤 1:创建一个Vue实例</span></div><div class="line"><span class="keyword">var</span> Vue = <span class="built_in">require</span>(<span class="string">'vue'</span>)</div><div class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">render</span>: <span class="function"><span class="keyword">function</span> (<span class="params">h</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> h(<span class="string">'p'</span>, <span class="string">'hello world'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 步骤 2: 创建一个渲染器</span></div><div class="line"><span class="keyword">var</span> renderer = <span class="built_in">require</span>(<span class="string">'vue-server-renderer'</span>).createRenderer()</div><div class="line"></div><div class="line"><span class="comment">// 步骤 3: 将 Vue实例 渲染成 HTML</span></div><div class="line"></div><div class="line">renderer.renderToString(app, <span class="function"><span class="keyword">function</span> (<span class="params">error, html</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (error) <span class="keyword">throw</span> error</div><div class="line">  <span class="built_in">console</span>.log(html)</div><div class="line">  <span class="comment">// =&gt; &lt;p server-rendered="true"&gt;hello world&lt;/p&gt;</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这并不困难。当然这个示例比大部分应用都简单。我们不必担心：</p>
+<ul>
+<li>一个Web服务器</li>
+<li>流式响应</li>
+<li>组件缓存</li>
+<li>构建过程</li>
+<li>路由</li>
+<li>Vuex状态管理</li>
+</ul>
+<p>这个指南的其余部分，我们将探讨这些功能怎样运作。一旦你理解了基础，我们会提供更多细节温和和进一步的示例来帮助你解决意外情况。</p>
+<h2 id="通过Express-Web服务器实现简单的服务端渲染"><a href="#通过Express-Web服务器实现简单的服务端渲染" class="headerlink" title="通过Express Web服务器实现简单的服务端渲染"></a>通过Express Web服务器实现简单的服务端渲染</h2><p>如果没有一个Web服务器，我们很难说在服务端渲染，所以我们来补充它。我们将构建一个非常简单的服务端渲染应用，只用ES5，也不带其他构建步骤或Vue插件。</p>
+<p>启动一个应用告诉用户他们在一个页面上花了多少时间。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;div&gt;你已经在这花了 &#123;&#123; counter &#125;&#125; 秒。&lt;/div&gt;'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">counter</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> vm = <span class="keyword">this</span></div><div class="line">    setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      vm.counter += <span class="number">1</span></div><div class="line">    &#125;, <span class="number">1000</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>为了适应服务端渲染，我们需要进行一些修改，让它可以在浏览器和Node中渲染：</p>
+<ul>
+<li>在浏览器中，将我们的应用实例添加到全局上下文（ <code>window</code>）上,我们可以安装它。</li>
+<li>在Node中，导出一个工厂函数让我们可以为每个请求创建应用实例。</li>
+</ul>
+<p>实现这个需要一点模板：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// assets/app.js</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="string">'use strict'</span></div><div class="line">  <span class="keyword">var</span> createApp = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// ---------------------</span></div><div class="line">    <span class="comment">// 开始常用的应用代码</span></div><div class="line">    <span class="comment">// ---------------------</span></div><div class="line"></div><div class="line">    <span class="comment">// 主要的Vue实例必须返回，并且有一个根节点在id "app"上，这样客户端可以加载它。</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Vue(&#123;</div><div class="line">      <span class="attr">template</span>: <span class="string">'&lt;div id="app"&gt;你已经在这花了 &#123;&#123; counter &#125;&#125; 秒。&lt;/div&gt;'</span>,</div><div class="line">      <span class="attr">data</span>: &#123;</div><div class="line">        <span class="attr">counter</span>: <span class="number">0</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> vm = <span class="keyword">this</span></div><div class="line">        setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          vm.counter += <span class="number">1</span></div><div class="line">        &#125;, <span class="number">1000</span>)</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    <span class="comment">// -------------------</span></div><div class="line">    <span class="comment">// 结束常用的应用代码</span></div><div class="line">    <span class="comment">// -------------------</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">module</span> !== <span class="string">'undefined'</span> &amp;&amp; <span class="built_in">module</span>.exports) &#123;</div><div class="line">    <span class="built_in">module</span>.exports = createApp</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">this</span>.app = createApp()</div><div class="line">  &#125;</div><div class="line">&#125;).call(<span class="keyword">this</span>)</div></pre></td></tr></table></figure>
+<p>现在有了应用代码，接着加一个 html文件。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- index.html --&gt;</span></div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>My Vue App<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/assets/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/assets/app.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">app.$mount(<span class="string">'#app'</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>主要引用<code>assets</code>文件夹中我们先前创建的<code>app.js</code>，以及<code>vue.js</code>文件，我们就有了一个可以运行的单页面应用</p>
+<p>然后为了实现服务端渲染，在服务端需要加一个步骤。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// server.js</span></div><div class="line"><span class="meta">'use strict'</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 定义全局的Vue为了服务端的app.js</span></div><div class="line">global.Vue = <span class="built_in">require</span>(<span class="string">'vue'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 获取HTML布局</span></div><div class="line"><span class="keyword">var</span> layout = fs.readFileSync(<span class="string">'./index.html'</span>, <span class="string">'utf8'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 创建一个渲染器</span></div><div class="line"><span class="keyword">var</span> renderer = <span class="built_in">require</span>(<span class="string">'vue-server-renderer'</span>).createRenderer()</div><div class="line"></div><div class="line"><span class="comment">// 创建一个Express服务器</span></div><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">var</span> server = express()</div><div class="line"></div><div class="line"><span class="comment">// 部署静态文件夹为 "assets"文件夹</span></div><div class="line">server.use(<span class="string">'/assets'</span>, express.static(</div><div class="line">  path.resolve(__dirname, <span class="string">'assets'</span>)</div><div class="line">))</div><div class="line"></div><div class="line"><span class="comment">// 处理所有的Get请求</span></div><div class="line">server.get(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</div><div class="line">  <span class="comment">// 渲染我们的Vue应用为一个字符串</span></div><div class="line">  renderer.renderToString(</div><div class="line">    <span class="comment">// 创建一个应用实例</span></div><div class="line">    <span class="built_in">require</span>(<span class="string">'./assets/app'</span>)(),</div><div class="line">    <span class="comment">// 处理渲染结果</span></div><div class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">error, html</span>) </span>&#123;</div><div class="line">      <span class="comment">// 如果渲染时发生了错误</span></div><div class="line">      <span class="keyword">if</span> (error) &#123;</div><div class="line">        <span class="comment">// 打印错误到控制台</span></div><div class="line">        <span class="built_in">console</span>.error(error)</div><div class="line">        <span class="comment">// 告诉客户端错误</span></div><div class="line">        <span class="keyword">return</span> response</div><div class="line">          .status(<span class="number">500</span>)</div><div class="line">          .send(<span class="string">'Server Error'</span>)</div><div class="line">      &#125;</div><div class="line">      <span class="comment">// 发送布局和HTML文件</span></div><div class="line">      response.send(layout.replace(<span class="string">'&lt;div id="app"&gt;&lt;/div&gt;'</span>, html))</div><div class="line">    &#125;</div><div class="line">  )</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 监听5000端口</span></div><div class="line">server.listen(<span class="number">5000</span>, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (error) <span class="keyword">throw</span> error</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Server is running at localhost:5000'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这样就完成了。<a href="https://github.com/chrisvfritz/vue-ssr-demo-simple" target="_blank" rel="external">整个示例</a>，克隆下来深度实验。一个它在本地运行时，你可以通过在页面右击选择<code>页面资源</code>（或类似操作）确认服务选渲染真的运行了。可以在body中看到：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span> <span class="attr">server-rendered</span>=<span class="string">"true"</span>&gt;</span>You have been here for 0 seconds&amp;period;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>代替:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="流式响应"><a href="#流式响应" class="headerlink" title="流式响应"></a>流式响应</h2><p>Vue还支持<strong>流式</strong>渲染，优先选择适用于支持流的Web服务器。允许HTML写入响应作为反馈，而不是在最后一次全部写入。其结果是请求服务速度更快，没有缺点！</p>
+<p>为了使上一节应用代码适用流式渲染，可以简单的替换 <code>server.get(&#39;*&#39;,...)</code>为下面的代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 拆分布局成两段HTML</span></div><div class="line"><span class="keyword">var</span> layoutSections = layout.split(<span class="string">'&lt;div id="app"&gt;&lt;/div&gt;'</span>)</div><div class="line"><span class="keyword">var</span> preAppHTML = layoutSections[<span class="number">0</span>]</div><div class="line"><span class="keyword">var</span> postAppHTML = layoutSections[<span class="number">1</span>]</div><div class="line"></div><div class="line"><span class="comment">// 处理所有的Get请求</span></div><div class="line">server.get(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</div><div class="line">  <span class="comment">// 渲染我们的Vue实例作为流</span></div><div class="line">  <span class="keyword">var</span> stream = renderer.renderToStream(<span class="built_in">require</span>(<span class="string">'./assets/app'</span>)())</div><div class="line"></div><div class="line">  <span class="comment">// 将预先的HTML写入响应</span></div><div class="line">  response.write(preAppHTML)</div><div class="line"></div><div class="line">  <span class="comment">// 每当新的块被渲染</span></div><div class="line">  stream.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">chunk</span>) </span>&#123;</div><div class="line">    <span class="comment">// 将块写入响应</span></div><div class="line">    response.write(chunk)</div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  <span class="comment">// 当所有的块被渲染完成</span></div><div class="line">  stream.on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// 将post-app HTML写入响应</span></div><div class="line">    response.end(postAppHTML)</div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  <span class="comment">// 当渲染时发生错误</span></div><div class="line">  stream.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="comment">// 打印错误到控制台</span></div><div class="line">    <span class="built_in">console</span>.error(error)</div><div class="line">    <span class="comment">// 告诉客服端发生了错误</span></div><div class="line">    <span class="keyword">return</span> response</div><div class="line">      .status(<span class="number">500</span>)</div><div class="line">      .send(<span class="string">'Server Error'</span>)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这不必先前的版本复杂多少，甚至这对你来说是个新概念。我们做了：</p>
+<ol>
+<li>建立流</li>
+<li>在应用响应前写入HTML</li>
+<li>在可获得时将应用HTML写入响应</li>
+<li>在响应最后写入HTML</li>
+<li>处理任何错误</li>
+</ol>
+<h2 id="组件缓存"><a href="#组件缓存" class="headerlink" title="组件缓存"></a>组件缓存</h2><p>Vue的服务端渲染默认非常快，但是你可以通过缓存渲染好的组件进一步提高性能。这被认为是一种先进的功能，但是，如果缓存了错误的组件（或者正确的组件带有错误的内容）将导致应用渲染出错。特别注意：</p>
+<p class="tip">不应该缓存组件包含子组件依赖全局状态（例如来自vuex的状态）。如果这么做，子组件（事实上是整个子树）也会被缓存。所以要特别注意带有slots片段或者子组件的情况。</p>
+
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>在警告情况之外的，我们可以用下面的方法缓存组件。</p>
+<p>First, you’ll need to provide your renderer with a <a href="https://www.npmjs.com/package/vue-server-renderer#cache" target="_blank" rel="external">cache object</a>. Here’s a simple example using <a href="https://github.com/isaacs/node-lru-cache" target="_blank" rel="external">lru-cache</a>:</p>
+<p>首先，你需要提供给渲染器一个 <a href="https://www.npmjs.com/package/vue-server-renderer#cache" target="_blank" rel="external">缓存对象</a>。这有个简单的示例使用 <a href="https://github.com/isaacs/node-lru-cache" target="_blank" rel="external">lru-cache</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> createRenderer = <span class="built_in">require</span>(<span class="string">'vue-server-renderer'</span>).createRenderer</div><div class="line"><span class="keyword">var</span> lru = <span class="built_in">require</span>(<span class="string">'lru-cache'</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> renderer = createRenderer(&#123;</div><div class="line">  <span class="attr">cache</span>: lru(<span class="number">1000</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这将缓存高达1000个独立的渲染。对于更进一步缓存到内容中的配置，看<a href="https://github.com/isaacs/node-lru-cache#options" target="_blank" rel="external">lru-cache设置</a></p>
+<p>然后对于你想缓存的组件，你可以为他们提供：</p>
+<ul>
+<li>一个独特的<code>名字</code></li>
+<li>一个 <code>serverCacheKey</code>函数，返回一个独特的组件作用域</li>
+</ul>
+<p>例如:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(&#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'list-item'</span>,</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;li&gt;&#123;&#123; item.name &#125;&#125;&lt;/li&gt;'</span>,</div><div class="line">  <span class="attr">props</span>: [<span class="string">'item'</span>],</div><div class="line">  <span class="attr">serverCacheKey</span>: <span class="function"><span class="keyword">function</span> (<span class="params">props</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> props.item.type + <span class="string">'::'</span> + props.item.id</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="缓存的理想组件"><a href="#缓存的理想组件" class="headerlink" title="缓存的理想组件"></a>缓存的理想组件</h3><p>任何纯组件可以被安全缓存 -  这是保证给任何组件传递一样的数据产生相同的HTML。这些场景的例子🌰包括：</p>
+<ul>
+<li>静态的组件 (例如 总是尝试一样的HTML,所以 <code>serverCacheKey</code> 函数可以被返回 <code>true</code>)</li>
+<li>列表组件（当有大量列表，缓存他们可以改善性能）</li>
+<li>通用UI组件 (例如 buttons, alerts, 等等 - 至少他们通过props获取数据而不是 slots或者子组件)</li>
+</ul>
+<h2 id="构建过程，路由，和Vuex状态管理"><a href="#构建过程，路由，和Vuex状态管理" class="headerlink" title="构建过程，路由，和Vuex状态管理"></a>构建过程，路由，和Vuex状态管理</h2><p>现在，应该立即服务端渲染背后的基本概念了。但是，构建过程、路由、Vuex每一个都有自己的注意事项。</p>
+<p>要真正掌握复杂应用下的服务端渲染，我们推荐深度熟悉以下资源：</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/vue-server-renderer#api" target="_blank" rel="external">vue-server-renderer 文档</a>:更多细节在这里，和更多先进的主题一起的文档。 例如 <a href="https://www.npmjs.com/package/vue-server-renderer#why-use-bundlerenderer" target="_blank" rel="external">preventing cross-request contamination</a> 和 <a href="https://www.npmjs.com/package/vue-server-renderer#creating-the-server-bundle" target="_blank" rel="external">添加独立的服务构建</a></li>
+<li><a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" rel="external">vue-hackernews-2.0</a>: 明确整合了  所有主要的Vue库和概念在单个应用中</li>
+</ul>
+<hr>
+<blockquote>
+<p>原文: <a href="http://rc.vuejs.org/guide/ssr.html" target="_blank" rel="external">http://rc.vuejs.org/guide/ssr.html</a></p>
+</blockquote>
+<hr>
+
+    
+      <div class="guide-links">
+        
+          <span>← <a href="/guide/unit-testing.html">单元测试</a></span>
+        
+        
+          <span style="float:right"><a href="/guide/migration.html">1.x迁移</a> →</span>
+        
+      </div>
+    
+    <div class="footer">
+      发现错误？想参与编辑？
+      <a href="https://github.com/dingyiming/vuejs.org/tree/2.0-cn/src/guide/ssr.md" target="_blank">
+        在 Github 上编辑此页！
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>

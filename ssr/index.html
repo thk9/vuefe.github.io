@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>服务端渲染 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "ssr"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Vue.js v2.0.0-rc.8</span>
+  </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与翻译:427447379
+  </span>
+  <ul id="nav">
+    <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/ssr/" class="nav-link current">SSR</a></li>
+<li><a href="/changelog/" class="nav-link">更新日志</a></li>
+<li><a href="/about/" class="nav-link">关于翻译</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+        
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/ssr/" class="nav-link current">SSR</a></li>
+<li><a href="/changelog/" class="nav-link">更新日志</a></li>
+<li><a href="/about/" class="nav-link">关于翻译</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/images/patreon.png">
+              <a href="/support-vuejs">支持 Vue.js</a>
+            </span>
+        </div>
+        <h2>
+            
+            
+            <select class="version-select">
+                <option value="rc" selected>2.0</option>
+                <!-- !!TODO: Update value to subdomain when 2.0 is released -->
+                <option value="">1.0</option>
+                <option>0.12</option>
+                <option>0.11</option> -->
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+                
+                
+                
+                
+                <li>
+                    <a href="/ssr/index.html" class="sidebar-link current">服务端渲染</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content ssr with-sidebar ">
+    	
+    <h1>服务端渲染</h1>
+    <p><a href="https://www.npmjs.com/package/vue-server-renderer#api" target="_blank" rel="external">SSR</a></p>
+<h1 id="vue-server-renderer"><a href="#vue-server-renderer" class="headerlink" title="vue-server-renderer"></a>vue-server-renderer</h1><blockquote>
+<p>This package is auto-generated. For pull requests please see <a href="https://github.com/vuejs/vue/blob/next/src/entries/web-server-renderer.js" target="_blank" rel="external">src/entries/web-server-renderer.js</a>.</p>
+</blockquote>
+<p>This package offers Node.js server-side rendering for Vue 2.0.</p>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#renderer-options">Renderer Options</a></li>
+<li><a href="#why-use-bundlerenderer">Why Use <code>bundleRenderer</code>?</a></li>
+<li><a href="#creating-the-server-bundle">Creating the Server Bundle</a></li>
+<li><a href="#component-caching">Component Caching</a></li>
+<li><a href="#client-side-hydration">Client Side Hydration</a></li>
+</ul>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">npm install vue-server-renderer</div></pre></td></tr></table></figure>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="createRenderer-rendererOptions"><a href="#createRenderer-rendererOptions" class="headerlink" title="createRenderer([rendererOptions])"></a>createRenderer([<a href="#renderer-options">rendererOptions</a>])</h3><p>Create a <code>renderer</code> instance.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> renderer = <span class="built_in">require</span>(<span class="string">'vue-server-renderer'</span>).createRenderer()</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="renderer-renderToString-vm-cb"><a href="#renderer-renderToString-vm-cb" class="headerlink" title="renderer.renderToString(vm, cb)"></a>renderer.renderToString(vm, cb)</h3><p>Render a Vue instance to string. The callback is a standard Node.js callback that receives the error as the first argument:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> Vue = <span class="built_in">require</span>(<span class="string">'vue'</span>)</div><div class="line"></div><div class="line"><span class="keyword">const</span> renderer = <span class="built_in">require</span>(<span class="string">'vue-server-renderer'</span>).createRenderer()</div><div class="line"></div><div class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  render (h) &#123;</div><div class="line">    <span class="keyword">return</span> h(<span class="string">'div'</span>, <span class="string">'hello'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">renderer.renderToString(vm, (err, html) =&gt; &#123;</div><div class="line">  <span class="built_in">console</span>.log(html) <span class="comment">// -&gt; &lt;div server-rendered="true"&gt;hello&lt;/div&gt;</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="renderer-renderToStream-vm"><a href="#renderer-renderToStream-vm" class="headerlink" title="renderer.renderToStream(vm)"></a>renderer.renderToStream(vm)</h3><p>Render a Vue instance in streaming mode. Returns a Node.js readable stream.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// example usage with express</span></div><div class="line">app.get(<span class="string">'/'</span>, (req, res) =&gt; &#123;</div><div class="line">  <span class="keyword">const</span> vm = <span class="keyword">new</span> App(&#123; <span class="attr">url</span>: req.url &#125;)</div><div class="line">  <span class="keyword">const</span> stream = renderer.renderToStream(vm)</div><div class="line"></div><div class="line">  res.write(<span class="string">`&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;...&lt;/title&gt;&lt;/head&gt;&lt;body&gt;`</span>)</div><div class="line"></div><div class="line">  stream.on(<span class="string">'data'</span>, chunk =&gt; &#123;</div><div class="line">    res.write(chunk)</div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  stream.on(<span class="string">'end'</span>, () =&gt; &#123;</div><div class="line">    res.end(<span class="string">'&lt;/body&gt;&lt;/html&gt;'</span>)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="createBundleRenderer-code-rendererOptions"><a href="#createBundleRenderer-code-rendererOptions" class="headerlink" title="createBundleRenderer(code, [rendererOptions])"></a>createBundleRenderer(code, [<a href="#renderer-options">rendererOptions</a>])</h3><p>Creates a <code>bundleRenderer</code> instance using pre-bundled application code (see <a href="#creating-the-server-bundle">Creating the Server Bundle</a>). For each render call, the code will be re-run in a new context using Node.js’ <code>vm</code> module. This ensures your application state is discrete between requests, and you don’t need to worry about structuring your application in a limiting pattern just for the sake of SSR.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> bundleRenderer = <span class="built_in">require</span>(<span class="string">'vue-server-renderer'</span>).createBundleRenderer(code)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="bundleRenderer-renderToString-context-cb"><a href="#bundleRenderer-renderToString-context-cb" class="headerlink" title="bundleRenderer.renderToString([context], cb)"></a>bundleRenderer.renderToString([context], cb)</h3><p>Render the bundled app to a string. Same callback interface with <code>renderer.renderToString</code>. The optional context object will be passed to the bundle’s exported function.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">bundleRenderer.renderToString(&#123; <span class="attr">url</span>: <span class="string">'/'</span> &#125;, (err, html) =&gt; &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="bundleRenderer-renderToStream-context"><a href="#bundleRenderer-renderToStream-context" class="headerlink" title="bundleRenderer.renderToStream([context])"></a>bundleRenderer.renderToStream([context])</h3><p>Render the bundled app to a stream. Same stream interface with <code>renderer.renderToStream</code>. The optional context object will be passed to the bundle’s exported function.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">bundleRenderer</div><div class="line">  .renderToStream(&#123; <span class="attr">url</span>: <span class="string">'/'</span> &#125;)</div><div class="line">  .pipe(writableStream)</div></pre></td></tr></table></figure>
+<h2 id="Renderer-Options"><a href="#Renderer-Options" class="headerlink" title="Renderer Options"></a>Renderer Options</h2><h3 id="directives"><a href="#directives" class="headerlink" title="directives"></a>directives</h3><p>Allows you to provide server-side implementations for your custom directives:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> renderer = createRenderer(&#123;</div><div class="line">  <span class="attr">directives</span>: &#123;</div><div class="line">    example (vnode, directiveMeta) &#123;</div><div class="line">      <span class="comment">// transform vnode based on directive binding metadata</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>As an example, check out <a href="https://github.com/vuejs/vue/blob/next/src/platforms/web/server/directives/show.js" target="_blank" rel="external"><code>v-show</code>‘s server-side implementation</a>.</p>
+<hr>
+<h3 id="cache"><a href="#cache" class="headerlink" title="cache"></a>cache</h3><p>Provide a <a href="#component-caching">component cache</a> implementation. The cache object must implement the following interface:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">get</span>: <span class="function">(<span class="params">key: string, [cb: <span class="built_in">Function</span>]</span>) =&gt;</span> string | <span class="keyword">void</span>,</div><div class="line">  <span class="attr">set</span>: <span class="function">(<span class="params">key: string, val: string</span>) =&gt;</span> <span class="keyword">void</span>,</div><div class="line">  has?: <span class="function">(<span class="params">key: string, [cb: <span class="built_in">Function</span>]</span>) =&gt;</span> boolean | <span class="keyword">void</span> <span class="comment">// optional</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>A typical usage is passing in an <a href="https://github.com/isaacs/node-lru-cache" target="_blank" rel="external">lru-cache</a>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> LRU = <span class="built_in">require</span>(<span class="string">'lru-cache'</span>)</div><div class="line"></div><div class="line"><span class="keyword">const</span> renderer = createRenderer(&#123;</div><div class="line">  <span class="attr">cache</span>: LRU(&#123;</div><div class="line">    <span class="attr">max</span>: <span class="number">10000</span></div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>Note that the cache object should at least implement <code>get</code> and <code>set</code>. In addition, <code>get</code> and <code>has</code> can be optionally async if they accept a second argument as callback. This allows the cache to make use of async APIs, e.g. a redis client:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> renderer = createRenderer(&#123;</div><div class="line">  <span class="attr">cache</span>: &#123;</div><div class="line">    <span class="attr">get</span>: <span class="function">(<span class="params">key, cb</span>) =&gt;</span> &#123;</div><div class="line">      redisClient.get(key, (err, res) =&gt; &#123;</div><div class="line">        <span class="comment">// handle error if any</span></div><div class="line">        cb(res)</div><div class="line">      &#125;)</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">set</span>: <span class="function">(<span class="params">key, val</span>) =&gt;</span> &#123;</div><div class="line">      redisClient.set(key, val)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="Why-Use-bundleRenderer"><a href="#Why-Use-bundleRenderer" class="headerlink" title="Why Use bundleRenderer?"></a>Why Use <code>bundleRenderer</code>?</h2><p>In a typical Node.js app, the server is a long-running process. If we directly require our application code, the instantiated modules will be shared across every request. This imposes some inconvenient restrictions to the application structure: we will have to avoid any use of global stateful singletons (e.g. the store), otherwise state mutations caused by one request will affect the result of the next.</p>
+<p>Instead, it’s more straightforward to run our app “fresh” for each request, so that we don’t have to think about avoiding state contamination across requests. This is exactly what <code>bundleRenderer</code> helps us achieve.</p>
+<h2 id="Creating-the-Server-Bundle"><a href="#Creating-the-Server-Bundle" class="headerlink" title="Creating the Server Bundle"></a>Creating the Server Bundle</h2><p><img width="973" alt="screen shot 2016-08-11 at 6 06 57 pm" src="https://cloud.githubusercontent.com/assets/499550/17607895/786a415a-5fee-11e6-9c11-45a2cfdf085c.png"></p>
+<p>The application bundle can be generated by any build tool, so you can easily use Webpack + <code>vue-loader</code> with the bundleRenderer. You do need to use a slightly different webpack config and entry point for your server-side bundle, but the difference is rather minimal:</p>
+<ol>
+<li><p>add <code>target: &#39;node&#39;</code>, and use <code>output: { libraryTarget: &#39;commonjs2&#39; }</code> for your webpack config. Also, it’s probably a good idea to <a href="#externals">externalize your dependencies</a>.</p>
+</li>
+<li><p>In your server-side entry point, export a function. The function will receive the render context object (passed to <code>bundleRenderer.renderToString</code> or <code>bundleRenderer.renderToStream</code>), and should return a Promise, which should eventually resolve to the app’s root Vue instance:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// server-entry.js</span></div><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.vue'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(App)</div><div class="line"></div><div class="line"><span class="comment">// the default export should be a function</span></div><div class="line"><span class="comment">// which will receive the context of the render call</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> context =&gt; &#123;</div><div class="line">  <span class="comment">// data pre-fetching</span></div><div class="line">  <span class="keyword">return</span> app.fetchServerData(context.url).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> app</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Externals"><a href="#Externals" class="headerlink" title="Externals"></a>Externals</h3><p>When using the <code>bundleRenderer</code>, we will by default bundle every dependency of our app into the server bundle as well. This means on each request these depdencies will need to be parsed and evaluated again, which is unnecessary in most cases.</p>
+<p>We can optimize this by externalizing dependencies from your bundle. During the render, any raw <code>require()</code> calls found in the bundle will return the actual Node module from your rendering process. With Webpack, we can simply list the modules we want to externalize using the <a href="https://webpack.github.io/docs/configuration.html#externals" target="_blank" rel="external"><code>externals</code> config option</a>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// webpack.config.js</span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="comment">// this will externalize all modules listed under "dependencies"</span></div><div class="line">  <span class="comment">// in your package.json</span></div><div class="line">  externals: <span class="built_in">Object</span>.keys(<span class="built_in">require</span>(<span class="string">'./package.json'</span>).dependencies)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Externals-Caveats"><a href="#Externals-Caveats" class="headerlink" title="Externals Caveats"></a>Externals Caveats</h3><p>Since externalized modules will be shared across every request, you need to make sure that the dependency is <strong>idempotent</strong>. That is, using it across different requests should always yield the same result - it cannot have global state that may be changed by your application. Interactions between externalized modules are fine (e.g. using a Vue plugin).</p>
+<h2 id="Component-Caching"><a href="#Component-Caching" class="headerlink" title="Component Caching"></a>Component Caching</h2><p>You can easily cache components during SSR by implementing the <code>serverCacheKey</code> function:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'item'</span>, <span class="comment">// required</span></div><div class="line">  props: [<span class="string">'item'</span>],</div><div class="line">  <span class="attr">serverCacheKey</span>: <span class="function"><span class="params">props</span> =&gt;</span> props.item.id,</div><div class="line">  render (h) &#123;</div><div class="line">    <span class="keyword">return</span> h(<span class="string">'div'</span>, <span class="keyword">this</span>.item.id)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Note that cachable component <strong>must also define a unique “name” option</strong>. This is necessary for Vue to determine the identity of the component when using the<br>bundle renderer.</p>
+<p>With a unique name, the cache key is thus per-component: you don’t need to worry about two components returning the same key. A cache key should contain sufficient information to represent the shape of the render result. The above is a good implementation if the render result is solely determined by <code>props.item.id</code>. However, if the item with the same id may change over time, or if render result also relies on another prop, then you need to modify your <code>getCacheKey</code> implementation to take those other variables into account.</p>
+<p>Returning a constant will cause the component to always be cached, which is good for purely static components.</p>
+<h3 id="When-to-use-component-caching"><a href="#When-to-use-component-caching" class="headerlink" title="When to use component caching"></a>When to use component caching</h3><p>If the renderer hits a cache for a component during render, it will directly reuse the cached result for the entire sub tree. So <strong>do not cache a component containing child components that rely on global state</strong>.</p>
+<p>In most cases, you shouldn’t and don’t need to cache single-instance components. The most common type of components that need caching are ones in big lists. Since these components are usually driven by objects in database collections, they can make use of a simple caching strategy: generate their cache keys using their unique id plus the last updated timestamp:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">serverCacheKey: <span class="function"><span class="params">props</span> =&gt;</span> props.item.id + <span class="string">'::'</span> + props.item.last_updated</div></pre></td></tr></table></figure>
+<h2 id="Client-Side-Hydration"><a href="#Client-Side-Hydration" class="headerlink" title="Client Side Hydration"></a>Client Side Hydration</h2><p>In server-rendered output, the root element will have the <code>server-rendered=&quot;true&quot;</code> attribute. On the client, when you mount a Vue instance to an element with this attribute, it will attempt to “hydrate” the existing DOM instead of creating new DOM nodes.</p>
+<p>In development mode, Vue will assert the client-side generated virtual DOM tree matches the DOM structure rendered from the server. If there is a mismatch, it will bail hydration, discard existing DOM and render from scratch. <strong>In production mode, this assertion is disabled for maximum performance.</strong></p>
+<h3 id="Hydration-Caveats"><a href="#Hydration-Caveats" class="headerlink" title="Hydration Caveats"></a>Hydration Caveats</h3><p>One thing to be aware of when using SSR + client hydration is some special HTML structures that may be altered by the browser. For example, when you write this in a Vue template:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>hi<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>The browser will automatically inject <code>&lt;tbody&gt;</code> inside <code>&lt;table&gt;</code>, however, the virtual DOM generated by Vue does not contain <code>&lt;tbody&gt;</code>, so it will cause a mismatch. To ensure correct matching, make sure to write valid HTML in your templates.</p>
+
+    
+    <div class="footer">
+      发现错误？想参与编辑？
+      <a href="https://github.com/dingyiming/vuejs.org/tree/2.0-cn/src/ssr/index.md" target="_blank">
+        在 Github 上编辑此页！
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>
