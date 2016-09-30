@@ -15,7 +15,7 @@
         <script src="/js/vue.js"></script>
     </head>
     <body>
-        <div id="mobile-bar">
+        <div id="mobile-bar" >
             <a class="menu-button"></a>
             <a class="logo" href="/"></a>
         </div>
@@ -100,8 +100,7 @@
             
             API
             <select class="version-select">
-                <option value="rc" selected>2.0</option>
-                <!-- !!TODO: Update value to subdomain when 2.0 is released -->
+                <option value="SELF" selected>2.0</option>
             </select>
         </h2>
         <ul class="menu-root">
@@ -179,9 +178,9 @@
 </li>
 <li><p><strong>Usage:</strong></p>
 <p>Create a “subclass” of the base Vue constructor. The argument should be an object containing component options.</p>
-<p>The special cases to note here are <code>el</code> and <code>data</code> options - they must be functions when used with <code>Vue.extend()</code>.</p>
+<p>The special case to note here is the <code>data</code> option - it must be a function when used with <code>Vue.extend()</code>.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"mount-point"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// create reusable constructor</span></div><div class="line"><span class="keyword">var</span> Profile = Vue.extend(&#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;p&gt;&#123;&#123;firstName&#125;&#125; &#123;&#123;lastName&#125;&#125; aka &#123;&#123;alias&#125;&#125;&lt;/p&gt;'</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">// create an instance of Profile</span></div><div class="line"><span class="keyword">var</span> profile = <span class="keyword">new</span> Profile(&#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">firstName</span>: <span class="string">'Walter'</span>,</div><div class="line">    <span class="attr">lastName</span>: <span class="string">'White'</span>,</div><div class="line">    <span class="attr">alias</span>: <span class="string">'Heisenberg'</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="comment">// mount it on an element</span></div><div class="line">profile.$mount(<span class="string">'#mount-point'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// create constructor</span></div><div class="line"><span class="keyword">var</span> Profile = Vue.extend(&#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;p&gt;&#123;&#123;firstName&#125;&#125; &#123;&#123;lastName&#125;&#125; aka &#123;&#123;alias&#125;&#125;&lt;/p&gt;'</span>,</div><div class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">firstName</span>: <span class="string">'Walter'</span>,</div><div class="line">      <span class="attr">lastName</span>: <span class="string">'White'</span>,</div><div class="line">      <span class="attr">alias</span>: <span class="string">'Heisenberg'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="comment">// create an instance of Profile and mount it on an element</span></div><div class="line"><span class="keyword">new</span> Profile().$mount(<span class="string">'#mount-point'</span>)</div></pre></td></tr></table></figure>
 <p>Will result in:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Walter White aka Heisenberg<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>

@@ -535,6 +535,22 @@ a.button.white {
 body {
   background-color: #727f80;
 }
+#logo span {
+  font-size: 1.2em;
+}
+#logo img {
+  display: none;
+}
+.sidebar {
+  display: none;
+}
+#mobile-bar.top {
+  background-color: transparent;
+  box-shadow: none;
+}
+#mobile-bar.top .logo {
+  display: none;
+}
 #hero {
   padding: 50px 40px;
   background-color: #fff;
@@ -667,6 +683,9 @@ body {
   body {
     -webkit-text-size-adjust: none;
     font-size: 14px;
+  }
+  .sidebar {
+    display: block;
   }
   #header {
     display: none;

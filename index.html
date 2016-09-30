@@ -15,7 +15,7 @@
         <script src="/js/vue.js"></script>
     </head>
     <body>
-        <div id="mobile-bar">
+        <div id="mobile-bar" class="top">
             <a class="menu-button"></a>
             <a class="logo" href="/"></a>
         </div>
@@ -140,6 +140,18 @@
 </div>
 
 <script src="/js/common.js"></script>
+<script>
+var topScrolled = false
+window.addEventListener('scroll', function () {
+  if (window.pageYOffset > 165 && !topScrolled) {
+    topScrolled = true
+    document.getElementById('mobile-bar').classList.remove('top')
+  } else if (window.pageYOffset <= 165 && topScrolled) {
+    topScrolled = false
+    document.getElementById('mobile-bar').classList.add('top')
+  }
+})
+</script>
 
         
 
