@@ -608,7 +608,7 @@ ul.demo li {
   display: none;
   padding-left: 0;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 900px) {
   .sidebar {
     position: fixed;
     z-index: 8;
@@ -889,7 +889,7 @@ ul.demo li {
     left: 140px;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 900px) {
   #ad {
     width: 100%;
   }
@@ -920,7 +920,7 @@ ul.demo li {
     padding: 1.2em 1em;
   }
   .content.with-sidebar {
-    margin-left: 0;
+    margin: auto;
   }
   .footer {
     margin-left: 0;
