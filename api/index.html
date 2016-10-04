@@ -343,6 +343,7 @@
 </li>
 <li><p><strong>Example:</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> data = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;</div><div class="line"></div><div class="line"><span class="comment">// direct instance creation</span></div><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">data</span>: data</div><div class="line">&#125;)</div><div class="line">vm.a <span class="comment">// -&gt; 1</span></div><div class="line">vm.$data === data <span class="comment">// -&gt; true</span></div><div class="line"></div><div class="line"><span class="comment">// must use function when in Vue.extend()</span></div><div class="line"><span class="keyword">var</span> Component = Vue.extend(&#123;</div><div class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p class="tip">Note that <strong>you should not use an arrow function with the <code>data</code> property</strong> (e.g. <code>data: () =&gt; { return { a: this.myProp }}</code>). The reason is arrow functions bind the parent context, so <code>this</code> will not be the Vue instance as you expect and <code>this.myProp</code> will be undefined.</p>
 </li>
 <li><p><strong>See also:</strong> <a href="/guide/reactivity.html">Reactivity in Depth</a></p>
 </li>
@@ -376,6 +377,8 @@
 </li>
 <li><p><strong>Details:</strong></p>
 <p>Computed properties to be mixed into the Vue instance. All getters and setters have their <code>this</code> context automatically bound to the Vue instance.</p>
+<p class="tip">Note that <strong>you should not use an arrow function to define a computed property</strong> (e.g. <code>aDouble: () =&gt; this.a * 2</code>). The reason is arrow functions bind the parent context, so <code>this</code> will not be the Vue instance as you expect and <code>this.a</code> will be undefined.</p>
+
 <p>Computed properties are cached, and only re-computed on reactive dependency changes.</p>
 </li>
 <li><p><strong>Example:</strong></p>
@@ -392,6 +395,7 @@
 </li>
 <li><p><strong>Details:</strong></p>
 <p>Methods to be mixed into the Vue instance. You can access these methods directly on the VM instance, or use them in directive expressions. All methods will have their <code>this</code> context automatically bound to the Vue instance.</p>
+<p class="tip">Note that <strong>you should not use an arrow function to define a method</strong> (e.g. <code>plus: () =&gt; this.a++</code>). The reason is arrow functions bind the parent context, so <code>this</code> will not be the Vue instance as you expect and <code>this.a</code> will be undefined.</p>
 </li>
 <li><p><strong>Example:</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">data</span>: &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">plus</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.a++</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">vm.plus()</div><div class="line">vm.a <span class="comment">// 2</span></div></pre></td></tr></table></figure>
@@ -406,7 +410,8 @@
 <p>An object where keys are expressions to watch and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. The Vue instance will call <code>$watch()</code> for each entry in the object at instantiation.</p>
 </li>
 <li><p><strong>Example:</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">watch</span>: &#123;</div><div class="line">    <span class="string">'a'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">val, oldVal</span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'new: %s, old: %s'</span>, val, oldVal)</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// string method name</span></div><div class="line">    <span class="string">'b'</span>: <span class="string">'someMethod'</span>,</div><div class="line">    <span class="comment">// deep watcher</span></div><div class="line">    <span class="string">'c'</span>: &#123;</div><div class="line">      <span class="attr">handler</span>: <span class="function"><span class="keyword">function</span> (<span class="params">val, oldVal</span>) </span>&#123; <span class="comment">/* ... */</span> &#125;,</div><div class="line">      <span class="attr">deep</span>: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">vm.a = <span class="number">2</span> <span class="comment">// -&gt; new: 2, old: 1</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">b</span>: <span class="number">2</span>,</div><div class="line">    <span class="attr">c</span>: <span class="number">3</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">watch</span>: &#123;</div><div class="line">    <span class="attr">a</span>: <span class="function"><span class="keyword">function</span> (<span class="params">val, oldVal</span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'new: %s, old: %s'</span>, val, oldVal)</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// string method name</span></div><div class="line">    b: <span class="string">'someMethod'</span>,</div><div class="line">    <span class="comment">// deep watcher</span></div><div class="line">    c: &#123;</div><div class="line">      <span class="attr">handler</span>: <span class="function"><span class="keyword">function</span> (<span class="params">val, oldVal</span>) </span>&#123; <span class="comment">/* ... */</span> &#125;,</div><div class="line">      <span class="attr">deep</span>: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">vm.a = <span class="number">2</span> <span class="comment">// -&gt; new: 2, old: 1</span></div></pre></td></tr></table></figure>
+<p class="tip">Note that <strong>you should not use an arrow function to define a watcher</strong> (e.g. <code>searchQuery: newValue =&gt; this.updateAutocomplete(newValue)</code>). The reason is arrow functions bind the parent context, so <code>this</code> will not be the Vue instance as you expect and <code>this.updateAutocomplete</code> will be undefined.</p>
 </li>
 <li><p><strong>See also:</strong> <a href="#vm-watch">Instance Methods - vm.$watch</a></p>
 </li>
@@ -453,7 +458,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="Options-Lifecycle-Hooks"><a href="#Options-Lifecycle-Hooks" class="headerlink" title="Options / Lifecycle Hooks"></a>Options / Lifecycle Hooks</h2><h3 id="beforeCreate"><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h3><ul>
+<h2 id="Options-Lifecycle-Hooks"><a href="#Options-Lifecycle-Hooks" class="headerlink" title="Options / Lifecycle Hooks"></a>Options / Lifecycle Hooks</h2><p>All lifecycle hooks automatically have their <code>this</code> context bound to the instance, so that you can access data, computed properties, and methods. This means <strong>you should not use an arrow function to define a lifecycle method</strong> (e.g. <code>created: () =&gt; this.fetchTodos()</code>). The reason is arrow functions bind the parent context, so <code>this</code> will not be the Vue instance as you expect and <code>this.fetchTodos</code> will be undefined.</p>
+<h3 id="beforeCreate"><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h3><ul>
 <li><p><strong>Type:</strong> <code>Function</code></p>
 </li>
 <li><p><strong>Details:</strong></p>
@@ -666,7 +672,7 @@
 <li><p><strong>Type:</strong> <code>Object</code></p>
 </li>
 <li><p><strong>Details:</strong></p>
-<p>The data object that the Vue instance is observing. You can swap it with a new object. The Vue instance proxies access to the properties on its data object.</p>
+<p>The data object that the Vue instance is observing. The Vue instance proxies access to the properties on its data object.</p>
 </li>
 <li><p><strong>See also:</strong> <a href="#data">Options - data</a></p>
 </li>

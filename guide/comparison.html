@@ -122,7 +122,7 @@
                 
                 
                 <li>
-                    <a href="/guide/index.html" class="sidebar-link">起步</a>
+                    <a href="/guide/index.html" class="sidebar-link">介绍</a>
                 </li>
             
                 
@@ -377,7 +377,7 @@
 <p>Being so similar in scope, we’ve put more time into fine-tuning this comparison than any other. We want to ensure not only technical accuracy, but also balance. We point out where React outshines Vue, for example in the richness of their ecosystem and abundance of their custom renderers.</p>
 <p>The React community <a href="https://github.com/vuejs/vuejs.org/issues/364" target="_blank" rel="external">has been instrumental</a> in helping us achieve this balance, with special thanks to Dan Abramov from the React team. He was extremely generous with his time and considerable expertise to help us refine this document until we were <a href="https://github.com/vuejs/vuejs.org/issues/364#issuecomment-244575740" target="_blank" rel="external">both happy</a> with the final result.</p>
 <p>With that said, we hope you can feel confident in the fairness of the review below as we explore the differences between these two libraries.</p>
-<h3 id="Performance-Profiles"><a href="#Performance-Profiles" class="headerlink" title="Performance Profiles"></a>Performance Profiles</h3><p>In every real-world scenario that we’ve tested so far, Vue outperforms React by a fair margin (usually at least 20-50% faster, though in some cases much more than that). We could now link to benchmarks - but frankly, all benchmarks are flawed in some way and very few resemble what you’d write in a real application. Instead, let’s break it down.</p>
+<h3 id="Performance-Profiles"><a href="#Performance-Profiles" class="headerlink" title="Performance Profiles"></a>Performance Profiles</h3><p>In every real-world scenario that we’ve tested so far, Vue outperforms React by a fair margin. If your eyebrows are raising right now, read further. We’ll breakdown why (and even include a benchmark developed in collaboration with the React team).</p>
 <h4 id="Render-Performance"><a href="#Render-Performance" class="headerlink" title="Render Performance"></a>Render Performance</h4><p>When rendering UI, manipulating the DOM is typically the most expensive operation and unfortunately, no library can make those raw operations faster. The best we can do is:</p>
 <ol>
 <li>Minimize the number of necessary DOM mutations. Both React and Vue use virtual DOM abstractions to accomplish this and both implementations work about equally well.</li>
