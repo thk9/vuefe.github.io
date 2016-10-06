@@ -114,58 +114,58 @@
 <div class="content api with-sidebar ">
     	
     <h1></h1>
-    <h2 id="Global-Config"><a href="#Global-Config" class="headerlink" title="Global Config"></a>Global Config</h2><p><code>Vue.config</code> is an object containing Vue’s global configurations. You can modify its properties listed below before bootstrapping your application:</p>
+    <h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><p><code>Vue.config</code> is 是一个对象，包含 Vue 的全局配置。可以在启动应用之前修改下列属性：</p>
 <h3 id="silent"><a href="#silent" class="headerlink" title="silent"></a>silent</h3><ul>
-<li><p><strong>Type:</strong> <code>boolean</code></p>
+<li><p><strong>类型:</strong> <code>boolean</code></p>
 </li>
-<li><p><strong>Default:</strong> <code>false</code></p>
+<li><p><strong>默认值:</strong> <code>false</code></p>
 </li>
-<li><p><strong>Usage:</strong></p>
+<li><p><strong>用法:</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.config.silent = <span class="literal">true</span></div></pre></td></tr></table></figure>
-<p>Suppress all Vue logs and warnings.</p>
+<p>取消 Vue 所有的日志与警告。</p>
 </li>
 </ul>
 <h3 id="optionMergeStrategies"><a href="#optionMergeStrategies" class="headerlink" title="optionMergeStrategies"></a>optionMergeStrategies</h3><ul>
-<li><p><strong>Type:</strong> <code>{ [key: string]: Function }</code></p>
+<li><p><strong>类型:</strong> <code>{ [key: string]: Function }</code></p>
 </li>
-<li><p><strong>Default:</strong> <code>{}</code></p>
+<li><p><strong>默认值:</strong> <code>{}</code></p>
 </li>
-<li><p><strong>Usage:</strong></p>
+<li><p><strong>用法:</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.config.optionMergeStrategies._my_option = <span class="function"><span class="keyword">function</span> (<span class="params">parent, child, vm</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> child + <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> Profile = Vue.extend(&#123;</div><div class="line">  <span class="attr">_my_option</span>: <span class="number">1</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// Profile.options._my_option = 2</span></div></pre></td></tr></table></figure>
-<p>Define custom merging strategies for options.</p>
-<p>The merge strategy receives the value of that option defined on the parent and child instances as the first and second arguments, respectively. The context Vue instance is passed as the third argument.</p>
+<p>自定义选项的混合策略。</p>
+<p>合并策略函数接收定义在父实例和子实例上的 option，分别作为第一个和第二个参数的值，Vue实例上下文被作为第三个参数传入。</p>
 </li>
-<li><p><strong>See also</strong>: <a href="/guide/mixins.html#Custom-Option-Merge-Strategies">Custom Option Merging Strategies</a></p>
+<li><p><strong>参考</strong>: <a href="/guide/mixins.html#Custom-Option-Merge-Strategies">自定义选项的混合策略</a></p>
 </li>
 </ul>
 <h3 id="devtools"><a href="#devtools" class="headerlink" title="devtools"></a>devtools</h3><ul>
-<li><p><strong>Type:</strong> <code>boolean</code></p>
+<li><p><strong>类型:</strong> <code>boolean</code></p>
 </li>
-<li><p><strong>Default:</strong> <code>true</code> (<code>false</code> in production builds)</p>
+<li><p><strong>默认值:</strong> <code>true</code> (生产版为 <code>false</code>)</p>
 </li>
-<li><p><strong>Usage:</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// make sure to set this synchronously immediately after loading Vue</span></div><div class="line">Vue.config.devtools = <span class="literal">true</span></div></pre></td></tr></table></figure>
-<p>Configure whether to allow <a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="external">vue-devtools</a> inspection. This option’s default value is <code>true</code> in development builds and <code>false</code> in production builds. You can set it to <code>true</code> to enable inspection for production builds.</p>
+<li><p><strong>用法:</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 务必在加载 Vue 之后，立即同步设置以下内容</span></div><div class="line">Vue.config.devtools = <span class="literal">true</span></div></pre></td></tr></table></figure>
+<p>配置是否允许 <a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="external">vue-devtools</a> 检查代码。开发版本默认为 <code>true</code>，生产版本默认为 <code>false</code>。生产版本设为 <code>true</code> 可以启用检查。</p>
 </li>
 </ul>
 <h3 id="errorHandler"><a href="#errorHandler" class="headerlink" title="errorHandler"></a>errorHandler</h3><ul>
-<li><p><strong>Type:</strong> <code>Function</code></p>
+<li><p><strong>类型:</strong> <code>Function</code></p>
 </li>
-<li><p><strong>Default:</strong> Error is thrown in place</p>
+<li><p><strong>默认值:</strong> 默认抛出错误</p>
 </li>
-<li><p><strong>Usage:</strong></p>
+<li><p><strong>用法:</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.config.errorHandler = <span class="function"><span class="keyword">function</span> (<span class="params">err, vm</span>) </span>&#123;</div><div class="line">  <span class="comment">// handle error</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Assign a handler for uncaught errors during component render and watchers. The handler gets called with the error and the Vue instance.</p>
+<p>指定组件的渲染和观察期间未捕获错误的处理函数。处理函数被调用时，可获取错误信息和 Vue 实例。</p>
 </li>
 </ul>
 <h3 id="keyCodes"><a href="#keyCodes" class="headerlink" title="keyCodes"></a>keyCodes</h3><ul>
-<li><p><strong>Type:</strong> <code>{ [key: string]: number }</code></p>
+<li><p><strong>类型:</strong> <code>{ [key: string]: number }</code></p>
 </li>
-<li><p><strong>Default:</strong> <code>{}</code></p>
+<li><p><strong>默认值:</strong> <code>{}</code></p>
 </li>
-<li><p><strong>Usage:</strong></p>
+<li><p><strong>用法:</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.config.keyCodes = &#123; <span class="attr">esc</span>: <span class="number">27</span> &#125;</div></pre></td></tr></table></figure>
-<p>Define custom key aliases for v-on.</p>
+<p>自定义 v-on 键位别名。</p>
 </li>
 </ul>
 <h2 id="Global-API"><a href="#Global-API" class="headerlink" title="Global API"></a>Global API</h2><h3 id="Vue-extend">Vue.extend( options )</h3>
