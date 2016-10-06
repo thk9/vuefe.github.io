@@ -365,10 +365,10 @@
 <div class="content guide with-sidebar list-guide">
     	
     <h1>列表渲染</h1>
-    <h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a><code>v-for</code></h2><p>We can use the <code>v-for</code> directive to render a list of items based on an array. The <code>v-for</code> directive requires a special syntax in the form of <code>item in items</code>, where <code>items</code> is the source data array and <code>item</code> is an <strong>alias</strong> for the array element being iterated on:</p>
-<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"example-1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">    &#123;&#123; item.message &#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> example1 = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#example-1'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">items</span>: [</div><div class="line">      &#123; <span class="attr">message</span>: <span class="string">'Foo'</span> &#125;,</div><div class="line">      &#123; <span class="attr">message</span>: <span class="string">'Bar'</span> &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>Result:</p>
+    <h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a><code>v-for</code></h2><p>我们用<code>v-for</code> 指令根据一组数组的选项列表进行渲染。<code>v-for</code> 指令需要以 <code>item in items</code> 形式的特殊语法，<code>items</code> 是源数据数组并且 <code>item</code> 是数组元素迭代的别名。</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"example-1"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">	  &#123;&#123; item.message &#125;&#125;</div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> example1 = <span class="keyword">new</span> Vue(&#123;</div><div class="line">	<span class="attr">el</span>: <span class="string">'#example-1'</span>,</div><div class="line">	<span class="attr">data</span>: &#123;</div><div class="line">		<span class="attr">items</span>: [</div><div class="line">			&#123;<span class="attr">message</span>: <span class="string">'foo'</span> &#125;,</div><div class="line">			&#123;<span class="attr">message</span>: <span class="string">'Bar'</span> &#125;</div><div class="line">		]	</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>结果：</p>
 
 <ul id="example-1" class="demo">
   <li v-for="item in items">
@@ -392,10 +392,10 @@ var example1 = new Vue({
 })
 </script>
 
-<p>Inside <code>v-for</code> blocks we have full access to parent scope properties. <code>v-for</code> also supports an optional second argument for the index of the current item.</p>
+<p>在 <code>v-for</code> 块内部，我们有完全访问父作用域的属性。<code>v-for</code> 还支持一个可选的第二个参数为当前项的索引。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"example-2"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in items"</span>&gt;</span></div><div class="line">    &#123;&#123; parentMessage &#125;&#125; - &#123;&#123; index &#125;&#125; - &#123;&#123; item.message &#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> example2 = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#example-2'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">parentMessage</span>: <span class="string">'Parent'</span>,</div><div class="line">    <span class="attr">items</span>: [</div><div class="line">      &#123; <span class="attr">message</span>: <span class="string">'Foo'</span> &#125;,</div><div class="line">      &#123; <span class="attr">message</span>: <span class="string">'Bar'</span> &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>Result:</p>
+<p>结果:</p>
 
 <ul id="example-2" class="demo">
   <li v-for="(item, index) in items">
@@ -420,14 +420,14 @@ var example2 = new Vue({
 })
 </script>
 
-<p>You can also use <code>of</code> as the delimiter instead of <code>in</code>, so that it is closer to JavaScript’s syntax for iterators:</p>
+<p>你也可以用 <code>of</code> 替代 <code>in</code> 作为分隔符, 所以它是最接近JavaScript迭代器的语法</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item of items"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="Template-v-for"><a href="#Template-v-for" class="headerlink" title="Template v-for"></a>Template v-for</h3><p>Similar to template <code>v-if</code>, you can also use a <code>&lt;template&gt;</code> tag with <code>v-for</code> to render a block of multiple elements. For example:</p>
+<h3 id="Template-v-for"><a href="#Template-v-for" class="headerlink" title="Template v-for"></a>Template v-for</h3><p>如同 <code>v-if</code> 模板，你也可以用带有 <code>v-for</code> 的 <code>&lt;template&gt;</code> 标签来渲染多个元素块。例如： </p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; item.msg &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"divider"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="Object-v-for"><a href="#Object-v-for" class="headerlink" title="Object v-for"></a>Object v-for</h3><p>You can also use <code>v-for</code> to iterate through the properties of an object.</p>
+<h3 id="对象迭代-v-for"><a href="#对象迭代-v-for" class="headerlink" title="对象迭代 v-for"></a>对象迭代 v-for</h3><p>你也可以用 <code>v-for</code> 通过一个对象的属性来迭代。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"repeat-object"</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"value in object"</span>&gt;</span></div><div class="line">    &#123;&#123; value &#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#repeat-object'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">object</span>: &#123;</div><div class="line">      <span class="attr">FirstName</span>: <span class="string">'John'</span>,</div><div class="line">      <span class="attr">LastName</span>: <span class="string">'Doe'</span>,</div><div class="line">      <span class="attr">Age</span>: <span class="number">30</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>Result:</p>
+<p>结果:</p>
 
 <ul id="repeat-object" class="demo">
   <li v-for="value in object">
@@ -447,15 +447,15 @@ new Vue({
 })
 </script>
 
-<p>You can also provide a second argument for the key:</p>
+<p>你也可以提供第二个的参数为键名:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(value, key) in object"</span>&gt;</span></div><div class="line">  &#123;&#123; key &#125;&#125; : &#123;&#123; value &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>And another for the index:</p>
+<p>第三个参数为索引:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(value, key, index) in object"</span>&gt;</span></div><div class="line">  &#123;&#123; index &#125;&#125;. &#123;&#123; key &#125;&#125; : &#123;&#123; value &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p class="tip">When iterating over an object, the order is based on the key enumeration order of <code>Object.keys()</code>, which is <strong>not</strong> guaranteed to be consistent across JavaScript engine implementations.</p>
+<p class="tip">当遍历一个对象时，顺序是根据 <code>Object.keys()</code> 可枚举键名排列，不保证和JavaScript引擎实现是一致的。</p>
 
-<h3 id="Range-v-for"><a href="#Range-v-for" class="headerlink" title="Range v-for"></a>Range v-for</h3><p><code>v-for</code> can also take an integer. In this case it will repeat the template that many times.</p>
+<h3 id="整数迭代-v-for"><a href="#整数迭代-v-for" class="headerlink" title="整数迭代 v-for"></a>整数迭代 v-for</h3><p><code>v-for</code> 也可以取整数。在这种情况下，它将重复多次模板</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-for</span>=<span class="string">"n in 10"</span>&gt;</span>&#123;&#123; n &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>Result:</p>
+<p>结果:</p>
 
 <div id="range" class="demo">
   <span v-for="n in 10">{{ n }} </span>
@@ -464,15 +464,15 @@ new Vue({
 new Vue({ el: '#range' })
 </script>
 
-<h3 id="Components-and-v-for"><a href="#Components-and-v-for" class="headerlink" title="Components and v-for"></a>Components and v-for</h3><blockquote>
-<p>This section assumes knowledge of <a href="/guide/components.html">Components</a>. Feel free to skip it and come back later.</p>
+<h3 id="组件-和-v-for"><a href="#组件-和-v-for" class="headerlink" title="组件 和 v-for"></a>组件 和 v-for</h3><blockquote>
+<p>了解组件相关知识，查看 <a href="/guide/components.html">组件</a> 。</p>
 </blockquote>
-<p>You can directly use <code>v-for</code> on a custom component, like any normal element:</p>
+<p>在自定义组件里，你可以像任何普通元素一样用 <code>v-for</code> 。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>However, this won’t automatically pass any data to the component, because components have isolated scopes of their own. In order to pass the iterated data into the component, we should also use props:</p>
+<p>然而他不能自动传递数据到组件里，因为组件有自己独立的作用域。为了传递迭代数据到组件里，我们要用 <code>props</code> ：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span></span></div><div class="line">  <span class="attr">v-for</span>=<span class="string">"(item, index) in items"</span></div><div class="line">  <span class="attr">v-bind:item</span>=<span class="string">"item"</span></div><div class="line">  <span class="attr">v-bind:index</span>=<span class="string">"index"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>The reason for not automatically injecting <code>item</code> into the component is because that makes the component tightly coupled to how <code>v-for</code> works. Being explicit about where its data comes from makes the component reusable in other situations.</p>
-<p>Here’s a complete example of a simple todo list:</p>
+<p>不自动注入 <code>item</code> 到组件里是因为这样能让组件紧密耦合 <code>v-for</code> 怎么运作的。在一些情况下，明确了数据的来源让其组件可重复使用。</p>
+<p>下面是一个简单的todo list完整的例子:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"todo-list-example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span></span></div><div class="line">    <span class="attr">v-model</span>=<span class="string">"newTodoText"</span></div><div class="line">    <span class="attr">v-on:keyup.enter</span>=<span class="string">"addNewTodo"</span></div><div class="line">    <span class="attr">placeholder</span>=<span class="string">"Add a todo"</span></div><div class="line">  &gt;</div><div class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span></span></div><div class="line">      <span class="attr">is</span>=<span class="string">"todo-item"</span></div><div class="line">      <span class="attr">v-for</span>=<span class="string">"(todo, index) in todos"</span></div><div class="line">      <span class="attr">v-bind:title</span>=<span class="string">"todo"</span></div><div class="line">      <span class="attr">v-on:remove</span>=<span class="string">"todos.splice(index, 1)"</span></div><div class="line">    &gt;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'todo-item'</span>, &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'\</span></div><div class="line">    &lt;li&gt;\</div><div class="line">      &#123;&#123; title &#125;&#125;\</div><div class="line">      &lt;button v-on:click="$emit(\'remove\')"&gt;X&lt;/button&gt;\</div><div class="line">    &lt;\li&gt;\</div><div class="line">  ',</div><div class="line">  <span class="attr">props</span>: [<span class="string">'title'</span>]</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#todo-list-example'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">newTodoText</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">todos</span>: [</div><div class="line">      <span class="string">'Do the dishes'</span>,</div><div class="line">      <span class="string">'Take out the trash'</span>,</div><div class="line">      <span class="string">'Mow the lawn'</span></div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">addNewTodo</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.todos.push(<span class="keyword">this</span>.newTodoText)</div><div class="line">      <span class="keyword">this</span>.newTodoText = <span class="string">''</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
@@ -511,13 +511,13 @@ new Vue({
 })
 </script>
 
-<h2 id="key"><a href="#key" class="headerlink" title="key"></a>key</h2><p>When Vue.js is updating a list of elements rendered with <code>v-for</code>, it by default uses an “in-place patch” strategy. If the order of the data items has changed, instead of moving the DOM elements to match the order of the items, Vue will simply patch each element in-place and make sure it reflects what should be rendered at that particular index. This is similar to the behavior of <code>track-by=&quot;$index&quot;</code> in Vue 1.x.</p>
-<p>This default mode is efficient, but only suitable <strong>when your list render output does not rely on child component state or temporary DOM state (e.g. form input values)</strong>.</p>
-<p>To give Vue a hint so that it can track each node’s identity, and thus reuse and reorder existing elements, you need to provide a unique <code>key</code> attribute for each item. An ideal value for <code>key</code> would be the unique id of each item. This special attribute is a rough equivalent to <code>track-by</code> in 1.x, but it works like an attribute, so you need to use <code>v-bind</code> to bind it to dynamic values (using shorthand here):</p>
+<h2 id="key"><a href="#key" class="headerlink" title="key"></a>key</h2><p>当Vue.js用 <code>v-for</code> 正在更新已渲染过的元素列表时，它默认用 “就地复用” 策略。如果数据项的顺序被改变，而不是移动DOM元素来匹配列表的顺序，Vue将简单复用此处每个元素，并且确保它在特定索引下显示已被渲染过的每个元素。这个类似Vue 1.X的 <code>track-by=&quot;$index&quot;</code> 。</p>
+<p>这个默认的模式是有效的，但是只适合你的列表渲染输出时不依赖子组件状态或临时DOM状态（例如：表单输入框的值）</p>
+<p>给Vue一个提示以便它能跟踪每个节点身份，并且因此重新使用和重新排序现有元素，你需要为每项提供一个唯一 <code>key</code> 属性。一个有效的 <code>key</code> 值是每项唯一ID. 这个特殊的属性相当于Vue 1.x的 <code>track-by</code> ，但它像一个变量，所以你需要用 <code>v-bind</code> 来绑定动态值（简洁写法如下）</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- content --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>It is recommended to provide a <code>key</code> with <code>v-for</code> whenever possible, unless the iterated DOM content is simple, or you are intentionally relying on the default behavior for performance gains.</p>
-<p>Since it’s a generic mechanism for Vue to identify nodes, the <code>key</code> also has other uses that are not specifically tied to <code>v-for</code>, as we will see later in the guide.</p>
-<h2 id="Array-Change-Detection"><a href="#Array-Change-Detection" class="headerlink" title="Array Change Detection"></a>Array Change Detection</h2><h3 id="Mutation-Methods"><a href="#Mutation-Methods" class="headerlink" title="Mutation Methods"></a>Mutation Methods</h3><p>Vue wraps an observed array’s mutation methods so they will also trigger view updates. The wrapped methods are:</p>
+<p>它建议尽可能用 <code>v-for</code> 时提供一个 <code>key</code> 。除非迭代DOM内容很简单，或者你有意要依赖于对性能提升的默认行为。</p>
+<p>因为它是Vue识别节点的通用的机制，<code>key</code> 还具有并不特别依赖于 <code>v-for</code> 的其他用途，我们将在后面的指南中看到其他用途。</p>
+<h2 id="数组更新检测"><a href="#数组更新检测" class="headerlink" title="数组更新检测"></a>数组更新检测</h2><h3 id="突变方法"><a href="#突变方法" class="headerlink" title="突变方法"></a>突变方法</h3><p>Vue包含一组观察数组的突变方法，所以它们也将会触发视图更新。这些方法如下：</p>
 <ul>
 <li><code>push()</code></li>
 <li><code>pop()</code></li>
@@ -527,25 +527,25 @@ new Vue({
 <li><code>sort()</code></li>
 <li><code>reverse()</code></li>
 </ul>
-<p>You can open the console and play with the previous examples’ <code>items</code> array by calling their mutation methods. For example: <code>example1.items.push({ message: &#39;Baz&#39; })</code>.</p>
-<h3 id="Replacing-an-Array"><a href="#Replacing-an-Array" class="headerlink" title="Replacing an Array"></a>Replacing an Array</h3><p>Mutation methods, as the name suggests, mutate the original array they are called on. In comparison, there are also non-mutating methods, e.g. <code>filter()</code>, <code>concat()</code> and <code>slice()</code>, which do not mutate the original Array but <strong>always return a new array</strong>. When working with non-mutating methods, you can just replace the old array with the new one:</p>
+<p>你打开控制台，然后用前面例子的 <code>items</code> 数组调用突变方法：<code>example1.items.push({ measage: &#39;Baz&#39; })</code></p>
+<h3 id="重塑数组"><a href="#重塑数组" class="headerlink" title="重塑数组"></a>重塑数组</h3><p>突变方法，顾名思义，改变原始数组的称呼。相比之下，也有不改变原组数的方法，例如：<code>filter()</code> ，<code>concat()</code> ，<code>slice()</code> 。这些不会改变原始数组，但总是返回一个新的数组。当用不改变原数组的方法时，你只需替换旧数组用新的：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">example1.items = example1.items.filter(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> item.message.match(<span class="regexp">/Foo/</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>You might think this will cause Vue to throw away the existing DOM and re-render the entire list - luckily, that is not the case. Vue implements some smart heuristics to maximize DOM element reuse, so replacing an array with another array containing overlapping objects is a very efficient operation.</p>
-<h3 id="Caveats"><a href="#Caveats" class="headerlink" title="Caveats"></a>Caveats</h3><p>Due to limitations in JavaScript, Vue <strong>cannot</strong> detect the following changes to an array:</p>
+<p>你可你能认为这将导致Vue丢掉现有DOM和重新渲染整个列表。幸运的是，事实并非如此。Vue实现了一些智能化去最大化的重用DOM元素，所以用另外含有重叠对象的数组替换数组是非常高效的操作。</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>由于JavaScript的限制，Vue不能检测以下变动的数组：</p>
 <ol>
-<li>When you directly set an item with the index, e.g. <code>vm.items[indexOfItem] = newValue</code></li>
-<li>When you modify the length of the array, e.g. <code>vm.items.length = newLength</code></li>
+<li>当你直接设置一个项的索引时, 例如： <code>vm.items[indexOfItem] = newValue</code></li>
+<li>当你修改数组的长度时, 例如： <code>vm.items.length = newLength</code></li>
 </ol>
-<p>To overcome caveat 1, both of the following will accomplish the same as <code>vm.items[indexOfItem] = newValue</code>, but will also trigger state updates in the reactivity system:</p>
+<p>为了避免第一种情况, 以下两种方式将达到像 <code>vm.items[indexOfItem] = newValue</code> 的效果， 同时也将触发状态更新:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Vue.set</span></div><div class="line">Vue.set(example1.items, indexOfItem, newValue)</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Array.prototype.splice`</span></div><div class="line">example1.items.splice(indexOfItem, <span class="number">1</span>, newValue)</div></pre></td></tr></table></figure>
-<p>To deal with caveat 2, you can also use <code>splice</code>:</p>
+<p>避免第二种情况, 使用 <code>splice</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">example1.items.splice(newLength)</div></pre></td></tr></table></figure>
-<h2 id="Displaying-Filtered-Sorted-Results"><a href="#Displaying-Filtered-Sorted-Results" class="headerlink" title="Displaying Filtered/Sorted Results"></a>Displaying Filtered/Sorted Results</h2><p>Sometimes we want to display a filtered or sorted version of an array without actually mutating or resetting the original data. In this case, you can create a computed property that returns the filtered or sorted array.</p>
-<p>For example:</p>
+<h2 id="显示过滤-排序结果"><a href="#显示过滤-排序结果" class="headerlink" title="显示过滤/排序结果"></a>显示过滤/排序结果</h2><p>有时我们无需实际改变或重置原始数据对数组进行过滤或排序。在这种情况下，你可以创建计算的属性返回过滤或排序的数组。</p>
+<p>例如:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"n in evenNumbers"</span>&gt;</span>&#123;&#123; n &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: &#123;</div><div class="line">  <span class="attr">numbers</span>: [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> ]</div><div class="line">&#125;,</div><div class="line"><span class="attr">computed</span>: &#123;</div><div class="line">  <span class="attr">evenNumbers</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.numbers.filter(<span class="function"><span class="keyword">function</span> (<span class="params">number</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> number % <span class="number">2</span> === <span class="number">0</span></div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Alternatively, you can also just use a method where computed properties are not feasible (e.g. inside nested <code>v-for</code> loops):</p>
+<p>此外, 你也可以只使用一种方法计算 (例如： 嵌套在 <code>v-for</code> 里循环)，但是性能是低效的:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"n in even(numbers)"</span>&gt;</span>&#123;&#123; n &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: &#123;</div><div class="line">  <span class="attr">numbers</span>: [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> ]</div><div class="line">&#125;,</div><div class="line"><span class="attr">methods</span>: &#123;</div><div class="line">  <span class="attr">even</span>: <span class="function"><span class="keyword">function</span> (<span class="params">numbers</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> numbers.filter(<span class="function"><span class="keyword">function</span> (<span class="params">number</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> number % <span class="number">2</span> === <span class="number">0</span></div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
