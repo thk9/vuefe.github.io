@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>应用导航 - vue.js</title>
+        <title>编程式的导航 - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -137,7 +137,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">匹配动态路由</a>
+                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">动态路由匹配</a>
                 </li>
             
                 
@@ -153,7 +153,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/navigation.html" class="sidebar-link current">应用导航</a>
+                    <a href="/router/essentials/navigation.html" class="sidebar-link current">编程式的导航</a>
                 </li>
             
                 
@@ -161,7 +161,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-routes.html" class="sidebar-link">具名路由</a>
+                    <a href="/router/essentials/named-routes.html" class="sidebar-link">命名路由</a>
                 </li>
             
                 
@@ -169,7 +169,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-views.html" class="sidebar-link">具名视图</a>
+                    <a href="/router/essentials/named-views.html" class="sidebar-link">命名视图</a>
                 </li>
             
                 
@@ -177,7 +177,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向和链接</a>
+                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向 和 别名</a>
                 </li>
             
                 
@@ -185,7 +185,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/history-mode.html" class="sidebar-link">History模式</a>
+                    <a href="/router/essentials/history-mode.html" class="sidebar-link">HTML5 History 模式</a>
                 </li>
             
                 
@@ -195,7 +195,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">Navigation Guards</a>
+                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">导航钩子</a>
                 </li>
             
                 
@@ -203,7 +203,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/meta.html" class="sidebar-link">Route Meta Fields</a>
+                    <a href="/router/advanced/meta.html" class="sidebar-link">路由元信息</a>
                 </li>
             
                 
@@ -211,7 +211,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡</a>
+                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡动效</a>
                 </li>
             
                 
@@ -227,7 +227,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动</a>
+                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动行为</a>
                 </li>
             
                 
@@ -235,7 +235,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">异步加载</a>
+                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">路由懒加载</a>
                 </li>
             
                 
@@ -261,7 +261,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/route-object.html" class="sidebar-link">路由对象</a>
+                    <a href="/router/api/route-object.html" class="sidebar-link">路由信息对象</a>
                 </li>
             
                 
@@ -269,7 +269,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/options.html" class="sidebar-link">路由构造选项</a>
+                    <a href="/router/api/options.html" class="sidebar-link">Router 构造配置</a>
                 </li>
             
                 
@@ -277,7 +277,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/router-instance.html" class="sidebar-link">路由实例</a>
+                    <a href="/router/api/router-instance.html" class="sidebar-link">Router 实例</a>
                 </li>
             
                 
@@ -285,7 +285,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/component-injections.html" class="sidebar-link">组件注入</a>
+                    <a href="/router/api/component-injections.html" class="sidebar-link">对组件注入</a>
                 </li>
             
         </ul>
@@ -295,15 +295,15 @@
 
 <div class="content router with-sidebar ">
     	
-    <h1>应用导航</h1>
-    <h1 id="Programmatic-Navigation"><a href="#Programmatic-Navigation" class="headerlink" title="Programmatic Navigation"></a>Programmatic Navigation</h1><p>Aside from using <code>&lt;router-link&gt;</code> to create anchor tags for declarative navigation, we can do this programmatically using the router’s instance methods.</p>
-<h4 id="router-push-location"><a href="#router-push-location" class="headerlink" title="router.push(location)"></a><code>router.push(location)</code></h4><p>To navigate to a different URL, use <code>router.push</code>. This method pushes a new entry into the history stack, so when the user clicks the browser back button they will be taken to the previous URL.</p>
-<p>This is the method called internally when you click a <code>&lt;router-link&gt;</code>, so clicking <code>&lt;router-link :to=&quot;...&quot;&gt;</code> is the equivalent of calling <code>router.push(...)</code>.</p>
+    <h1>编程式的导航</h1>
+    <h1 id="编程式的导航"><a href="#编程式的导航" class="headerlink" title="编程式的导航"></a>编程式的导航</h1><p>除了使用 <code>&lt;router-link&gt;</code> 创建 a 标签来定义导航链接，我们还可以借助 router 的实例方法，通过编写代码来实现。</p>
+<h4 id="router-push-location"><a href="#router-push-location" class="headerlink" title="router.push(location)"></a><code>router.push(location)</code></h4><p>想要导航到不同的 URL，则使用 <code>router.push</code> 方法。这个方法会向 history 栈添加一个新的记录，所以，当用户点击浏览器后退按钮时，则回到之前的 URL。</p>
+<p>当你点击 <code>&lt;router-link&gt;</code> 时，这个方法会在内部调用，所以说，点击 <code>&lt;router-link :to=&quot;...&quot;&gt;</code> 等同于调用 <code>router.push(...)</code>。</p>
 <table>
 <thead>
 <tr>
-<th>Declarative</th>
-<th>Programmatic</th>
+<th>声明式</th>
+<th>编程式</th>
 </tr>
 </thead>
 <tbody>
@@ -313,14 +313,14 @@
 </tr>
 </tbody>
 </table>
-<p>The argument can be a string path, or a location descriptor object. Examples:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// literal string</span></div><div class="line">router.push(<span class="string">'home'</span>)</div><div class="line"></div><div class="line"><span class="comment">// object</span></div><div class="line">router.push(&#123; <span class="attr">path</span>: <span class="string">'home'</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">// named route</span></div><div class="line">router.push(&#123; <span class="attr">name</span>: <span class="string">'user'</span>, <span class="attr">params</span>: &#123; <span class="attr">userId</span>: <span class="number">123</span> &#125;&#125;)</div><div class="line"></div><div class="line"><span class="comment">// with query, resulting in /register?plan=private</span></div><div class="line">router.push(&#123; <span class="attr">path</span>: <span class="string">'register'</span>, <span class="attr">query</span>: &#123; <span class="attr">plan</span>: <span class="string">'private'</span> &#125;&#125;)</div></pre></td></tr></table></figure>
-<h4 id="router-replace-location"><a href="#router-replace-location" class="headerlink" title="router.replace(location)"></a><code>router.replace(location)</code></h4><p>It acts like <code>router.go</code>, the only difference is that it navigates without pushing a new history entry, as its name suggests - it replaces the current entry.</p>
+<p>该方法的参数可以是一个字符串路径，或者一个描述地址的对象。例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 字符串</span></div><div class="line">router.push(<span class="string">'home'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 对象</span></div><div class="line">router.push(&#123; <span class="attr">path</span>: <span class="string">'home'</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">// 命名的路由</span></div><div class="line">router.push(&#123; <span class="attr">name</span>: <span class="string">'user'</span>, <span class="attr">params</span>: &#123; <span class="attr">userId</span>: <span class="number">123</span> &#125;&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 带查询参数，变成 /register?plan=private</span></div><div class="line">router.push(&#123; <span class="attr">path</span>: <span class="string">'register'</span>, <span class="attr">query</span>: &#123; <span class="attr">plan</span>: <span class="string">'private'</span> &#125;&#125;)</div></pre></td></tr></table></figure>
+<h4 id="router-replace-location"><a href="#router-replace-location" class="headerlink" title="router.replace(location)"></a><code>router.replace(location)</code></h4><p>跟 <code>router.push</code> 很像，唯一的不同就是，它不会向 history 添加新记录，而是跟它的方法名一样 —— 替换掉当前的 history 记录。</p>
 <table>
 <thead>
 <tr>
-<th>Declarative</th>
-<th>Programmatic</th>
+<th>声明式</th>
+<th>编程式</th>
 </tr>
 </thead>
 <tbody>
@@ -330,12 +330,12 @@
 </tr>
 </tbody>
 </table>
-<h4 id="router-go-n"><a href="#router-go-n" class="headerlink" title="router.go(n)"></a><code>router.go(n)</code></h4><p>This method takes a single integer as parameter that indicates by how many steps to go forwards or go backwards in the history stack, similar to <code>window.history.go(n)</code>.</p>
-<p>Examples</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// go forward by one record, the same as history.forward()</span></div><div class="line">router.go(<span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment">// go back by one record, the same as history.back()</span></div><div class="line">router.go(<span class="number">-1</span>)</div><div class="line"></div><div class="line"><span class="comment">// go forward by 3 records</span></div><div class="line">router.go(<span class="number">3</span>)</div><div class="line"></div><div class="line"><span class="comment">// fails silently if there aren't that many records.</span></div><div class="line">router.go(<span class="number">-100</span>)</div><div class="line">router.go(<span class="number">100</span>)</div></pre></td></tr></table></figure>
-<h4 id="History-Manipulation"><a href="#History-Manipulation" class="headerlink" title="History Manipulation"></a>History Manipulation</h4><p>You may have noticed that <code>router.push</code>, <code>router.replace</code> and <code>router.go</code> are counterparts of <a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank" rel="external"><code>window.history.pushState</code>, <code>window.history.replaceState</code> and <code>window.history.go</code></a>, and they do imitate the <code>window.history</code> APIs.</p>
-<p>Therefore, if you are already familiar with <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API" target="_blank" rel="external">Browser History APIs</a>, manipulating history will be super easy with vue-router.</p>
-<p>It is worth mentioning that vue-router navigation methods (<code>push</code>, <code>replace</code>, <code>go</code>) work consistently in all router modes (<code>history</code>, <code>hash</code> and <code>abstract</code>).</p>
+<h4 id="router-go-n"><a href="#router-go-n" class="headerlink" title="router.go(n)"></a><code>router.go(n)</code></h4><p>这个方法的参数是一个整数，意思是在 history 记录中向前或者后退多少步，类似 <code>window.history.go(n)</code>。</p>
+<p>例子</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 在浏览器记录中前进一步，等同于 history.forward()</span></div><div class="line">router.go(<span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment">// 后退一步记录，等同于 history.back()</span></div><div class="line">router.go(<span class="number">-1</span>)</div><div class="line"></div><div class="line"><span class="comment">// 前进 3 步记录</span></div><div class="line">router.go(<span class="number">3</span>)</div><div class="line"></div><div class="line"><span class="comment">// 如果 history 记录不够用，那就默默地失败呗</span></div><div class="line">router.go(<span class="number">-100</span>)</div><div class="line">router.go(<span class="number">100</span>)</div></pre></td></tr></table></figure>
+<h4 id="操作-History"><a href="#操作-History" class="headerlink" title="操作 History"></a>操作 History</h4><p>你也许注意到 <code>router.push</code>、 <code>router.replace</code> 和 <code>router.go</code> 跟 <a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank" rel="external"><code>window.history.pushState</code>、 <code>window.history.replaceState</code> 和 <code>window.history.go</code></a>好像， 实际上它们确实是效仿 <code>window.history</code> API 的。</p>
+<p>因此，如果你已经熟悉 <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API" target="_blank" rel="external">Browser History APIs</a>，那么在 vue-router 中操作 history 就是超级简单的。</p>
+<p>还有值得提及的，vue-router 的导航方法 （<code>push</code>、 <code>replace</code>、 <code>go</code>） 在各类路由模式（<code>history</code>、 <code>hash</code> 和 <code>abstract</code>）下表现一致。</p>
 
     
     <div class="footer">

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>路由对象 - vue.js</title>
+        <title>路由信息对象 - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -137,7 +137,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">匹配动态路由</a>
+                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">动态路由匹配</a>
                 </li>
             
                 
@@ -153,7 +153,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/navigation.html" class="sidebar-link">应用导航</a>
+                    <a href="/router/essentials/navigation.html" class="sidebar-link">编程式的导航</a>
                 </li>
             
                 
@@ -161,7 +161,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-routes.html" class="sidebar-link">具名路由</a>
+                    <a href="/router/essentials/named-routes.html" class="sidebar-link">命名路由</a>
                 </li>
             
                 
@@ -169,7 +169,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-views.html" class="sidebar-link">具名视图</a>
+                    <a href="/router/essentials/named-views.html" class="sidebar-link">命名视图</a>
                 </li>
             
                 
@@ -177,7 +177,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向和链接</a>
+                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向 和 别名</a>
                 </li>
             
                 
@@ -185,7 +185,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/history-mode.html" class="sidebar-link">History模式</a>
+                    <a href="/router/essentials/history-mode.html" class="sidebar-link">HTML5 History 模式</a>
                 </li>
             
                 
@@ -195,7 +195,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">Navigation Guards</a>
+                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">导航钩子</a>
                 </li>
             
                 
@@ -203,7 +203,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/meta.html" class="sidebar-link">Route Meta Fields</a>
+                    <a href="/router/advanced/meta.html" class="sidebar-link">路由元信息</a>
                 </li>
             
                 
@@ -211,7 +211,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡</a>
+                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡动效</a>
                 </li>
             
                 
@@ -227,7 +227,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动</a>
+                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动行为</a>
                 </li>
             
                 
@@ -235,7 +235,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">异步加载</a>
+                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">路由懒加载</a>
                 </li>
             
                 
@@ -261,7 +261,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/route-object.html" class="sidebar-link current">路由对象</a>
+                    <a href="/router/api/route-object.html" class="sidebar-link current">路由信息对象</a>
                 </li>
             
                 
@@ -269,7 +269,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/options.html" class="sidebar-link">路由构造选项</a>
+                    <a href="/router/api/options.html" class="sidebar-link">Router 构造配置</a>
                 </li>
             
                 
@@ -277,7 +277,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/router-instance.html" class="sidebar-link">路由实例</a>
+                    <a href="/router/api/router-instance.html" class="sidebar-link">Router 实例</a>
                 </li>
             
                 
@@ -285,7 +285,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/component-injections.html" class="sidebar-link">组件注入</a>
+                    <a href="/router/api/component-injections.html" class="sidebar-link">对组件注入</a>
                 </li>
             
         </ul>
@@ -295,68 +295,69 @@
 
 <div class="content router with-sidebar ">
     	
-    <h1>路由对象</h1>
-    <h1 id="The-Route-Object"><a href="#The-Route-Object" class="headerlink" title="The Route Object"></a>The Route Object</h1><p>A <strong>route object</strong> represents the state of the current active route. It contains parsed information of the current URL and the <strong>route records</strong> matched by the URL.</p>
-<p>The route object is immutable. Every successful navigation will result in a fresh route object.</p>
-<p>The route object can be found in multiple places:</p>
+    <h1>路由信息对象</h1>
+    <h1 id="路由信息对象"><a href="#路由信息对象" class="headerlink" title="路由信息对象"></a>路由信息对象</h1><p>一个 <strong>route object（路由信息对象）</strong> 表示当前激活的路由的状态信息，包含了当前 URL 解析得到的信息，还有 URL 匹配到的 <strong>route records（路由记录）</strong>。</p>
+<p>route object 是 immutable（不可变） 的，每次成功的导航后都会产生一个新的对象。</p>
+<p>route object 出现在多个地方:</p>
 <ul>
-<li><p>Inside components as <code>this.$route</code>, and obvious inside <code>$route</code> watcher callbacks;</p>
+<li><p>组件内的 <code>this.$route</code> 和 <code>$route</code> watcher 回调（监测变化处理）;</p>
 </li>
-<li><p>As the return value of calling <code>router.match(location)</code>;</p>
+<li><p><code>router.match(location)</code> 的返回值</p>
 </li>
-<li><p>Inside navigation guards as the first argument:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">router.beforeEach(<span class="function">(<span class="params">route, redirect, next</span>) =&gt;</span> &#123;</div><div class="line">  <span class="comment">// route here is a route object</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<li><p>导航钩子的参数：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</div><div class="line">  <span class="comment">// to 和 from 都是 路由信息对象</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
-<li><p>Inside the <code>scrollBehavior</code> function as arguments:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</div><div class="line">    <span class="comment">// to and from are both route objects</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<li><p><code>scrollBehavior</code> 方法的参数:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</div><div class="line">    <span class="comment">// to 和 from 都是 路由信息对象</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="Route-Object-Properties"><a href="#Route-Object-Properties" class="headerlink" title="Route Object Properties"></a>Route Object Properties</h3><ul>
+<h3 id="路由信息对象的属性"><a href="#路由信息对象的属性" class="headerlink" title="路由信息对象的属性"></a>路由信息对象的属性</h3><ul>
 <li><p><strong>$route.path</strong></p>
 <ul>
-<li><p>type: <code>string</code></p>
-<p>A string that equals the path of the current route, always resolved as an absolute path. e.g. <code>&quot;/foo/bar&quot;</code>.</p>
+<li><p>类型: <code>string</code></p>
+<p>字符串，对应当前路由的路径，总是解析为绝对路径，如 <code>&quot;/foo/bar&quot;</code>。</p>
 </li>
 </ul>
 </li>
 <li><p><strong>$route.params</strong></p>
 <ul>
-<li><p>type: <code>Object</code></p>
-<p>An object that contains key/value pairs of dynamic segments and star segments. If there are no params the value will be an empty object.</p>
-</li>
+<li>类型: <code>Object</code></li>
 </ul>
+<p>一个 key/value 对象，包含了 动态片段 和 全匹配片段，如果没有路由参数，就是一个空对象。</p>
 </li>
 <li><p><strong>$route.query</strong></p>
 <ul>
-<li><p>type: <code>Object</code></p>
-<p>An object that contains key/value pairs of the query string. For example, for a path <code>/foo?user=1</code>, we get <code>$route.query.user == 1</code>. If there is no query the value will be an empty object.</p>
+<li><p>类型: <code>Object</code></p>
+<p>一个 key/value 对象，表示 URL 查询参数。例如，对于路径 <code>/foo?user=1</code>，则有 <code>$route.query.user == 1</code>，如果没有查询参数，则是个空对象。</p>
 </li>
 </ul>
 </li>
 <li><p><strong>$route.hash</strong></p>
 <ul>
-<li><p>type: <code>string</code></p>
-<p>The hash of the current route (without <code>#</code>), if it has one. If no hash is present the value will be an empty string.</p>
+<li><p>类型: <code>string</code></p>
+<p>当前路由的 hash 值 (不带 <code>#</code>) ，如果没有 hash 值，则为空字符串。</p>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
 <li><p><strong>$route.fullPath</strong></p>
 <ul>
-<li><p>type: <code>string</code></p>
-<p>The full resolved URL including query and hash.</p>
+<li><p>类型: <code>string</code></p>
+<p>完成解析后的 URL，包含查询参数和 hash 的完整路径。</p>
 </li>
 </ul>
 </li>
 <li><p><strong>$route.matched</strong></p>
 <ul>
-<li>type: <code>Array&lt;RouteRecord&gt;</code></li>
+<li>类型: <code>Array&lt;RouteRecord&gt;</code></li>
 </ul>
-<p>An Array containing <strong>route records</strong> for all nested path segments of the current route. Route records are the copies of the objects in the <code>routes</code> configuration Array (and in <code>children</code> Arrays):</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [</div><div class="line">    <span class="comment">// the following object is a route record</span></div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/foo'</span>, <span class="attr">component</span>: Foo,</div><div class="line">      <span class="attr">children</span>: [</div><div class="line">        <span class="comment">// this is also a route record</span></div><div class="line">        &#123; <span class="attr">path</span>: <span class="string">'bar'</span>, <span class="attr">component</span>: Bar &#125;</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>When the URL is <code>/foo/bar</code>, <code>$route.matched</code> will be an Array containing both objects (cloned), in parent to child order.</p>
+<p>一个数组，包含当前路由的所有嵌套路径片段的 <strong>路由记录</strong> 。路由记录就是 <code>routes</code> 配置数组中的对象副本（还有在 <code>children</code> 数组）。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [</div><div class="line">    <span class="comment">// 下面的对象就是 route record</span></div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/foo'</span>, <span class="attr">component</span>: Foo,</div><div class="line">      <span class="attr">children</span>: [</div><div class="line">        <span class="comment">// 这也是个 route record</span></div><div class="line">        &#123; <span class="attr">path</span>: <span class="string">'bar'</span>, <span class="attr">component</span>: Bar &#125;</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>当 URL 为 <code>/foo/bar</code>，<code>$route.matched</code> 将会是一个包含从上到下的所有对象（副本）。</p>
 </li>
 <li><p><strong>$route.name</strong></p>
-<p>The name of the current route, if it has one. (See <a href="../essentials/named-routes.md">Named Routes</a>)</p>
+<p>当前路由的名称，如果有的话。（查看 <a href="../essentials/named-routes.md">命名路由</a>）</p>
 </li>
 </ul>
 

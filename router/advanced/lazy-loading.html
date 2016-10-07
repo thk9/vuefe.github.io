@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>异步加载 - vue.js</title>
+        <title>路由懒加载 - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -137,7 +137,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">匹配动态路由</a>
+                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">动态路由匹配</a>
                 </li>
             
                 
@@ -153,7 +153,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/navigation.html" class="sidebar-link">应用导航</a>
+                    <a href="/router/essentials/navigation.html" class="sidebar-link">编程式的导航</a>
                 </li>
             
                 
@@ -161,7 +161,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-routes.html" class="sidebar-link">具名路由</a>
+                    <a href="/router/essentials/named-routes.html" class="sidebar-link">命名路由</a>
                 </li>
             
                 
@@ -169,7 +169,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-views.html" class="sidebar-link">具名视图</a>
+                    <a href="/router/essentials/named-views.html" class="sidebar-link">命名视图</a>
                 </li>
             
                 
@@ -177,7 +177,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向和链接</a>
+                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向 和 别名</a>
                 </li>
             
                 
@@ -185,7 +185,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/history-mode.html" class="sidebar-link">History模式</a>
+                    <a href="/router/essentials/history-mode.html" class="sidebar-link">HTML5 History 模式</a>
                 </li>
             
                 
@@ -195,7 +195,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">Navigation Guards</a>
+                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">导航钩子</a>
                 </li>
             
                 
@@ -203,7 +203,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/meta.html" class="sidebar-link">Route Meta Fields</a>
+                    <a href="/router/advanced/meta.html" class="sidebar-link">路由元信息</a>
                 </li>
             
                 
@@ -211,7 +211,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡</a>
+                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡动效</a>
                 </li>
             
                 
@@ -227,7 +227,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动</a>
+                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动行为</a>
                 </li>
             
                 
@@ -235,7 +235,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link current">异步加载</a>
+                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link current">路由懒加载</a>
                 </li>
             
                 
@@ -261,7 +261,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/route-object.html" class="sidebar-link">路由对象</a>
+                    <a href="/router/api/route-object.html" class="sidebar-link">路由信息对象</a>
                 </li>
             
                 
@@ -269,7 +269,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/options.html" class="sidebar-link">路由构造选项</a>
+                    <a href="/router/api/options.html" class="sidebar-link">Router 构造配置</a>
                 </li>
             
                 
@@ -277,7 +277,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/router-instance.html" class="sidebar-link">路由实例</a>
+                    <a href="/router/api/router-instance.html" class="sidebar-link">Router 实例</a>
                 </li>
             
                 
@@ -285,7 +285,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/component-injections.html" class="sidebar-link">组件注入</a>
+                    <a href="/router/api/component-injections.html" class="sidebar-link">对组件注入</a>
                 </li>
             
         </ul>
@@ -295,18 +295,18 @@
 
 <div class="content router with-sidebar ">
     	
-    <h1>异步加载</h1>
-    <h1 id="Lazy-Loading-Routes"><a href="#Lazy-Loading-Routes" class="headerlink" title="Lazy Loading Routes"></a>Lazy Loading Routes</h1><p>When building apps with a bundler, the JavaScript bundle can become quite large and thus affecting page load time. It would be more efficient if we can split each route’s components into a separate chunk, and only load them when the route is visited.</p>
-<p>Combining Vue’s <a href="http://vuejs.org/guide/components.html#Async-Components" target="_blank" rel="external">async component feature</a> and Webpack’s <a href="https://webpack.github.io/docs/code-splitting.html" target="_blank" rel="external">code splitting feature</a>, it’s trivially easy to<br>lazy-load route components.</p>
-<p>All we need to do is defining our route components as async components:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> Foo = <span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</div><div class="line">  <span class="comment">// require.ensure is Webpack's special syntax for a code-split point.</span></div><div class="line">  <span class="built_in">require</span>.ensure([<span class="string">'./Foo.vue'</span>], () =&gt; &#123;</div><div class="line">    resolve(<span class="built_in">require</span>(<span class="string">'./Foo.vue'</span>))</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>There’s also an alternative code-split syntax using AMD style require, so this can be simplified to:</p>
+    <h1>路由懒加载</h1>
+    <h1 id="路由懒加载"><a href="#路由懒加载" class="headerlink" title="路由懒加载"></a>路由懒加载</h1><p>当打包构建应用时，Javascript 包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更加高效了。</p>
+<p>结合 Vue 的 <a href="http://vuejs.org/guide/components.html#Async-Components" target="_blank" rel="external">异步组件</a> 和 Webpack 的 <a href="https://webpack.github.io/docs/code-splitting.html" target="_blank" rel="external">code splitting feature</a>, 轻松实现路由组件的懒加载。</p>
+<p>我们要做的就是把路由对应的组件定义成异步组件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> Foo = <span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</div><div class="line">  <span class="comment">// require.ensure 是 Webpack 的特殊语法，用来设置 code-split point</span></div><div class="line">  <span class="comment">// （代码分块）</span></div><div class="line">  <span class="built_in">require</span>.ensure([<span class="string">'./Foo.vue'</span>], () =&gt; &#123;</div><div class="line">    resolve(<span class="built_in">require</span>(<span class="string">'./Foo.vue'</span>))</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里还有另一种代码分块的语法，使用 AMD 风格的 require，于是就更简单了：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> Foo = <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'./Foo.vue'</span>], resolve)</div></pre></td></tr></table></figure>
-<p>Nothing needs to change in the route config, just use <code>Foo</code> as usual:</p>
+<p>不需要改变任何路由配置，跟之前一样使用 <code>Foo</code>：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/foo'</span>, <span class="attr">component</span>: Foo &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="Grouping-Components-in-the-Same-Chunk"><a href="#Grouping-Components-in-the-Same-Chunk" class="headerlink" title="Grouping Components in the Same Chunk"></a>Grouping Components in the Same Chunk</h3><p>Sometimes we may want to group all the components nested under the same route into the same async chunk. To achieve that we need to use <a href="https://webpack.github.io/docs/code-splitting.html#named-chunks" target="_blank" rel="external">named chunks</a> by providing a chunk name to <code>require.ensure</code> as the 3rd argument:</p>
+<h3 id="把组件按组分块"><a href="#把组件按组分块" class="headerlink" title="把组件按组分块"></a>把组件按组分块</h3><p>有时候我们想把某个路由下的所有组件都打包在同个异步 chunk 中。只需要 <a href="https://webpack.github.io/docs/code-splitting.html#named-chunks" target="_blank" rel="external">给 chunk 命名</a>，提供 <code>require.ensure</code> 第三个参数作为 chunk 的名称:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> Foo = <span class="function"><span class="params">r</span> =&gt;</span> <span class="built_in">require</span>.ensure([], () =&gt; r(<span class="built_in">require</span>(<span class="string">'./Foo.vue'</span>)), <span class="string">'group-foo'</span>)</div><div class="line"><span class="keyword">const</span> Bar = <span class="function"><span class="params">r</span> =&gt;</span> <span class="built_in">require</span>.ensure([], () =&gt; r(<span class="built_in">require</span>(<span class="string">'./Bar.vue'</span>)), <span class="string">'group-foo'</span>)</div><div class="line"><span class="keyword">const</span> Baz = <span class="function"><span class="params">r</span> =&gt;</span> <span class="built_in">require</span>.ensure([], () =&gt; r(<span class="built_in">require</span>(<span class="string">'./Baz.vue'</span>)), <span class="string">'group-foo'</span>)</div></pre></td></tr></table></figure>
-<p>Webpack will group any async module with the same chunk name into the same async chunk - this also means we don’t need to explicitly list dependencies for <code>require.ensure</code> anymore (thus passing an empty array).</p>
+<p>Webpack 将相同 chunk 下的所有异步模块打包到一个异步块里面 —— 这也意味着我们无须明确列出 <code>require.ensure</code> 的依赖（传空数组就行）。</p>
 
     
     <div class="footer">

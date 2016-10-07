@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>滚动 - vue.js</title>
+        <title>滚动行为 - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -137,7 +137,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">匹配动态路由</a>
+                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">动态路由匹配</a>
                 </li>
             
                 
@@ -153,7 +153,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/navigation.html" class="sidebar-link">应用导航</a>
+                    <a href="/router/essentials/navigation.html" class="sidebar-link">编程式的导航</a>
                 </li>
             
                 
@@ -161,7 +161,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-routes.html" class="sidebar-link">具名路由</a>
+                    <a href="/router/essentials/named-routes.html" class="sidebar-link">命名路由</a>
                 </li>
             
                 
@@ -169,7 +169,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-views.html" class="sidebar-link">具名视图</a>
+                    <a href="/router/essentials/named-views.html" class="sidebar-link">命名视图</a>
                 </li>
             
                 
@@ -177,7 +177,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向和链接</a>
+                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向 和 别名</a>
                 </li>
             
                 
@@ -185,7 +185,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/history-mode.html" class="sidebar-link">History模式</a>
+                    <a href="/router/essentials/history-mode.html" class="sidebar-link">HTML5 History 模式</a>
                 </li>
             
                 
@@ -195,7 +195,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">Navigation Guards</a>
+                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">导航钩子</a>
                 </li>
             
                 
@@ -203,7 +203,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/meta.html" class="sidebar-link">Route Meta Fields</a>
+                    <a href="/router/advanced/meta.html" class="sidebar-link">路由元信息</a>
                 </li>
             
                 
@@ -211,7 +211,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡</a>
+                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡动效</a>
                 </li>
             
                 
@@ -227,7 +227,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link current">滚动</a>
+                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link current">滚动行为</a>
                 </li>
             
                 
@@ -235,7 +235,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">异步加载</a>
+                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">路由懒加载</a>
                 </li>
             
                 
@@ -261,7 +261,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/route-object.html" class="sidebar-link">路由对象</a>
+                    <a href="/router/api/route-object.html" class="sidebar-link">路由信息对象</a>
                 </li>
             
                 
@@ -269,7 +269,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/options.html" class="sidebar-link">路由构造选项</a>
+                    <a href="/router/api/options.html" class="sidebar-link">Router 构造配置</a>
                 </li>
             
                 
@@ -277,7 +277,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/router-instance.html" class="sidebar-link">路由实例</a>
+                    <a href="/router/api/router-instance.html" class="sidebar-link">Router 实例</a>
                 </li>
             
                 
@@ -285,7 +285,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/component-injections.html" class="sidebar-link">组件注入</a>
+                    <a href="/router/api/component-injections.html" class="sidebar-link">对组件注入</a>
                 </li>
             
         </ul>
@@ -295,26 +295,26 @@
 
 <div class="content router with-sidebar ">
     	
-    <h1>滚动</h1>
-    <h1 id="Scroll-Behavior"><a href="#Scroll-Behavior" class="headerlink" title="Scroll Behavior"></a>Scroll Behavior</h1><p>When using client-side routing, we may want to scroll to top when navigating to a new route, or preserve the scrolling position of history entries just like real page reload does. <code>vue-router</code> allows you to achieve these and even better, allows you to completely customize the scroll behavior on route navigation.</p>
-<p><strong>Note: this feature only works in HTML5 history mode.</strong></p>
-<p>When creating the router instance, you can provide the <code>scrollBehavior</code> function:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [...],</div><div class="line">  scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</div><div class="line">    <span class="comment">// return desired position</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>The <code>scrollBehavior</code> function receives the <code>to</code> and <code>from</code> route objects. The third argument, <code>savedPosition</code>, is only available if this is a <code>popstate</code> navigation (triggered by the browser’s back/forward buttons).</p>
-<p>The function can return a scroll position object. The object could be in the form of:</p>
+    <h1>滚动行为</h1>
+    <h1 id="滚动行为"><a href="#滚动行为" class="headerlink" title="滚动行为"></a>滚动行为</h1><p>使用前端路由，当切换到新路由时，想要页面滚到顶部，或者是保持原先的滚动位置，就像重新加载页面那样。 <code>vue-router</code> 能做到，而且更好，它让你可以自定义路由切换时页面如何滚动。</p>
+<p><strong>注意: 这个功能只在 HTML5 history 模式下可用。</strong></p>
+<p>当创建一个 Router 实例，你可以提供一个 <code>scrollBehavior</code> 方法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [...],</div><div class="line">  scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</div><div class="line">    <span class="comment">// return 期望滚动到哪个的位置</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><code>scrollBehavior</code> 方法接收 <code>to</code> 和 <code>from</code> 路由对象。第三个参数 <code>savedPosition</code> 当且仅当 <code>popstate</code> 导航 (通过浏览器的 前进/后退 按钮触发) 时才可用。</p>
+<p>这个方法返回滚动位置的对象信息，长这样：</p>
 <ul>
 <li><code>{ x: number, y: number }</code></li>
 <li><code>{ selector: string }</code></li>
 </ul>
-<p>If a falsy value or an empty object is returned, no scrolling will happen.</p>
-<p>For example:</p>
+<p>如果返回一个布尔假的值，或者是一个空对象，那么不会发生滚动。</p>
+<p>举例：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</div><div class="line">  <span class="keyword">return</span> &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>This will simply make the page scroll to top for all route navigations.</p>
-<p>Returning the <code>savedPosition</code> will result in a native-like behavior when navigating with back/forward buttons:</p>
+<p>对于所有路由导航，简单地让页面滚动到顶部。</p>
+<p>返回 <code>savedPosition</code>，在按下 后退/前进 按钮时，就会像浏览器的原生表现那样：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</div><div class="line">  <span class="keyword">if</span> (savedPosition) &#123;</div><div class="line">    <span class="keyword">return</span> savedPosition</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">return</span> &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>If you want to simulate the “scroll to anchor” behavior:</p>
+<p>如果你要模拟『滚动到锚点』的行为：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</div><div class="line">  <span class="keyword">if</span> (to.hash) &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">selector</span>: to.hash</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>We can also use <a href="meta.md">route meta fields</a> to implement fine-grained scroll behavior control. Check out a full example <a href="https://github.com/vuejs/vue-router/blob/next/examples/scroll-behavior/app.js" target="_blank" rel="external">here</a>.</p>
+<p>我们还可以利用 <a href="meta.md">路由元信息</a> 更细颗粒度地控制滚动。查看完整例子 <a href="https://github.com/vuejs/vue-router/blob/next/examples/scroll-behavior/app.js" target="_blank" rel="external">这里</a>.</p>
 
     
     <div class="footer">

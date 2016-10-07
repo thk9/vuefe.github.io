@@ -845,52 +845,52 @@
 <li><p><strong>See also:</strong> <a href="#Vue-delete">Vue.delete</a></p>
 </li>
 </ul>
-<h2 id="Instance-Methods-Events"><a href="#Instance-Methods-Events" class="headerlink" title="Instance Methods / Events"></a>Instance Methods / Events</h2><h3 id="vm-on">vm.$on( event, callback )</h3>
+<h2 id="实例方法-事件"><a href="#实例方法-事件" class="headerlink" title="实例方法/事件"></a>实例方法/事件</h2><h3 id="vm-on">vm.$on( event, callback )</h3>
 
 <ul>
-<li><p><strong>Arguments:</strong></p>
+<li><p><strong>参数：</strong></p>
 <ul>
 <li><code>{string} event</code></li>
 <li><code>{Function} callback</code></li>
 </ul>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Listen for a custom event on the current vm. Events can be triggered by <code>vm.$emit</code>. The callback will receive all the additional arguments passed into these event-triggering methods.</p>
+<li><p><strong>用法：</strong></p>
+<p>监听当前实例上的自定义事件。事件可以由vm.$emit触发。传入这些方法的附加参数都会传入这个方法的回调。</p>
 </li>
-<li><p><strong>Example:</strong></p>
+<li><p><strong>示例：</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">vm.$on(<span class="string">'test'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">msg</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(msg)</div><div class="line">&#125;)</div><div class="line">vm.$emit(<span class="string">'test'</span>, <span class="string">'hi'</span>)</div><div class="line"><span class="comment">// -&gt; "hi"</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="vm-once">vm.$once( event, callback )</h3>
 
 <ul>
-<li><p><strong>Arguments:</strong></p>
+<li><p><strong>参数：</strong></p>
 <ul>
 <li><code>{string} event</code></li>
 <li><code>{Function} callback</code></li>
 </ul>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Listen for a custom event, but only once. The listener will be removed once it triggers for the first time.</p>
+<li><p><strong>用法：</strong></p>
+<p>监听一个自定义事件，但是只触发一次，在第一次触发之后删除监听器。</p>
 </li>
 </ul>
 <h3 id="vm-off">vm.$off( [event, callback] )</h3>
 
 <ul>
-<li><p><strong>Arguments:</strong></p>
+<li><p><strong>参数：</strong></p>
 <ul>
 <li><code>{string} [event]</code></li>
 <li><code>{Function} [callback]</code></li>
 </ul>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Remove event listener(s).</p>
+<li><p><strong>用法：</strong></p>
+<p>删除事件监听器。</p>
 <ul>
-<li><p>If no arguments are provided, remove all event listeners;</p>
+<li><p>如果没有参数，则删除所有的事件监听器；</p>
 </li>
-<li><p>If only the event is provided, remove all listeners for that event;</p>
+<li><p>如果只提供了事件，则删除这个事件所有的监听器；</p>
 </li>
-<li><p>If both event and callback are given, remove the listener for that specific callback only.</p>
+<li><p>如果同时提供了事件与回调，则只删除这个回调。</p>
 </li>
 </ul>
 </li>
@@ -898,77 +898,77 @@
 <h3 id="vm-emit">vm.$emit( event, […args] )</h3>
 
 <ul>
-<li><p><strong>Arguments:</strong></p>
+<li><p><strong>参数：</strong></p>
 <ul>
 <li><code>{string} event</code></li>
 <li><code>[...args]</code></li>
 </ul>
-<p>Trigger an event on the current instance. Any additional arguments will be passed into the listener’s callback function.</p>
+<p>触发当前实例上的事件。附加参数都会传给监听器回调。</p>
 </li>
 </ul>
-<h2 id="Instance-Methods-Lifecycle"><a href="#Instance-Methods-Lifecycle" class="headerlink" title="Instance Methods / Lifecycle"></a>Instance Methods / Lifecycle</h2><h3 id="vm-mount">vm.$mount( [elementOrSelector] )</h3>
+<h2 id="实例方法-生命周期"><a href="#实例方法-生命周期" class="headerlink" title="实例方法 / 生命周期"></a>实例方法 / 生命周期</h2><h3 id="vm-mount">vm.$mount( [elementOrSelector] )</h3>
 
 <ul>
-<li><p><strong>Arguments:</strong></p>
+<li><p><strong>参数：</strong></p>
 <ul>
 <li><code>{Element | string} [elementOrSelector]</code></li>
 <li><code>{boolean} [hydrating]</code></li>
 </ul>
 </li>
-<li><p><strong>Returns:</strong> <code>vm</code> - the instance itself</p>
+<li><p><strong>返回值：</strong> <code>vm</code> - 实例自身</p>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>If a Vue instance didn’t receive the <code>el</code> option at instantiation, it will be in “unmounted” state, without an associated DOM element. <code>vm.$mount()</code> can be used to manually start the mounting of an unmounted Vue instance.</p>
-<p>If <code>elementOrSelector</code> argument is not provided, the template will be rendered as an off-document element, and you will have to use native DOM API to insert it into the document yourself.</p>
-<p>The method returns the instance itself so you can chain other instance methods after it.</p>
+<li><p><strong>用法：</strong></p>
+<p>如果 Vue 实例在实例化时没有收到 el 选项，则它处于“未挂载”状态，没有关联的 DOM 元素或片断。可以使用 vm.$mount() 手动地挂载一个未挂载的实例。</p>
+<p>如果没有”elementOrSelector”参数，模板将被渲染为文档之外的的元素，并且你必须使用原生DOM API把它插入文档中。</p>
+<p>这个方法返回实例自身，因而可以链式调用其它实例方法。</p>
 </li>
-<li><p><strong>Example:</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> MyComponent = Vue.extend(&#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;div&gt;Hello!&lt;/div&gt;'</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// create and mount to #app (will replace #app)</span></div><div class="line"><span class="keyword">new</span> MyComponent().$mount(<span class="string">'#app'</span>)</div><div class="line"></div><div class="line"><span class="comment">// the above is the same as:</span></div><div class="line"><span class="keyword">new</span> MyComponent(&#123; <span class="attr">el</span>: <span class="string">'#app'</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">// or, render off-document and append afterwards:</span></div><div class="line"><span class="keyword">var</span> component = <span class="keyword">new</span> MyComponent().$mount()</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'app'</span>).appendChild(vm.$el)</div></pre></td></tr></table></figure>
+<li><p><strong>示例：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> MyComponent = Vue.extend(&#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;div&gt;Hello!&lt;/div&gt;'</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 创建并挂载到 #app (会替换 #app)</span></div><div class="line"><span class="keyword">new</span> MyComponent().$mount(<span class="string">'#app'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 同上</span></div><div class="line"><span class="keyword">new</span> MyComponent(&#123; <span class="attr">el</span>: <span class="string">'#app'</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">// 或者，在文档之外渲染并且随后挂载</span></div><div class="line"><span class="keyword">var</span> component = <span class="keyword">new</span> MyComponent().$mount()</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'app'</span>).appendChild(vm.$el)</div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>See also:</strong></p>
+<li><p><strong>另见：</strong></p>
 <ul>
-<li><a href="/guide/instance.html#Lifecycle-Diagram">Lifecycle Diagram</a></li>
-<li><a href="/guide/ssr.html">Server-Side Rendering</a></li>
+<li><a href="/guide/instance.html#Lifecycle-Diagram">生命周期图示</a></li>
+<li><a href="/guide/ssr.html">服务端渲染</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="vm-forceUpdate">vm.$forceUpdate()</h3>
 
 <ul>
-<li><p><strong>Usage:</strong></p>
-<p>Force the Vue instance to re-render. Note it does not affect all child components, only the instance itself and child components with inserted slot content.</p>
+<li><p><strong>示例：</strong></p>
+<p>迫使Vue实例重修渲染。注意它仅仅影响实例本身和插入插槽内容的子组件，而不是所有子组件。</p>
 </li>
 </ul>
 <h3 id="vm-nextTick">vm.$nextTick( callback )</h3>
 
 <ul>
-<li><p><strong>Arguments:</strong></p>
+<li><p><strong>参数：</strong></p>
 <ul>
 <li><code>{Function} callback</code></li>
 </ul>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Defer the callback to be executed after the next DOM update cycle. Use it immediately after you’ve changed some data to wait for the DOM update. This is the same as the global <code>Vue.nextTick</code>, except that the callback’s <code>this</code> context is automatically bound to the instance calling this method.</p>
+<li><p><strong>用法：</strong></p>
+<p>将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新。它跟全局方法 Vue.nextTick 一样，不同的是回调的 this 自动绑定到调用它的实例上。</p>
 </li>
-<li><p><strong>Example:</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  methods: &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    example: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// modify data</span></div><div class="line">      <span class="keyword">this</span>.message = <span class="string">'changed'</span></div><div class="line">      <span class="comment">// DOM is not updated yet</span></div><div class="line">      <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// DOM is now updated</span></div><div class="line">        <span class="comment">// `this` is bound to the current instance</span></div><div class="line">        <span class="keyword">this</span>.doSomethingElse()</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<li><p><strong>示例：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  methods: &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    example: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// 修改数据</span></div><div class="line">      <span class="keyword">this</span>.message = <span class="string">'changed'</span></div><div class="line">      <span class="comment">// DOM 还没有更新</span></div><div class="line">      <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// DOM 现在更新了</span></div><div class="line">        <span class="comment">// `this` 绑定到当前实例</span></div><div class="line">        <span class="keyword">this</span>.doSomethingElse()</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>See also:</strong></p>
+<li><p><strong>另见：</strong></p>
 <ul>
 <li><a href="#Vue-nextTick">Vue.nextTick</a></li>
-<li><a href="/guide/reactivity.html#Async-Update-Queue">Async Update Queue</a></li>
+<li><a href="/guide/reactivity.html#Async-Update-Queue">异步更新队列</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="vm-destroy">vm.$destroy()</h3>
 
 <ul>
-<li><p><strong>Usage:</strong></p>
-<p>Completely destroy a vm. Clean up its connections with other existing vms, unbind all its directives, turn off all event listeners.</p>
-<p>Triggers the <code>beforeDestroy</code> and <code>destroyed</code> hooks.</p>
-<p class="tip">In normal use cases you shouldn’t have to call this method yourself. Prefer controlling the lifecycle of child components in a data-driven fashion using <code>v-if</code> and <code>v-for</code>.</p>
+<li><p><strong>用法：</strong></p>
+<p>完全销毁一个实例。清理它与其它实例的连接，解绑它的全部指令及事件监听器。</p>
+<p>在”beforeDestroy”和”destroyed”之间触发。</p>
+<p class="tip">在大多数场景中你不应该调用这个方法。最好使用”v-if”和”v-for”指令以数据驱动的方式控制子组件的生命周期。</p>
 </li>
-<li><p><strong>See also:</strong> <a href="/guide/instance.html#Lifecycle-Diagram">Lifecycle Diagram</a></p>
+<li><p><strong>另见：</strong> <a href="/guide/instance.html#Lifecycle-Diagram">生命周期图示</a></p>
 </li>
 </ul>
 <h2 id="Directives"><a href="#Directives" class="headerlink" title="Directives"></a>Directives</h2><h3 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h3><ul>

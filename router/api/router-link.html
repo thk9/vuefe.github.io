@@ -137,7 +137,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">匹配动态路由</a>
+                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">动态路由匹配</a>
                 </li>
             
                 
@@ -153,7 +153,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/navigation.html" class="sidebar-link">应用导航</a>
+                    <a href="/router/essentials/navigation.html" class="sidebar-link">编程式的导航</a>
                 </li>
             
                 
@@ -161,7 +161,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-routes.html" class="sidebar-link">具名路由</a>
+                    <a href="/router/essentials/named-routes.html" class="sidebar-link">命名路由</a>
                 </li>
             
                 
@@ -169,7 +169,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-views.html" class="sidebar-link">具名视图</a>
+                    <a href="/router/essentials/named-views.html" class="sidebar-link">命名视图</a>
                 </li>
             
                 
@@ -177,7 +177,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向和链接</a>
+                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向 和 别名</a>
                 </li>
             
                 
@@ -185,7 +185,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/history-mode.html" class="sidebar-link">History模式</a>
+                    <a href="/router/essentials/history-mode.html" class="sidebar-link">HTML5 History 模式</a>
                 </li>
             
                 
@@ -195,7 +195,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">Navigation Guards</a>
+                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">导航钩子</a>
                 </li>
             
                 
@@ -203,7 +203,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/meta.html" class="sidebar-link">Route Meta Fields</a>
+                    <a href="/router/advanced/meta.html" class="sidebar-link">路由元信息</a>
                 </li>
             
                 
@@ -211,7 +211,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡</a>
+                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡动效</a>
                 </li>
             
                 
@@ -227,7 +227,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动</a>
+                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动行为</a>
                 </li>
             
                 
@@ -235,7 +235,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">异步加载</a>
+                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">路由懒加载</a>
                 </li>
             
                 
@@ -261,7 +261,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/route-object.html" class="sidebar-link">路由对象</a>
+                    <a href="/router/api/route-object.html" class="sidebar-link">路由信息对象</a>
                 </li>
             
                 
@@ -269,7 +269,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/options.html" class="sidebar-link">路由构造选项</a>
+                    <a href="/router/api/options.html" class="sidebar-link">Router 构造配置</a>
                 </li>
             
                 
@@ -277,7 +277,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/router-instance.html" class="sidebar-link">路由实例</a>
+                    <a href="/router/api/router-instance.html" class="sidebar-link">Router 实例</a>
                 </li>
             
                 
@@ -285,7 +285,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/component-injections.html" class="sidebar-link">组件注入</a>
+                    <a href="/router/api/component-injections.html" class="sidebar-link">对组件注入</a>
                 </li>
             
         </ul>
@@ -296,82 +296,84 @@
 <div class="content router with-sidebar ">
     	
     <h1>router-link</h1>
-    <h1 id="lt-router-link-gt"><a href="#lt-router-link-gt" class="headerlink" title="&lt;router-link&gt;"></a><code>&lt;router-link&gt;</code></h1><p><code>&lt;router-link&gt;</code> is the component for enabling user navigation in a router-enabled app. The target location is specified with the <code>to</code> prop. It renders as an <code>&lt;a&gt;</code> tag with correct <code>href</code> by default, but can be configured with the <code>tag</code> prop. In addition, the link automatically gets an active CSS class when the target route is active.</p>
-<p><code>&lt;router-link&gt;</code> is preferred over hard-coded <code>&lt;a href=&quot;...&quot;&gt;</code> for the following reasons:</p>
+    <h1 id="lt-router-link-gt"><a href="#lt-router-link-gt" class="headerlink" title="&lt;router-link&gt;"></a><code>&lt;router-link&gt;</code></h1><p><code>&lt;router-link&gt;</code> 组件支持用户在具有路由功能的应用中（点击）导航。<br>通过 <code>to</code> 属性指定目标地址，默认渲染成带有正确链接的 <code>&lt;a&gt;</code> 标签，可以通过配置 <code>tag</code> 属性生成别的标签.。另外，当目标路由成功激活时，链接元素自动设置一个表示激活的 CSS 类名。</p>
+<p><code>&lt;router-link&gt;</code> 比起写死的 <code>&lt;a href=&quot;...&quot;&gt;</code> 会好一些，理由如下：</p>
 <ul>
-<li><p>It works the same way in both HTML5 history mode and hash mode, so if you ever decide to switch mode, or when the router falls back to hash mode in IE9, nothing needs to be changed.</p>
+<li><p>无论是 HTML5 history 模式还是 hash 模式，它的表现行为一致，所以，当你要切换路由模式，或者在 IE9 降级使用 hash 模式，无须作任何变动。</p>
 </li>
-<li><p>In HTML5 history mode, <code>router-link</code> will intercept the click event so that the browser doesn’t try to reload the page.</p>
+<li><p>在 HTML5 history 模式下，<code>router-link</code>  会拦截点击事件，让浏览器不在重新加载页面。</p>
 </li>
-<li><p>When you are using the <code>base</code> option in HTML5 history mode, you don’t need to include it in <code>to</code> prop’s URLs.</p>
+<li><p>当你在 HTML5 history 模式下使用 <code>base</code> 选项之后，所有的 <code>to</code> 属性都不需要写（基路径）了。</p>
 </li>
 </ul>
 <h3 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h3><ul>
 <li><p><strong>to</strong></p>
 <ul>
-<li><p>type: <code>string | Location</code></p>
+<li><p>类型: <code>string | Location</code></p>
 </li>
 <li><p>required</p>
 </li>
 </ul>
-<p>Denotes the target route of the link. When clicked, the value of the <code>to</code> prop will be passed to <code>router.push()</code> internally, so the value can be either a string or a location descriptor object.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- literal string --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"home"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- renders to --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"home"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- javascript expression using v-bind --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">v-bind:to</span>=<span class="string">"'home'"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Omitting v-bind is fine, just as binding any other prop --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"'home'"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- same as above --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123; path: 'home' &#125;"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- named route --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123; name: 'user', params: &#123; userId: 123 &#125;&#125;"</span>&gt;</span>User<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- with query, resulting in /register?plan=private --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123; path: 'register', query: &#123; plan: 'private' &#125;&#125;"</span>&gt;</span>Register<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>表示目标路由的链接。当被点击后，内部会立刻把 <code>to</code> 的值传到 <code>router.push()</code>，所以这个值可以是一个字符串或者是描述目标位置的对象。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 字符串 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"home"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- renders to --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"home"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 使用 v-bind 的 JS 表达式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">v-bind:to</span>=<span class="string">"'home'"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 不写 v-bind 也可以，就像绑定别的属性一样 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"'home'"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 同上 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123; path: 'home' &#125;"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 命名的路由 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123; name: 'user', params: &#123; userId: 123 &#125;&#125;"</span>&gt;</span>User<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 带查询参数，下面的结果为 /register?plan=private --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123; path: 'register', query: &#123; plan: 'private' &#125;&#125;"</span>&gt;</span>Register<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>replace</strong></p>
 <ul>
-<li><p>type: <code>boolean</code></p>
+<li><p>类型: <code>boolean</code></p>
 </li>
-<li><p>default: <code>false</code></p>
+<li><p>默认值: <code>false</code></p>
 </li>
 </ul>
-<p>Setting <code>replace</code> prop will call <code>router.replace()</code> instead of <code>router.push()</code> when clicked, so the navigation will not leave a history record.</p>
+<p>设置 <code>replace</code> 属性的话，当点击时，会调用 <code>router.replace()</code> 而不是 <code>router.push()</code>，于是导航后不会留下 history 记录。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123; path: '/abc'&#125;"</span> <span class="attr">replace</span>&gt;</span><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>append</strong></p>
 <ul>
-<li><p>type: <code>boolean</code></p>
+<li><p>类型: <code>boolean</code></p>
 </li>
-<li><p>default: <code>false</code></p>
+<li><p>默认值: <code>false</code></p>
 </li>
 </ul>
-<p>Setting <code>append</code> prop always appends the relative path to the current path. For example, assuming we are navigating from <code>/a</code> to a relative link <code>b</code>, without <code>append</code> we will end up at <code>/b</code>, but with <code>append</code> we will end up at <code>/a/b</code>.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123; path: 'relative/path'&#125;"</span> <span class="attr">append</span>&gt;</span><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
+</ul>
+<p>  设置 <code>append</code> 属性后，则在当前（相对）路径前添加基路径。例如，我们从 <code>/a</code> 导航到一个相对路径 <code>b</code>，如果没有配置 <code>append</code>，则路径为 <code>/b</code>，如果配了，则为 <code>/a/b</code></p>
+  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123; path: 'relative/path'&#125;"</span> <span class="attr">append</span>&gt;</span><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
 <li><p><strong>tag</strong></p>
 <ul>
-<li><p>type: <code>string</code></p>
+<li><p>类型: <code>string</code></p>
 </li>
-<li><p>default: <code>&quot;a&quot;</code></p>
+<li><p>默认值: <code>&quot;a&quot;</code></p>
 </li>
 </ul>
-<p>Sometimes we want <code>&lt;router-link&gt;</code> to render as another tag, e.g <code>&lt;li&gt;</code>. Then we can use <code>tag</code> prop to specify which tag to render to, and it will still listen to click events for navigation.</p>
+<p>有时候想要  <code>&lt;router-link&gt;</code> 渲染成某种标签，例如 <code>&lt;li&gt;</code>。<br>于是我们使用 <code>tag</code> prop 类指定何种标签，同样它还是会监听点击，触发导航。 </p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/foo"</span> <span class="attr">tag</span>=<span class="string">"li"</span>&gt;</span>foo<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- renders as --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>foo<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>active-class</strong></p>
 <ul>
-<li><p>type: <code>string</code></p>
+<li><p>类型: <code>string</code></p>
 </li>
-<li><p>default: <code>&quot;router-link-active&quot;</code></p>
+<li><p>默认值: <code>&quot;router-link-active&quot;</code></p>
 </li>
 </ul>
-<p>Configure the active CSS class applied when the link is active. Note the default value can also be configured globally via the <code>linkActiveClass</code> router constructor option.</p>
+<p>设置 链接激活时使用的 CSS 类名。默认值可以通过路由的构造选项 <code>linkActiveClass</code> 来全局配置。</p>
 </li>
 <li><p><strong>exact</strong></p>
 <ul>
-<li><p>type: <code>boolean</code></p>
+<li><p>类型: <code>boolean</code></p>
 </li>
-<li><p>default: <code>false</code></p>
-</li>
-</ul>
-<p>The default active class matching behavior is <strong>inclusive match</strong>. For example, <code>&lt;router-link to=&quot;/a&quot;&gt;</code> will get this class applied as long as the current path starts with <code>/a</code>.</p>
-<p>One consequence of this is that <code>&lt;router-link to=&quot;/&quot;&gt;</code> will be active for every route! To force the link into “exact match mode”, use the <code>exact</code> prop:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- this link will only be active at / --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/"</span> <span class="attr">exact</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>Checkout more examples explaining active link class <a href="http://jsfiddle.net/fnlCtrl/dokbyypq/" target="_blank" rel="external">live</a>.</p>
+<li><p>默认值: <code>false</code></p>
 </li>
 </ul>
-<h3 id="Applying-Active-Class-to-Outer-Element"><a href="#Applying-Active-Class-to-Outer-Element" class="headerlink" title="Applying Active Class to Outer Element"></a>Applying Active Class to Outer Element</h3><p>Sometimes we may want the active class to be applied to an outer element rather than the <code>&lt;a&gt;</code> tag itself, in that case, you can render that outer element using <code>&lt;router-link&gt;</code> and wrap the raw <code>&lt;a&gt;</code> tag inside:</p>
+<p>“是否激活” 默认类名的依据是 <strong>inclusive match</strong> （全包含匹配）。<br>举个例子，如果当前的路径是 <code>/a</code> 开头的，那么 <code>&lt;router-link to=&quot;/a&quot;&gt;</code> 也会被设置 CSS 类名。</p>
+</li>
+</ul>
+<p>  按照这个规则，<code>&lt;router-link to=&quot;/&quot;&gt;</code> 将会点亮各个路由！想要链接使用 “exact 匹配模式”，则使用 <code>exact</code> 属性：</p>
+  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- this link will only be active at / --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/"</span> <span class="attr">exact</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>  查看更多关于激活链接类名的例子 <a href="http://jsfiddle.net/fnlCtrl/dokbyypq/" target="_blank" rel="external">可运行</a>.</p>
+<h3 id="Applying-Active-Class-to-Outer-Element"><a href="#Applying-Active-Class-to-Outer-Element" class="headerlink" title="Applying Active Class to Outer Element"></a>Applying Active Class to Outer Element</h3><p>有时候我们要让 “激活 class” 应用在外层元素，而不是 <code>&lt;a&gt;</code> 标签本身，那么可以用 <code>&lt;router-link&gt;</code> 渲染外层元素，包裹着内层的原生 <code>&lt;a&gt;</code> 标签：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">tag</span>=<span class="string">"li"</span> <span class="attr">to</span>=<span class="string">"/foo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span>&gt;</span>/foo<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>In this case the <code>&lt;a&gt;</code> will be the actual link (and will get the correct <code>href</code>), but the active class will be applied to the outer <code>&lt;li&gt;</code>.</p>
+<p>在这种情况下，<code>&lt;a&gt;</code> 将作为真实的链接（它会获得正确的 <code>href</code> 的），而 “激活 class” 则设置到外层的 <code>&lt;li&gt;</code>。</p>
 
     
     <div class="footer">

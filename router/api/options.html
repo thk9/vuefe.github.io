@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>路由构造选项 - vue.js</title>
+        <title>Router 构造配置 - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -137,7 +137,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">匹配动态路由</a>
+                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">动态路由匹配</a>
                 </li>
             
                 
@@ -153,7 +153,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/navigation.html" class="sidebar-link">应用导航</a>
+                    <a href="/router/essentials/navigation.html" class="sidebar-link">编程式的导航</a>
                 </li>
             
                 
@@ -161,7 +161,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-routes.html" class="sidebar-link">具名路由</a>
+                    <a href="/router/essentials/named-routes.html" class="sidebar-link">命名路由</a>
                 </li>
             
                 
@@ -169,7 +169,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-views.html" class="sidebar-link">具名视图</a>
+                    <a href="/router/essentials/named-views.html" class="sidebar-link">命名视图</a>
                 </li>
             
                 
@@ -177,7 +177,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向和链接</a>
+                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向 和 别名</a>
                 </li>
             
                 
@@ -185,7 +185,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/history-mode.html" class="sidebar-link">History模式</a>
+                    <a href="/router/essentials/history-mode.html" class="sidebar-link">HTML5 History 模式</a>
                 </li>
             
                 
@@ -195,7 +195,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">Navigation Guards</a>
+                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">导航钩子</a>
                 </li>
             
                 
@@ -203,7 +203,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/meta.html" class="sidebar-link">Route Meta Fields</a>
+                    <a href="/router/advanced/meta.html" class="sidebar-link">路由元信息</a>
                 </li>
             
                 
@@ -211,7 +211,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡</a>
+                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡动效</a>
                 </li>
             
                 
@@ -227,7 +227,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动</a>
+                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动行为</a>
                 </li>
             
                 
@@ -235,7 +235,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">异步加载</a>
+                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">路由懒加载</a>
                 </li>
             
                 
@@ -261,7 +261,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/route-object.html" class="sidebar-link">路由对象</a>
+                    <a href="/router/api/route-object.html" class="sidebar-link">路由信息对象</a>
                 </li>
             
                 
@@ -269,7 +269,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/options.html" class="sidebar-link current">路由构造选项</a>
+                    <a href="/router/api/options.html" class="sidebar-link current">Router 构造配置</a>
                 </li>
             
                 
@@ -277,7 +277,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/router-instance.html" class="sidebar-link">路由实例</a>
+                    <a href="/router/api/router-instance.html" class="sidebar-link">Router 实例</a>
                 </li>
             
                 
@@ -285,7 +285,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/component-injections.html" class="sidebar-link">组件注入</a>
+                    <a href="/router/api/component-injections.html" class="sidebar-link">对组件注入</a>
                 </li>
             
         </ul>
@@ -295,49 +295,49 @@
 
 <div class="content router with-sidebar ">
     	
-    <h1>路由构造选项</h1>
-    <h1 id="Router-Construction-Options"><a href="#Router-Construction-Options" class="headerlink" title="Router Construction Options"></a>Router Construction Options</h1><h3 id="routes"><a href="#routes" class="headerlink" title="routes"></a>routes</h3><ul>
-<li><p>type: <code>Array&lt;RouteConfig&gt;</code></p>
-<p>Type declaration for <code>RouteConfig</code>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">declare type RouteConfig = &#123;</div><div class="line">  <span class="attr">path</span>: string;</div><div class="line">  component?: Component;</div><div class="line">  name?: string; <span class="comment">// for named routes</span></div><div class="line">  components?: &#123; [name: string]: Component &#125;; <span class="comment">// for named views</span></div><div class="line">  redirect?: string | Location | <span class="built_in">Function</span>;</div><div class="line">  alias?: string | <span class="built_in">Array</span>&lt;string&gt;;</div><div class="line">  children?: <span class="built_in">Array</span>&lt;RouteConfig&gt;; <span class="comment">// for nested routes</span></div><div class="line">  beforeEnter?: <span class="function">(<span class="params">route: Route, redirect: <span class="built_in">Function</span>, next: <span class="built_in">Function</span></span>) =&gt;</span> <span class="keyword">void</span>;</div><div class="line">  meta?: any;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+    <h1>Router 构造配置</h1>
+    <h1 id="Router-构造配置"><a href="#Router-构造配置" class="headerlink" title="Router 构造配置"></a>Router 构造配置</h1><h3 id="routes"><a href="#routes" class="headerlink" title="routes"></a>routes</h3><ul>
+<li><p>类型: <code>Array&lt;RouteConfig&gt;</code></p>
+<p><code>RouteConfig</code> 的类型定义：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">declare type RouteConfig = &#123;</div><div class="line">  <span class="attr">path</span>: string;</div><div class="line">  component?: Component;</div><div class="line">  name?: string; <span class="comment">// for named routes (命名路由)</span></div><div class="line">  components?: &#123; [name: string]: Component &#125;; <span class="comment">// for named views (命名视图组件)</span></div><div class="line">  redirect?: string | Location | <span class="built_in">Function</span>;</div><div class="line">  alias?: string | <span class="built_in">Array</span>&lt;string&gt;;</div><div class="line">  children?: <span class="built_in">Array</span>&lt;RouteConfig&gt;; <span class="comment">// for nested routes</span></div><div class="line">  beforeEnter?: <span class="function">(<span class="params">route: Route, redirect: <span class="built_in">Function</span>, next: <span class="built_in">Function</span></span>) =&gt;</span> <span class="keyword">void</span>;</div><div class="line">  meta?: any;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="mode"><a href="#mode" class="headerlink" title="mode"></a>mode</h3><ul>
-<li><p>type: <code>string</code></p>
+<li><p>类型: <code>string</code></p>
 </li>
-<li><p>default: <code>&quot;hash&quot; (in browser) | &quot;abstract&quot; (in Node.js)</code></p>
+<li><p>默认值: <code>&quot;hash&quot; (浏览器环境) | &quot;abstract&quot; (Node.js 环境)</code></p>
 </li>
-<li><p>available values: <code>&quot;hash&quot; | &quot;history&quot; | &quot;abstract&quot;</code></p>
-<p>Configure the router mode.</p>
+<li><p>可选值: <code>&quot;hash&quot; | &quot;history&quot; | &quot;abstract&quot;</code></p>
+<p>配置路由模式:</p>
 <ul>
-<li><p><code>hash</code>: uses the URL hash for routing. Works in all Vue-supported browsers, including those that do not support HTML5 History API.</p>
+<li><p><code>hash</code>: 使用 URL hash 值来作路由。支持所有浏览器，包括不支持 HTML5 History Api 的浏览器。</p>
 </li>
-<li><p><code>history</code>: requires HTML5 History API and server config. See <a href="../essentials/history.md">HTML5 History Mode</a>.</p>
+<li><p><code>history</code>: 依赖 HTML5 History API 和服务器配置。查看 <a href="../essentials/history-mode.md">HTML5 History 模式</a>.</p>
 </li>
-<li><p><code>abstract</code>: works in all JavaScript environments, e.g. server-side with Node.js. <strong>The router will automatically be forced into this mode if no browser API is present.</strong></p>
+<li><p><code>abstract</code>: 支持所有 JavaScript 运行环境，如 Node.js 服务器端。<strong>如果发现没有浏览器的 API，路由会自动强制进入这个模式。</strong></p>
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="base"><a href="#base" class="headerlink" title="base"></a>base</h3><ul>
-<li><p>type: <code>string</code></p>
+<li><p>类型: <code>string</code></p>
 </li>
-<li><p>default: <code>&quot;/&quot;</code></p>
-<p>The base URL of the app. For example, if the entire single page application is served under <code>/app/</code>, then <code>base</code> should use the value <code>&quot;/app/&quot;</code>.</p>
+<li><p>默认值: <code>&quot;/&quot;</code></p>
+<p>应用的基路径。例如，如果整个单页应用服务在 <code>/app/</code> 下，然后 <code>base</code> 就应该设为 <code>&quot;/app/&quot;</code>。</p>
 </li>
 </ul>
 <h3 id="linkActiveClass"><a href="#linkActiveClass" class="headerlink" title="linkActiveClass"></a>linkActiveClass</h3><ul>
-<li><p>type: <code>string</code></p>
+<li><p>类型: <code>string</code></p>
 </li>
-<li><p>default: <code>&quot;router-link-active&quot;</code></p>
-<p>Globally configure <code>&lt;router-link&gt;</code> default active class. Also see <a href="router-link.md">router-link</a>.</p>
+<li><p>默认值: <code>&quot;router-link-active&quot;</code></p>
+<p>全局配置 <code>&lt;router-link&gt;</code> 的默认『激活 class 类名』。参考 <a href="router-link.md">router-link</a>.</p>
 </li>
 </ul>
 <h3 id="scrollBehavior"><a href="#scrollBehavior" class="headerlink" title="scrollBehavior"></a>scrollBehavior</h3><ul>
-<li><p>type: <code>Function</code></p>
-<p>Signature:</p>
+<li><p>类型: <code>Function</code></p>
+<p>签名:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">(</div><div class="line">  to: Route,</div><div class="line">  from: Route,</div><div class="line">  savedPosition?: &#123; x: number, y: number &#125;</div><div class="line">) =&gt; &#123; x: number, y: number &#125; | &#123; selector: string &#125; | ?&#123;&#125;</div></pre></td></tr></table></figure>
-<p>For more details see <a href="../advanced/scroll-behavior.md">Scroll Behavior</a>.</p>
+<p>更多详情参考 <a href="../advanced/scroll-behavior.md">滚动行为</a>.</p>
 </li>
 </ul>
 

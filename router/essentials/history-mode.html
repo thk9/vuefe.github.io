@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>History模式 - vue.js</title>
+        <title>HTML5 History 模式 - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -137,7 +137,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">匹配动态路由</a>
+                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">动态路由匹配</a>
                 </li>
             
                 
@@ -153,7 +153,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/navigation.html" class="sidebar-link">应用导航</a>
+                    <a href="/router/essentials/navigation.html" class="sidebar-link">编程式的导航</a>
                 </li>
             
                 
@@ -161,7 +161,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-routes.html" class="sidebar-link">具名路由</a>
+                    <a href="/router/essentials/named-routes.html" class="sidebar-link">命名路由</a>
                 </li>
             
                 
@@ -169,7 +169,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-views.html" class="sidebar-link">具名视图</a>
+                    <a href="/router/essentials/named-views.html" class="sidebar-link">命名视图</a>
                 </li>
             
                 
@@ -177,7 +177,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向和链接</a>
+                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向 和 别名</a>
                 </li>
             
                 
@@ -185,7 +185,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/history-mode.html" class="sidebar-link current">History模式</a>
+                    <a href="/router/essentials/history-mode.html" class="sidebar-link current">HTML5 History 模式</a>
                 </li>
             
                 
@@ -195,7 +195,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">Navigation Guards</a>
+                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">导航钩子</a>
                 </li>
             
                 
@@ -203,7 +203,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/meta.html" class="sidebar-link">Route Meta Fields</a>
+                    <a href="/router/advanced/meta.html" class="sidebar-link">路由元信息</a>
                 </li>
             
                 
@@ -211,7 +211,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡</a>
+                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡动效</a>
                 </li>
             
                 
@@ -227,7 +227,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动</a>
+                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动行为</a>
                 </li>
             
                 
@@ -235,7 +235,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">异步加载</a>
+                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">路由懒加载</a>
                 </li>
             
                 
@@ -261,7 +261,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/route-object.html" class="sidebar-link">路由对象</a>
+                    <a href="/router/api/route-object.html" class="sidebar-link">路由信息对象</a>
                 </li>
             
                 
@@ -269,7 +269,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/options.html" class="sidebar-link">路由构造选项</a>
+                    <a href="/router/api/options.html" class="sidebar-link">Router 构造配置</a>
                 </li>
             
                 
@@ -277,7 +277,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/router-instance.html" class="sidebar-link">路由实例</a>
+                    <a href="/router/api/router-instance.html" class="sidebar-link">Router 实例</a>
                 </li>
             
                 
@@ -285,7 +285,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/component-injections.html" class="sidebar-link">组件注入</a>
+                    <a href="/router/api/component-injections.html" class="sidebar-link">对组件注入</a>
                 </li>
             
         </ul>
@@ -295,18 +295,19 @@
 
 <div class="content router with-sidebar ">
     	
-    <h1>History模式</h1>
-    <h1 id="HTML5-History-Mode"><a href="#HTML5-History-Mode" class="headerlink" title="HTML5 History Mode"></a>HTML5 History Mode</h1><p>The default mode for <code>vue-router</code> is hash mode - it uses the URL hash to simulate a full URL so that the page won’t be reloaded when the URL changes.</p>
-<p>To get rid of the ugly hash, we can use the router’s <strong>history mode</strong>, which leverages the <code>history.pushState</code> API to achieve URL navigation without page reload:</p>
+    <h1>HTML5 History 模式</h1>
+    <h1 id="HTML5-History-模式"><a href="#HTML5-History-模式" class="headerlink" title="HTML5 History 模式"></a>HTML5 History 模式</h1><p><code>vue-router</code> 默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。</p>
+<p>如果不想要很丑的 hash，我们可以用路由的 <strong>history 模式</strong>，这种模式充分利用 <code>history.pushState</code> API 来完成 URL 跳转而无须重新加载页面。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">mode</span>: <span class="string">'history'</span>,</div><div class="line">  <span class="attr">routes</span>: [...]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>But for this mode to work properly, you need to configure your server properly. When using history mode, the URL will look like a normal url, e.g. <code>http://yoursite.com/user/id</code>. Since our app is a single page client side app, without proper server configuration the users will get a 404 if they visit that URL directly.</p>
-<p>Therefore you need to add a catch-all fallback route to your server: if the URL doesn’t match any static assets, it should serve the same <code>index.html</code> page that your app lives in.</p>
-<h2 id="Example-Server-Configurations"><a href="#Example-Server-Configurations" class="headerlink" title="Example Server Configurations"></a>Example Server Configurations</h2><h4 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h4><figure class="highlight apache"><table><tr><td class="code"><pre><div class="line"><span class="section">&lt;IfModule mod_rewrite.c&gt;</span></div><div class="line">  <span class="attribute"><span class="nomarkup">RewriteEngine</span></span> <span class="literal">On</span></div><div class="line">  <span class="attribute">RewriteBase</span> /</div><div class="line">  <span class="attribute"><span class="nomarkup">RewriteRule</span></span> ^index\.html$ -<span class="meta"> [L]</span></div><div class="line">  <span class="attribute"><span class="nomarkup">RewriteCond</span></span> <span class="variable">%&#123;REQUEST_FILENAME&#125;</span> !-f</div><div class="line">  <span class="attribute"><span class="nomarkup">RewriteCond</span></span> <span class="variable">%&#123;REQUEST_FILENAME&#125;</span> !-d</div><div class="line">  <span class="attribute"><span class="nomarkup">RewriteRule</span></span> . /index.html<span class="meta"> [L]</span></div><div class="line"><span class="section">&lt;/IfModule&gt;</span></div></pre></td></tr></table></figure>
+<p>当你使用 history 模式时，URL 就像正常的 url，例如 <code>http://yoursite.com/user/id</code>，也好看！</p>
+<p>不过这种模式要玩好，还需要后台配置支持。因为我们的应用是个单页客户端应用，如果后台没有正确的配置，当用户在浏览器直接访问 <code>http://oursite.com/user/id</code> 就会返回 404，这就不好看了。</p>
+<p>所以呢，你要在服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 <code>index.html</code> 页面，这个页面就是你 app 依赖的页面。</p>
+<h2 id="后端配置例子"><a href="#后端配置例子" class="headerlink" title="后端配置例子"></a>后端配置例子</h2><h4 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h4><figure class="highlight apache"><table><tr><td class="code"><pre><div class="line"><span class="section">&lt;IfModule mod_rewrite.c&gt;</span></div><div class="line">  <span class="attribute"><span class="nomarkup">RewriteEngine</span></span> <span class="literal">On</span></div><div class="line">  <span class="attribute">RewriteBase</span> /</div><div class="line">  <span class="attribute"><span class="nomarkup">RewriteRule</span></span> ^index\.html$ -<span class="meta"> [L]</span></div><div class="line">  <span class="attribute"><span class="nomarkup">RewriteCond</span></span> <span class="variable">%&#123;REQUEST_FILENAME&#125;</span> !-f</div><div class="line">  <span class="attribute"><span class="nomarkup">RewriteCond</span></span> <span class="variable">%&#123;REQUEST_FILENAME&#125;</span> !-d</div><div class="line">  <span class="attribute"><span class="nomarkup">RewriteRule</span></span> . /index.html<span class="meta"> [L]</span></div><div class="line"><span class="section">&lt;/IfModule&gt;</span></div></pre></td></tr></table></figure>
 <h4 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h4><figure class="highlight nginx"><table><tr><td class="code"><pre><div class="line"><span class="attribute">location</span> / &#123;</div><div class="line">  <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.html;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="Node-js-Express"><a href="#Node-js-Express" class="headerlink" title="Node.js (Express)"></a>Node.js (Express)</h4><p><a href="https://github.com/bripkens/connect-history-api-fallback" target="_blank" rel="external">https://github.com/bripkens/connect-history-api-fallback</a></p>
-<h2 id="Caveats"><a href="#Caveats" class="headerlink" title="Caveats"></a>Caveats</h2><p>There is a caveats to this, because that your server will no longer report 404 errors as all paths will serve up your <code>index.html</code> file. To get around the issue, you should implement a catch-all route within your Vue app to show a 404 page:</p>
+<h2 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h2><p>给个警告，因为这么做以后，你的服务器就不再返回 404 错误页面，因为对于所有路径都会返回 <code>index.html</code> 文件。为了避免这种情况，你应该在 Vue 应用里面覆盖所有的路由情况，然后在给出一个 404 页面。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">mode</span>: <span class="string">'history'</span>,</div><div class="line">  <span class="attr">routes</span>: [</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'*'</span>, <span class="attr">component</span>: NotFoundComponent &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>Alternatively, if you are using a Node.js server, you can implement the fallback by using the router on the server side to match the incoming URL, and respond with 404 if no route is matched.</p>
+<p>或者，如果你是用 Node.js 作后台，可以使用服务端的路由来匹配 URL，当没有匹配到路由的时候返回 404，从而实现 fallback。</p>
 
     
     <div class="footer">

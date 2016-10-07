@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>组件注入 - vue.js</title>
+        <title>对组件注入 - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -137,7 +137,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">匹配动态路由</a>
+                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">动态路由匹配</a>
                 </li>
             
                 
@@ -153,7 +153,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/navigation.html" class="sidebar-link">应用导航</a>
+                    <a href="/router/essentials/navigation.html" class="sidebar-link">编程式的导航</a>
                 </li>
             
                 
@@ -161,7 +161,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-routes.html" class="sidebar-link">具名路由</a>
+                    <a href="/router/essentials/named-routes.html" class="sidebar-link">命名路由</a>
                 </li>
             
                 
@@ -169,7 +169,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-views.html" class="sidebar-link">具名视图</a>
+                    <a href="/router/essentials/named-views.html" class="sidebar-link">命名视图</a>
                 </li>
             
                 
@@ -177,7 +177,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向和链接</a>
+                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向 和 别名</a>
                 </li>
             
                 
@@ -185,7 +185,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/history-mode.html" class="sidebar-link">History模式</a>
+                    <a href="/router/essentials/history-mode.html" class="sidebar-link">HTML5 History 模式</a>
                 </li>
             
                 
@@ -195,7 +195,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">Navigation Guards</a>
+                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">导航钩子</a>
                 </li>
             
                 
@@ -203,7 +203,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/meta.html" class="sidebar-link">Route Meta Fields</a>
+                    <a href="/router/advanced/meta.html" class="sidebar-link">路由元信息</a>
                 </li>
             
                 
@@ -211,7 +211,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡</a>
+                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡动效</a>
                 </li>
             
                 
@@ -227,7 +227,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动</a>
+                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动行为</a>
                 </li>
             
                 
@@ -235,7 +235,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">异步加载</a>
+                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">路由懒加载</a>
                 </li>
             
                 
@@ -261,7 +261,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/route-object.html" class="sidebar-link">路由对象</a>
+                    <a href="/router/api/route-object.html" class="sidebar-link">路由信息对象</a>
                 </li>
             
                 
@@ -269,7 +269,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/options.html" class="sidebar-link">路由构造选项</a>
+                    <a href="/router/api/options.html" class="sidebar-link">Router 构造配置</a>
                 </li>
             
                 
@@ -277,7 +277,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/router-instance.html" class="sidebar-link">路由实例</a>
+                    <a href="/router/api/router-instance.html" class="sidebar-link">Router 实例</a>
                 </li>
             
                 
@@ -285,7 +285,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/component-injections.html" class="sidebar-link current">组件注入</a>
+                    <a href="/router/api/component-injections.html" class="sidebar-link current">对组件注入</a>
                 </li>
             
         </ul>
@@ -295,18 +295,18 @@
 
 <div class="content router with-sidebar ">
     	
-    <h1>组件注入</h1>
-    <h1 id="Component-Injections"><a href="#Component-Injections" class="headerlink" title="Component Injections"></a>Component Injections</h1><h3 id="Injected-Properties"><a href="#Injected-Properties" class="headerlink" title="Injected Properties"></a>Injected Properties</h3><p>These properties are injected into every child component by passing the router instance to the root instance as the <code>router</code> option.</p>
+    <h1>对组件注入</h1>
+    <h1 id="对组件注入"><a href="#对组件注入" class="headerlink" title="对组件注入"></a>对组件注入</h1><h3 id="注入的属性"><a href="#注入的属性" class="headerlink" title="注入的属性"></a>注入的属性</h3><p>通过在 Vue 根实例的 <code>router</code> 配置传入 router 实例，下面这些属性成员会被注入到每个子组件。</p>
 <ul>
-<li><h4 id="router"><a href="#router" class="headerlink" title="$router"></a>$router</h4><p>The router instance.</p>
+<li><h4 id="router"><a href="#router" class="headerlink" title="$router"></a>$router</h4><p>router 实例.</p>
 </li>
-<li><h4 id="route"><a href="#route" class="headerlink" title="$route"></a>$route</h4><p>The current active <a href="route-object.md">Route</a>. This property is read-only and its properties are immutable, but it can be watched.</p>
+<li><h4 id="route"><a href="#route" class="headerlink" title="$route"></a>$route</h4><p>当前激活的 <a href="route-object.md">路由信息对象</a>。这个属性是只读的，里面的属性是 immutable（不可变） 的，不过你可以 watch（监测变化） 它。</p>
 </li>
 </ul>
-<h3 id="Enabled-Options"><a href="#Enabled-Options" class="headerlink" title="Enabled Options"></a>Enabled Options</h3><ul>
+<h3 id="允许的额外配置"><a href="#允许的额外配置" class="headerlink" title="允许的额外配置"></a>允许的额外配置</h3><ul>
 <li><strong>beforeRouteEnter</strong></li>
 <li><p><strong>beforeRouteLeave</strong></p>
-<p>See <a href="../advanced/navigation-guards.md#incomponent-guards">In Component Guards</a>.</p>
+<p>查看 <a href="../advanced/navigation-guards.md#incomponent-guards">组件级导航钩子</a>.</p>
 </li>
 </ul>
 

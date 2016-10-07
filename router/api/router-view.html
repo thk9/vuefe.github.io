@@ -137,7 +137,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">匹配动态路由</a>
+                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">动态路由匹配</a>
                 </li>
             
                 
@@ -153,7 +153,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/navigation.html" class="sidebar-link">应用导航</a>
+                    <a href="/router/essentials/navigation.html" class="sidebar-link">编程式的导航</a>
                 </li>
             
                 
@@ -161,7 +161,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-routes.html" class="sidebar-link">具名路由</a>
+                    <a href="/router/essentials/named-routes.html" class="sidebar-link">命名路由</a>
                 </li>
             
                 
@@ -169,7 +169,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/named-views.html" class="sidebar-link">具名视图</a>
+                    <a href="/router/essentials/named-views.html" class="sidebar-link">命名视图</a>
                 </li>
             
                 
@@ -177,7 +177,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向和链接</a>
+                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向 和 别名</a>
                 </li>
             
                 
@@ -185,7 +185,7 @@
                 
                 
                 <li>
-                    <a href="/router/essentials/history-mode.html" class="sidebar-link">History模式</a>
+                    <a href="/router/essentials/history-mode.html" class="sidebar-link">HTML5 History 模式</a>
                 </li>
             
                 
@@ -195,7 +195,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">Navigation Guards</a>
+                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">导航钩子</a>
                 </li>
             
                 
@@ -203,7 +203,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/meta.html" class="sidebar-link">Route Meta Fields</a>
+                    <a href="/router/advanced/meta.html" class="sidebar-link">路由元信息</a>
                 </li>
             
                 
@@ -211,7 +211,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡</a>
+                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡动效</a>
                 </li>
             
                 
@@ -227,7 +227,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动</a>
+                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动行为</a>
                 </li>
             
                 
@@ -235,7 +235,7 @@
                 
                 
                 <li>
-                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">异步加载</a>
+                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">路由懒加载</a>
                 </li>
             
                 
@@ -261,7 +261,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/route-object.html" class="sidebar-link">路由对象</a>
+                    <a href="/router/api/route-object.html" class="sidebar-link">路由信息对象</a>
                 </li>
             
                 
@@ -269,7 +269,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/options.html" class="sidebar-link">路由构造选项</a>
+                    <a href="/router/api/options.html" class="sidebar-link">Router 构造配置</a>
                 </li>
             
                 
@@ -277,7 +277,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/router-instance.html" class="sidebar-link">路由实例</a>
+                    <a href="/router/api/router-instance.html" class="sidebar-link">Router 实例</a>
                 </li>
             
                 
@@ -285,7 +285,7 @@
                 
                 
                 <li>
-                    <a href="/router/api/component-injections.html" class="sidebar-link">组件注入</a>
+                    <a href="/router/api/component-injections.html" class="sidebar-link">对组件注入</a>
                 </li>
             
         </ul>
@@ -296,20 +296,20 @@
 <div class="content router with-sidebar ">
     	
     <h1>router-view</h1>
-    <h1 id="lt-router-view-gt"><a href="#lt-router-view-gt" class="headerlink" title="&lt;router-view&gt;"></a><code>&lt;router-view&gt;</code></h1><p>The <code>&lt;router-view&gt;</code> component is a functional component that renders the matched component for the given path. Components rendered in <code>&lt;router-view&gt;</code> can also contain its own <code>&lt;router-view&gt;</code>, which will render components for nested paths.</p>
-<h3 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h3><ul>
+    <h1 id="lt-router-view-gt"><a href="#lt-router-view-gt" class="headerlink" title="&lt;router-view&gt;"></a><code>&lt;router-view&gt;</code></h1><p><code>&lt;router-view&gt;</code> 组件是一个 functional 组件，渲染路径匹配到的视图组件。<code>&lt;router-view&gt;</code> 渲染的组件还可以内嵌自己的 <code>&lt;router-view&gt;</code>，根据嵌套路径，渲染嵌套组件。</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
 <li><p><strong>name</strong></p>
 <ul>
-<li><p>type: <code>string</code></p>
+<li><p>类型: <code>string</code></p>
 </li>
-<li><p>default: <code>&quot;default&quot;</code></p>
-</li>
-</ul>
-<p>When a <code>&lt;router-view&gt;</code> has a name, it will render the component with the corresponding name in the matched route record’s <code>components</code> option. See <a href="../essentials/named-views.md">Named Views</a> for an example.</p>
+<li><p>默认值: <code>&quot;default&quot;</code></p>
 </li>
 </ul>
-<h3 id="Behavior"><a href="#Behavior" class="headerlink" title="Behavior"></a>Behavior</h3><p>Any non-name props will be passed along to the rendered component, however most of the time the per-route data is contained in the route’s params.</p>
-<p>Since it’s just a component, it works with <code>&lt;transition&gt;</code> and <code>&lt;keep-alive&gt;</code>. When using the both together, make sure to use <code>&lt;keep-alive&gt;</code> inside:</p>
+</li>
+</ul>
+<p>如果 <code>&lt;router-view&gt;</code>设置了名称，则会渲染对应的路由配置中 <code>components</code> 下的相应组件。查看 <a href="../essentials/named-views.md">命名视图</a> 中的例子。</p>
+<h3 id="行为表现"><a href="#行为表现" class="headerlink" title="行为表现"></a>行为表现</h3><p>其他属性（非 router-view 使用的属性）都直接传给渲染的组件，<br>很多时候，每个路由的数据都是包含在路由参数中。</p>
+<p>因为它也是个组件，所以可以配合 <code>&lt;transition&gt;</code> 和 <code>&lt;keep-alive&gt;</code> 使用。如果两个结合一起用，要确保在内层使用 <code>&lt;keep-alive&gt;</code>：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure>
 
     
