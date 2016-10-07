@@ -1173,9 +1173,9 @@
 </ul>
 <h2 id="特殊元素"><a href="#特殊元素" class="headerlink" title="特殊元素"></a>特殊元素</h2><h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><ul>
 <li><p><strong>Expects:</strong> <code>string</code></p>
-<p><code>key</code>的特殊属性主要用在Vue的虚拟DOM算法，在新旧nodes对比时辨识VNodes。如果不使用key，Vue会使用一种最大限度减少动态元素并且尽可能的尝试修复/再利用相同类型元素的算法。使用key，它会基于key的变化重新排列元素顺序，并且会移除keys不存在的元素。</p>
+<p><code>key</code> 的特殊属性主要用在 Vue的虚拟DOM算法，在新旧nodes对比时辨识VNodes。如果不使用key，Vue会使用一种最大限度减少动态元素并且尽可能的尝试修复/再利用相同类型元素的算法。使用key，它会基于key的变化重新排列元素顺序，并且会移除key不存在的元素。</p>
 <p>相同公共父元素的子元素必须有<strong>独特的key</strong>。重复的key会造成渲染错误。</p>
-<p>最常见的用例是结合<code>v-for</code>:</p>
+<p>最常见的用例是结合 <code>v-for</code>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>它也可以用于强制替换元素/组件而不是重复使用它。当你遇到如下场景时它可能会很有用:</p>
 <ul>
@@ -1184,23 +1184,23 @@
 </ul>
 <p>例如:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">:key</span>=<span class="string">"text"</span>&gt;</span>&#123;&#123; text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>When <code>text</code> changes, the <code>&lt;span&gt;</code> will always be replaced instead of patched, so a transition will be triggered.</p>
+<p>当 <code>text</code> 发生改变时，<code>&lt;span&gt;</code> 会随时被更新，因此会触发过度。</p>
 </li>
 </ul>
 <h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><ul>
 <li><p><strong>Expects:</strong> <code>string</code></p>
-<p><code>ref</code> is used to register a reference to an element or a child component. The reference will be registered under the parent component’s <code>$refs</code> object. If used on a plain DOM element, the reference will be that element; if used on a child component, the reference will be component instance:</p>
+<p><code>ref</code> 被用来给元素或子组件注册引用信息。引用信息会根据父组件的 <code>$refs</code> 对象进行注册。如果在普通的DOM元素上使用，引用信息就是元素; 如果用在子组件上，引用信息就是组件实例:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- vm.$refs.p will the DOM node --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">"p"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- vm.$refs.child will be the child comp instance --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">child-comp</span> <span class="attr">ref</span>=<span class="string">"child"</span>&gt;</span><span class="tag">&lt;/<span class="name">child-comp</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>When used on elements/components with <code>v-for</code>, the registered reference will be an Array containing DOM nodes or component instances.</p>
-<p>An important note about the ref registration timing: because the refs themselves are created as a result of the render function, you cannot access them on the initial render - they don’t exist yet! <code>$refs</code> is also non-reactive, therefore you should not attempt to use it in templates for data-binding.</p>
+<p>当 <code>v-for</code> 用于元素或组件的时候，引用信息将是包含DOM节点或组件实例数组。</p>
+<p>关于ref注册时间的重要说明: 因为ref本身是作为渲染结果被创建的，在初始渲染的时候你不能访问它们 - 它们还不存在！<code>$refs</code> 也不能使用，因此你不应该试图用它在模版中做数据绑定。</p>
 </li>
 <li><p><strong>See also:</strong> <a href="/guide/components.html#Child-Component-Refs">Child Component Refs</a></p>
 </li>
 </ul>
 <h3 id="slot"><a href="#slot" class="headerlink" title="slot"></a>slot</h3><ul>
 <li><p><strong>Expects:</strong> <code>string</code></p>
-<p>Used on content inserted into child components to indicate which named slot the content belongs to.</p>
-<p>For detailed usage, see the guide section linked below.</p>
+<p>用于标记往哪个slot中插入子组件内容。</p>
+<p>详细用法，请参考下面指南部分的链接。</p>
 </li>
 <li><p><strong>See also:</strong> <a href="/guide/components.html#Named-Slots">Named Slots</a></p>
 </li>
