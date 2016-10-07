@@ -673,106 +673,106 @@
 <li><p><strong>另见:</strong> <a href="/guide/render-function.html#Functional-Components">Functional Components</a></p>
 </li>
 </ul>
-<h2 id="Instance-Properties"><a href="#Instance-Properties" class="headerlink" title="Instance Properties"></a>Instance Properties</h2><h3 id="vm-data"><a href="#vm-data" class="headerlink" title="vm.$data"></a>vm.$data</h3><ul>
-<li><p><strong>Type:</strong> <code>Object</code></p>
+<h2 id="实例属性"><a href="#实例属性" class="headerlink" title="实例属性"></a>实例属性</h2><h3 id="vm-data"><a href="#vm-data" class="headerlink" title="vm.$data"></a>vm.$data</h3><ul>
+<li><p><strong>类型:</strong> <code>Object</code></p>
 </li>
-<li><p><strong>Details:</strong></p>
-<p>The data object that the Vue instance is observing. The Vue instance proxies access to the properties on its data object.</p>
+<li><p><strong>详细:</strong></p>
+<p>Vue 实例观察的数据对象。Vue 实例代理了对其 data 对象属性的访问。</p>
 </li>
-<li><p><strong>See also:</strong> <a href="#data">Options - data</a></p>
+<li><p><strong>另见:</strong> <a href="#data">选项 - data</a></p>
 </li>
 </ul>
 <h3 id="vm-el"><a href="#vm-el" class="headerlink" title="vm.$el"></a>vm.$el</h3><ul>
-<li><p><strong>Type:</strong> <code>HTMLElement</code></p>
+<li><p><strong>类型:</strong> <code>HTMLElement</code></p>
 </li>
-<li><p><strong>Read only</strong></p>
+<li><p><strong>只读</strong></p>
 </li>
-<li><p><strong>Details:</strong></p>
-<p>The root DOM element that the Vue instance is managing.</p>
+<li><p><strong>详细:</strong></p>
+<p>Vue 实例使用的根 DOM 元素。</p>
 </li>
 </ul>
 <h3 id="vm-options"><a href="#vm-options" class="headerlink" title="vm.$options"></a>vm.$options</h3><ul>
-<li><p><strong>Type:</strong> <code>Object</code></p>
+<li><p><strong>类型:</strong> <code>Object</code></p>
 </li>
-<li><p><strong>Read only</strong></p>
+<li><p><strong>只读</strong></p>
 </li>
-<li><p><strong>Details:</strong></p>
-<p>The instantiation options used for the current Vue instance. This is useful when you want to include custom properties in the options:</p>
+<li><p><strong>详细:</strong></p>
+<p>用于当前 Vue 实例的初始化选项。当选项中需要自定义属性时会有用处：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">customOption</span>: <span class="string">'foo'</span>,</div><div class="line">  <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.$options.customOption) <span class="comment">// -&gt; 'foo'</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="vm-parent"><a href="#vm-parent" class="headerlink" title="vm.$parent"></a>vm.$parent</h3><ul>
-<li><p><strong>Type:</strong> <code>Vue instance</code></p>
+<li><p><strong>类型:</strong> <code>Vue instance</code></p>
 </li>
-<li><p><strong>Read only</strong></p>
+<li><p><strong>只读</strong></p>
 </li>
-<li><p><strong>Details:</strong></p>
-<p>The parent instance, if the current instance has one.</p>
+<li><p><strong>详细:</strong></p>
+<p>父实例，如果当前实例有的话。</p>
 </li>
 </ul>
 <h3 id="vm-root"><a href="#vm-root" class="headerlink" title="vm.$root"></a>vm.$root</h3><ul>
-<li><p><strong>Type:</strong> <code>Vue instance</code></p>
+<li><p><strong>类型:</strong> <code>Vue instance</code></p>
 </li>
-<li><p><strong>Read only</strong></p>
+<li><p><strong>只读</strong></p>
 </li>
-<li><p><strong>Details:</strong></p>
-<p>The root Vue instance of the current component tree. If the current instance has no parents this value will be itself.</p>
+<li><p><strong>详细:</strong></p>
+<p>当前组件树的根 Vue 实例。如果当前实例没有父实例，属性值将会是其自身。</p>
 </li>
 </ul>
 <h3 id="vm-children"><a href="#vm-children" class="headerlink" title="vm.$children"></a>vm.$children</h3><ul>
-<li><p><strong>Type:</strong> <code>Array&lt;Vue instance&gt;</code></p>
+<li><p><strong>类型:</strong> <code>Array&lt;Vue instance&gt;</code></p>
 </li>
-<li><p><strong>Read only</strong></p>
+<li><p><strong>只读</strong></p>
 </li>
-<li><p><strong>Details:</strong></p>
-<p>The direct child components of the current instance. <strong>Note there’s no order guarantee for <code>$children</code>, and it is not reactive.</strong> If you find yourself trying to use <code>$children</code> for data binding, consider using an Array and <code>v-for</code> to generate child components, and use the Array as the source of truth.</p>
+<li><p><strong>详细:</strong></p>
+<p>当前实例的直接子组件。<strong>需要注意 <code>$children</code> 并不保证顺序，也不是响应式的。</strong>如果你发现自己正在尝试使用 <code>$children</code> 来进行数据绑定，考虑使用一个数组配合 <code>v-for</code> 来生成子组件，并且使用 Array 作为真正的来源。</p>
 </li>
 </ul>
 <h3 id="vm-slots"><a href="#vm-slots" class="headerlink" title="vm.$slots"></a>vm.$slots</h3><ul>
-<li><p><strong>Type:</strong> <code>Object</code></p>
+<li><p><strong>类型:</strong> <code>Object</code></p>
 </li>
-<li><p><strong>Read only</strong></p>
+<li><p><strong>只读</strong></p>
 </li>
-<li><p><strong>Details:</strong></p>
-<p>Used to access content <a href="/guide/components.html#Content-Distribution-with-Slots">distributed by slots</a>. Each <a href="/guide/components.html#Named-Slots">named slot</a> has its own corresponding property (e.g. the contents of <code>slot=&quot;foo&quot;</code> will be found at <code>vm.$slots.foo</code>). The <code>default</code> property contains any nodes not included in a named slot.</p>
-<p>Accessing <code>vm.$slots</code> is most useful when writing a component with a <a href="/guide/render-function.html">render function</a>.</p>
+<li><p><strong>详细:</strong></p>
+<p>用来访问被 <a href="/guide/components.html#Content-Distribution-with-Slots">slot 分发</a>的内容。每个<a href="/guide/components.html#Named-Slots">具名 slot</a> 有其响应的属性（例如：<code>slot=&quot;foo&quot;</code> 中的内容将会在 <code>vm.$slots.foo</code> 中被找到）。<code>default</code> 属性包括了所有没有被包含在一个具名 slot 中的节点。</p>
+<p>在使用 <a href="/guide/render-function.html">render 函数</a>书写一个组件时，访问 <code>vm.$slots</code> 最有帮助。</p>
 </li>
-<li><p><strong>Example:</strong></p>
+<li><p><strong>示例:</strong></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">blog-post</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">slot</span>=<span class="string">"header"</span>&gt;</span></div><div class="line">    About Me</div><div class="line">  <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Here's some page content, which will be included in vm.$slots.default, because it's not inside a named slot.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"footer"</span>&gt;</span></div><div class="line">    Copyright 2016 Evan You</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>If I have some content down here, it will also be included in vm.$slots.default.<span class="tag">&lt;/<span class="name">p</span>&gt;</span>.</div><div class="line"><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'blog-post'</span>, &#123;</div><div class="line">  <span class="attr">render</span>: <span class="function"><span class="keyword">function</span> (<span class="params">createElement</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> header = <span class="keyword">this</span>.$slots.header</div><div class="line">    <span class="keyword">var</span> body   = <span class="keyword">this</span>.$slots.default</div><div class="line">    <span class="keyword">var</span> footer = <span class="keyword">this</span>.$slots.footer</div><div class="line">    <span class="keyword">return</span> createElement(<span class="string">'div'</span>, [</div><div class="line">      createElement(<span class="string">'header'</span>, header)</div><div class="line">      createElement(<span class="string">'main'</span>, body)</div><div class="line">      createElement(<span class="string">'footer'</span>, footer)</div><div class="line">    ])</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>See also:</strong></p>
+<li><p><strong>另见:</strong></p>
 <ul>
-<li><a href="#slot"><code>&lt;slot&gt;</code> Component</a></li>
-<li><a href="/guide/components.html#Content-Distribution-with-Slots">Content Distribution with Slots</a></li>
-<li><a href="/guide/render-function.html">Render Functions</a></li>
+<li><a href="#slot"><code>&lt;slot&gt;</code> 组件</a></li>
+<li><a href="/guide/components.html#Content-Distribution-with-Slots">使用 Slots 进行内容分发</a></li>
+<li><a href="/guide/render-function.html">Render 函数</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="vm-refs"><a href="#vm-refs" class="headerlink" title="vm.$refs"></a>vm.$refs</h3><ul>
-<li><p><strong>Type:</strong> <code>Object</code></p>
+<li><p><strong>类型:</strong> <code>Object</code></p>
 </li>
-<li><p><strong>Read only</strong></p>
+<li><p><strong>只读</strong></p>
 </li>
-<li><p><strong>Details:</strong></p>
-<p>An object that holds child components that have <code>ref</code> registered.</p>
+<li><p><strong>详细:</strong></p>
+<p>一个对象，其中包含了所有拥有 <code>ref</code> 注册的子组件。</p>
 </li>
-<li><p><strong>See also:</strong></p>
+<li><p><strong>另见:</strong></p>
 <ul>
-<li><a href="/guide/components.html#Child-Component-Refs">Child Component Refs</a></li>
+<li><a href="/guide/components.html#Child-Component-Refs">子组件引用</a></li>
 <li><a href="#ref">ref</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="vm-isServer"><a href="#vm-isServer" class="headerlink" title="vm.$isServer"></a>vm.$isServer</h3><ul>
-<li><p><strong>Type:</strong> <code>boolean</code></p>
+<li><p><strong>类型:</strong> <code>boolean</code></p>
 </li>
-<li><p><strong>Read only</strong></p>
+<li><p><strong>只读</strong></p>
 </li>
-<li><p><strong>Details:</strong></p>
-<p>Whether the current Vue instance is running on the server.</p>
+<li><p><strong>详细:</strong></p>
+<p>当前 Vue 实例是否运行于服务器。</p>
 </li>
-<li><p><strong>See also:</strong> <a href="/guide/ssr.html">Server-Side Rendering</a></p>
+<li><p><strong>另见:</strong> <a href="/guide/ssr.html">服务端渲染</a></p>
 </li>
 </ul>
 <h2 id="Instance-Methods-Data"><a href="#Instance-Methods-Data" class="headerlink" title="Instance Methods / Data"></a>Instance Methods / Data</h2><h3 id="vm-watch">vm.$watch( expOrFn, callback, [options] )</h3>
