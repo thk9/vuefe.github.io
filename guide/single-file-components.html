@@ -365,48 +365,48 @@
 <div class="content guide with-sidebar single-file-components-guide">
     	
     <h1>单文件组件</h1>
-    <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>In many Vue projects, global components will be defined using <code>Vue.component</code>, followed by <code>new Vue({ el: &#39;#container &#39;})</code> to target a container element in the body of every page.</p>
-<p>This can work very well for small to medium-sized projects, where JavaScript is only used to enhance certain views. In more complex projects however, or when your frontend is entirely driven by JavaScript, these disadvantages become apparent:</p>
+    <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在很多Vue项目中，全局组件使用 <code>Vue.component</code> 来定义，紧接着用 <code>new Vue({ el: &#39;#container &#39;})</code> 在每个页面内指定一个容器元素。</p>
+<p>当 JavaScript 只是用来增强某个视图的时候，这种方案在中小型项目中工作得很好。然而在更复杂的项目中，或者当你的前端完全采用 JavaScript 驱动的时候，以下弊端就显现出来：</p>
 <ul>
-<li><strong>Global definitions</strong> force unique names for every component</li>
-<li><strong>String templates</strong> lack syntax highlighting and require ugly slashes for multiline HTML</li>
-<li><strong>No CSS support</strong> means that while HTML and JavaScript are modularized into components, CSS is conspicuously left out</li>
-<li><strong>No build step</strong> restricts us to HTML and ES5 JavaScript, rather than preprocessors like Pug (formerly Jade) and Babel</li>
+<li><strong>全局定义(Global definitions)</strong>  强制要求每个 component 中的命名不得重复</li>
+<li><strong>字符串模板(String templates)</strong>  缺乏语法高亮，在 HTML 有多行的时候，需要用到丑陋的 <code>/</code></li>
+<li><strong>不支持CSS(No CSS support)</strong>  意味着当 HTML 和 JavaScript 在组件中都是模块化时，CSS 明显被遗漏</li>
+<li><strong>没有构建步骤(No build step)</strong>  限制只能使用 HTML 和 ES5 JavaScript,  而不能使用预处理器，如 Pug (formerly Jade) 和 Babel</li>
 </ul>
-<p>All of these are solved by <strong>single-file components</strong> with a <code>.vue</code> extension, made possible with build tools such as Webpack or Browserify.</p>
-<p>Here’s a simple example of a file we’ll call <code>Hello.vue</code>:</p>
+<p>文件扩展名为 <code>.vue</code> 的 <strong>single-file components(单文件组件)</strong> 正是用来解决以上所有的问题，并且还可以使用 Webpack 或 Browserify 等开发工具。</p>
+<p>这是一个文件名为 <code>Hello.vue</code> 的简单实例：</p>
 <p><img src="/images/vue-component.png" style="display: block; margin: 30px auto"></p>
-<p>Now we get:</p>
+<p>现在我们获得：</p>
 <ul>
-<li><a href="https://github.com/vuejs/awesome-vue#syntax-highlighting" target="_blank" rel="external">Complete syntax highlighting</a></li>
-<li><a href="https://webpack.github.io/docs/commonjs.html" target="_blank" rel="external">CommonJS modules</a></li>
+<li><a href="https://github.com/vuejs/awesome-vue#syntax-highlighting" target="_blank" rel="external">完整语法高亮</a></li>
+<li><a href="https://webpack.github.io/docs/commonjs.html" target="_blank" rel="external">CommonJS 模块</a></li>
 <li><a href="https://github.com/vuejs/vue-loader/blob/master/docs/en/features/scoped-css.md" target="_blank" rel="external">Component-scoped CSS</a></li>
 </ul>
-<p>As promised, we can also use preprocessors such as Jade, Babel (with ES2015 modules), and Stylus for cleaner and more feature-rich components.</p>
+<p>正如我们说过的，我们可以使用预处理器来完成简洁和功能更丰富的组件，比如 Jade，Babel (with ES2015 modules)，和 Stylus。</p>
 <p><img src="/images/vue-component-with-preprocessors.png" style="display: block; margin: 30px auto"></p>
-<p>These specific languages are just examples. You could just as easily use Buble, TypeScript, SCSS, PostCSS - or whatever other preprocessors that help you be productive.</p>
+<p>这些特定的语言只是例子，你可以只是简单地使用 Buble，TypeScript，SCSS，PostCSS - 或者一些其他的能够帮助你提高生产力的预处理器。</p>
 <!-- TODO: include CSS modules once it's supported in vue-loader 9.x -->
-<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><h3 id="For-Users-New-to-Module-Build-Systems-in-JavaScript"><a href="#For-Users-New-to-Module-Build-Systems-in-JavaScript" class="headerlink" title="For Users New to Module Build Systems in JavaScript"></a>For Users New to Module Build Systems in JavaScript</h3><p>With <code>.vue</code> components, we’re entering the realm of advanced JavaScript applications. That means learning to use a few additional tools if you haven’t already:</p>
+<h2 id="启程"><a href="#启程" class="headerlink" title="启程"></a>启程</h2><h3 id="针对刚接触-JavaScript-模块开发系统的用户"><a href="#针对刚接触-JavaScript-模块开发系统的用户" class="headerlink" title="针对刚接触 JavaScript 模块开发系统的用户"></a>针对刚接触 JavaScript 模块开发系统的用户</h3><p>使用 <code>.vue</code> 组件，我们就进入了高级 JavaScirpt 应用领域。如果你没有准备好的话，意味着还需要学会使用一些附加的工具：</p>
 <ul>
-<li><p><strong>Node Package Manager (NPM)</strong>: Read the <a href="https://docs.npmjs.com/getting-started/what-is-npm" target="_blank" rel="external">Getting Started guide</a> through section <em>10: Uninstalling global packages</em>.</p>
+<li><p><strong>Node Package Manager (NPM)</strong>: 阅读 <a href="https://docs.npmjs.com/getting-started/what-is-npm" target="_blank" rel="external">Getting Started guide</a> 直到 <em>10: Uninstalling global packages</em>章节.</p>
 </li>
-<li><p><strong>Modern JavaScript with ES2015/16</strong>: Read through Babel’s <a href="https://babeljs.io/docs/learn-es2015/" target="_blank" rel="external">Learn ES2015 guide</a>. You don’t have to memorize every feature right now, but keep this page as a reference you can come back to.</p>
+<li><p><strong>Modern JavaScript with ES2015/16</strong>: 阅读 Babel 的 <a href="https://babeljs.io/docs/learn-es2015/" target="_blank" rel="external">Learn ES2015 guide</a>. 你现在不需要记住所有的细节特征，但是保留这个页面作为以后可以快速找到的参考。</p>
 </li>
 </ul>
-<p>After you’ve taken a day to dive into these resources, we recommend checking out the <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="external">webpack-simple</a> template. Follow the instructions and you should have a Vue project with <code>.vue</code> components, ES2015 and hot-reloading running in no time!</p>
-<p>The template uses <a href="https://webpack.github.io/" target="_blank" rel="external">Webpack</a>, a module bundler that takes a number of “modules” and then bundle them into your final application. To learn more about Webpack itself, <a href="https://www.youtube.com/watch?v=WQue1AN93YU" target="_blank" rel="external">this video</a> offers a good intro. Once you get past the basics, you might also want to check out <a href="https://egghead.io/courses/using-webpack-for-production-javascript-applications" target="_blank" rel="external">this advanced Webpack course on Egghead.io</a>.</p>
-<p>In Webpack, each module can be transformed by a “loader” before included into the bundle, and Vue offers the <a href="https://github.com/vuejs/vue-loader" target="_blank" rel="external">vue-loader</a> plugin to take care of translating <code>.vue</code> single-file components. The <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="external">webpack-simple</a> template has already set up everything for you, but if you’d like to learn more about how <code>.vue</code> components work with Webpack, you can read <a href="https://vue-loader.vuejs.org" target="_blank" rel="external">the docs for vue-loader</a>.</p>
-<h3 id="For-Advanced-Users"><a href="#For-Advanced-Users" class="headerlink" title="For Advanced Users"></a>For Advanced Users</h3><p>Whether you prefer Webpack or Browserify, we have documented templates for both simple and more complex projects. We recommend browsing <a href="https://github.com/vuejs-templates" target="_blank" rel="external">github.com/vuejs-templates</a>, picking a template that’s right for you, then following the instructions in the README to generate a new project with <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="external">vue-cli</a>.</p>
-<h2 id="Deploying-for-Production"><a href="#Deploying-for-Production" class="headerlink" title="Deploying for Production"></a>Deploying for Production</h2><p>The minified standalone build of Vue has already stripped out all the warnings for you for a smaller file size, but when you are using tools like Webpack or Browserify, you will need some additional configuration to achieve this.</p>
-<h3 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h3><p>Use Webpack’s <a href="http://webpack.github.io/docs/list-of-plugins.html#defineplugin" target="_blank" rel="external">DefinePlugin</a> to indicate a production environment, so that warning blocks can be automatically dropped by UglifyJS during minification. Example config:</p>
+<p>在你花一些时日了解这些资源之后，我们推荐你切换到 <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="external">webpack-simple</a> 模板参考。跟着这些指示，你应该有一个Vue 项目用到 <code>.vue</code> 组件, ES2015 和 任意时间 热重载( hot-reloading ) 运行!</p>
+<p>这个模板使用 <a href="https://webpack.github.io/" target="_blank" rel="external">Webpack</a>，一个模块打包工具，将多个模块打包成最终的应用。要学习更多的关于 Webpack 的内容， <a href="https://www.youtube.com/watch?v=WQue1AN93YU" target="_blank" rel="external">这个视频</a> 提供了很好的介绍。 当你学会这些基础， 你可能想切换到 <a href="https://egghead.io/courses/using-webpack-for-production-javascript-applications" target="_blank" rel="external">这个在 Egghead.io上的 高级 Webpack 课程</a>.</p>
+<p>在 Webpack中，每个模块被包含到 bundle 之前都由相应的一个 “loader” 来转换，Vue 也提供 <a href="https://github.com/vuejs/vue-loader" target="_blank" rel="external">vue-loader</a> 插件来保证 <code>.vue</code> 单文件组件 的转换. 这个 <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="external">webpack-simple</a> 模板已经为你准备好了所以的东西，但是如果你想了解更多关于 <code>.vue</code> 组件和 Webpack 一起时是如何工作的，你可以阅读 <a href="https://vue-loader.vuejs.org" target="_blank" rel="external">vue-loader 的文档</a>。</p>
+<h3 id="针对高级用户"><a href="#针对高级用户" class="headerlink" title="针对高级用户"></a>针对高级用户</h3><p>无论你喜欢 Webpack 或是 Browserify，我们为简单的和更复杂的项目都提供了一些文档模板。我们建议浏览 <a href="https://github.com/vuejs-templates" target="_blank" rel="external">github.com/vuejs-templates</a>，找到你需要的部分，然后参考 README 中的说明，使用 <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="external">vue-cli</a> 工具生成新的项目。</p>
+<h2 id="产品部署"><a href="#产品部署" class="headerlink" title="产品部署"></a>产品部署</h2><p>Vue 的压缩独立构建(minified standalone build)版本为了更小的文件体积已经为你移除了所有的警告，但是当你使用 Webpack 或是 Browserify 这样的工具的时候，你需要一些附加的配置来实现。</p>
+<h3 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h3><p>使用 Webpack 的 <a href="http://webpack.github.io/docs/list-of-plugins.html#defineplugin" target="_blank" rel="external">DefinePlugin</a> 指明产品环境，使得警告信息在压缩期间可以通过 UglifyJS 自动丢弃。配置实例:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  plugins: [</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</div><div class="line">      <span class="string">'process.env'</span>: &#123;</div><div class="line">        <span class="attr">NODE_ENV</span>: <span class="string">'"production"'</span></div><div class="line">      &#125;</div><div class="line">    &#125;),</div><div class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(&#123;</div><div class="line">      <span class="attr">compress</span>: &#123;</div><div class="line">        <span class="attr">warnings</span>: <span class="literal">false</span></div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Browserify"><a href="#Browserify" class="headerlink" title="Browserify"></a>Browserify</h3><ul>
-<li>Run your bundling command with <code>NODE_ENV</code> set to <code>&quot;production&quot;</code>. This tells <code>vueify</code> to avoid including hot-reload and development related code.</li>
-<li>Apply a global <a href="https://github.com/hughsk/envify" target="_blank" rel="external">envify</a> transform to your bundle. This allows the minifier to strip out all the warnings in Vue’s source code wrapped in env variable conditional blocks. For example:</li>
+<li>运行你的打包命令，并将 <code>NODE_ENV</code> 设置为 <code>&quot;production&quot;</code>，这会告诉 <code>vueify</code> 避免包含 hot-reload 和 相关开发代码。</li>
+<li>应用全局 <a href="https://github.com/hughsk/envify" target="_blank" rel="external">envify</a> 转换到你的 bundle 中。在环境变量条件块中添加，允许压缩工具从折叠的 Vue 的源代码中移除所有的警告信息，例如：</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">NODE_ENV=production browserify -g envify <span class="_">-e</span> main.js | uglifyjs -c -m &gt; build.js</div></pre></td></tr></table></figure>
 <ul>
-<li>To extract styles to a separate css file use a extract-css plugin which is included in vueify.</li>
+<li>使用 vueify 中的 extract-css 插件提取 样式(styles) 到一个独立的 css 文件中。</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">NODE_ENV=production browserify -g envify -p [ vueify/plugins/extract-css -o build.css ] <span class="_">-e</span> main.js | uglifyjs -c -m &gt; build.js</div></pre></td></tr></table></figure>
 
