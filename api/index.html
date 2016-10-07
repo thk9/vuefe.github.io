@@ -331,9 +331,9 @@
 <h2 id="选项-数据"><a href="#选项-数据" class="headerlink" title="选项 / 数据"></a>选项 / 数据</h2><h3 id="data"><a href="#data" class="headerlink" title="data"></a>data</h3><ul>
 <li><p><strong>类型：</strong> <code>Object | Function</code></p>
 </li>
-<li><p><strong>限制</strong> 组件中定义 data 只接受 <code>函数</code>。</p>
+<li><p><strong>限制:</strong> 组件中定义 data 只接受 <code>函数</code>。</p>
 </li>
-<li><p><strong>详细</strong></p>
+<li><p><strong>详细:</strong></p>
 <p>Vue 实例的数据对象。Vue 将会递归将 data 的属性转换为 getter/setter，从而让 data 的属性能够响应数据变化。<strong>对象必须是普通对象</strong>：浏览器 API 创建的原生对象，原型上的属性会被忽略。大概来说，data 应该只能是数据 - 不推荐观察拥有状态行为的对象。</p>
 <p>一旦观察过，不需要再次在数据对象上添加响应式属性。因此推荐在创建实例之前，就声明所有的根级响应式属性。</p>
 <p>实例创建之后，可以通过 <code>vm.$data</code> 访问原始数据对象。Vue 实例也代理了 data 对象上所有的属性，因此访问 <code>vm.a</code> 等价于访问 <code>vm.$data.a</code>。</p>
@@ -351,7 +351,8 @@
 <h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><ul>
 <li><p><strong>类型:</strong> <code>Array&lt;string&gt; | Object</code></p>
 </li>
-<li><p><strong>详细:</strong><br>props 可以是数组或对象，用于接收来自父组件的数据。props 可以是简单的数组，或者使用对象作为替代，对象允许配置高级选项，如类型检测、自定义校验和设置默认值。</p>
+<li><p><strong>详细:</strong></p>
+<p>props 可以是数组或对象，用于接收来自父组件的数据。props 可以是简单的数组，或者使用对象作为替代，对象允许配置高级选项，如类型检测、自定义校验和设置默认值。</p>
 </li>
 <li><p><strong>示例:</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 简单语法</span></div><div class="line">Vue.component(<span class="string">'props-demo-simple'</span>, &#123;</div><div class="line">  <span class="attr">props</span>: [<span class="string">'size'</span>, <span class="string">'myMessage'</span>]</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 对象语法，提供校验</span></div><div class="line">Vue.component(<span class="string">'props-demo-advanced'</span>, &#123;</div><div class="line">  <span class="attr">props</span>: &#123;</div><div class="line">    <span class="comment">// 只检测类型</span></div><div class="line">    height: <span class="built_in">Number</span>,</div><div class="line">    <span class="comment">// 检测类型 + 其他验证</span></div><div class="line">    age: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</div><div class="line">      <span class="attr">default</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">required</span>: <span class="literal">true</span>,</div><div class="line">      <span class="attr">validator</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> value &gt;= <span class="number">0</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
