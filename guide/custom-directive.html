@@ -449,6 +449,11 @@ new Vue({
 <h2 id="对象常量"><a href="#对象常量" class="headerlink" title="对象常量"></a>对象常量</h2><p>如果自定义指令需要复杂的值，也可以传递 javascript 对象。要知道，指令函数能够接受所有类型的 javascript 常量。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-demo</span>=<span class="string">"&#123; color: 'white', text: 'hello!' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.directive(<span class="string">'demo'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">el, binding</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(binding.value.color) <span class="comment">// =&gt; "white"</span></div><div class="line">  <span class="built_in">console</span>.log(binding.value.text)  <span class="comment">// =&gt; "hello!"</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>原文：<a href="http://vuejs.org/guide/custom-directive.html" target="_blank" rel="external">http://vuejs.org/guide/custom-directive.html</a></p>
+</blockquote>
+<hr>
 
     
       <div class="guide-links">

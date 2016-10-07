@@ -377,6 +377,11 @@
 <h2 id="主张异步更新"><a href="#主张异步更新" class="headerlink" title="主张异步更新"></a>主张异步更新</h2><p>由于Vue进行<a href="(/guide/reactivity.html#Async-Update-Queue">异步更新DOM</a>)的情况，一些断言必须在<code>Vue nexttick</code>回调中进行：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 在状态更新后检查生成的HTML</span></div><div class="line">it(<span class="string">'updates the rendered message when vm.message updates'</span>, done =&gt; &#123;</div><div class="line">  <span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(MyComponent).$mount()</div><div class="line">  vm.message = <span class="string">'foo'</span></div><div class="line"></div><div class="line">  <span class="comment">// wait a "tick" after state change before asserting DOM updates</span></div><div class="line">  Vue.nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    expect(vm.$el.textContent).toBe(<span class="string">'foo'</span>)</div><div class="line">    done()</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>我们计划做一个通用的测试工具集，让不同策略的渲染输出(例如忽略子组件的基本渲染)和断言变得更简单。</p>
+<hr>
+<blockquote>
+<p>原文： <a href="http://vuejs.org/guide/unit-testing.html" target="_blank" rel="external">http://vuejs.org/guide/unit-testing.html</a></p>
+</blockquote>
+<hr>
 
     
       <div class="guide-links">
