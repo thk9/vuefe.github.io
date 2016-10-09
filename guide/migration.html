@@ -539,7 +539,7 @@
 <h3 id="修改-Props-弃用"><a href="#修改-Props-弃用" class="headerlink" title="修改 Props 弃用"></a>修改 Props <sup>弃用</sup></h3><p>组件内修改prop是反模式（不推荐的）的。比如，先申明一个prop，然后在组件中通过 <code>this.myProp = &#39;someOtherValue&#39;</code> 改变prop的值。根据渲染机制，当父组件重新渲染时，子组件的内部prop值也将被覆盖。</p>
 <p>大多数情况下，改变prop值可以用以下选项代替：</p>
 <ul>
-<li>通过 data 属性，用prop去设置一个data属性的默认值。//todu</li>
+<li>通过 data 属性，用prop去设置一个data属性的默认值。</li>
 <li>通过 computed 属性。</li>
 </ul>
 
@@ -625,7 +625,7 @@ new Vue({
 
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 工具找出石勇 <code>debounce</code> 参数的 实例。</p>
+  <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 工具找出使用 <code>debounce</code> 参数的 实例。</p>
 </div>
 
 <h3 id="使用-lazy-或者-number-参数的-v-model-。-弃用"><a href="#使用-lazy-或者-number-参数的-v-model-。-弃用" class="headerlink" title="使用 lazy 或者 number 参数的 v-model 。 弃用"></a>使用 <code>lazy</code> 或者 <code>number</code> 参数的 <code>v-model</code> 。 <sup>弃用</sup></h3><p><code>lazy</code> 和 <code>number</code> 参数现在以修饰符的形式使用，这样看起来更加清晰，而不是这样：</p>
