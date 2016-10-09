@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>起步 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "vuex"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Vue.js v2.0 中文</span>
+  </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与:427447379
+  </span>
+  <ul id="nav">
+    <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link current">vuex</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+        
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link current">vuex</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/images/patreon.png">
+              <a href="/support-vuejs">支持 Vue.js</a>
+            </span>
+        </div>
+        <h2>
+            
+            
+            <select class="version-select">
+                <option value="SELF" selected>2.0</option>
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/index.html" class="sidebar-link">Vuex 目录</a>
+                </li>
+            
+                
+                
+                  <li><h3>基础</h3></li>
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/installation.html" class="sidebar-link">安装</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/intro.html" class="sidebar-link">什么是 Vuex</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/getting-started.html" class="sidebar-link current">起步</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/state.html" class="sidebar-link">State</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/getters.html" class="sidebar-link">Getters</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/mutations.html" class="sidebar-link">Mutations</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/actions.html" class="sidebar-link">Actions</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/modules.html" class="sidebar-link">Modules</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/structure.html" class="sidebar-link">应用结构</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/plugins.html" class="sidebar-link">插件</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/strict.html" class="sidebar-link">严格模式</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/forms.html" class="sidebar-link">表单处理</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/testing.html" class="sidebar-link">测试</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/hot-reload.html" class="sidebar-link">热加载</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/api.html" class="sidebar-link">API</a>
+                </li>
+            
+             
+        </ul>
+    </div>
+</div>
+
+
+<div class="content vuex with-sidebar ">
+    	
+    <h1>起步</h1>
+    <h1 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h1><p>At the center of every Vuex application is the <strong>store</strong>. A “store” is basically a container that holds your application <strong>state</strong>. There are two things that makes a Vuex store different from a plain global object:</p>
+<ol>
+<li><p>Vuex stores are reactive. When Vue components retrieve state from it, they will reactively and efficiently update if the store’s state changes.</p>
+</li>
+<li><p>You cannot directly mutate the store’s state. The only way to change a store’s state is by explicitly <strong>committing mutations</strong>. This ensures every state change leaves a track-able record, and enables tooling that helps us better understand our applications.</p>
+</li>
+</ol>
+<h3 id="The-Simplest-Store"><a href="#The-Simplest-Store" class="headerlink" title="The Simplest Store"></a>The Simplest Store</h3><blockquote>
+<p><strong>NOTE:</strong> We will be using ES2015 syntax for code examples for the rest of the docs. If you haven’t picked it up, <a href="https://babeljs.io/docs/learn-es2015/" target="_blank" rel="external">you should</a>!</p>
+</blockquote>
+<p>After <a href="installation.md">installing</a> Vuex, let’s create a store. It is pretty straightforward - just provide an initial state object, and some mutations:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Make sure to call Vue.use(Vuex) first if using a module system</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="attr">state</span>: &#123;</div><div class="line">    <span class="attr">count</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">mutations</span>: &#123;</div><div class="line">    increment (state) &#123;</div><div class="line">      state.count++</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>Now, you can access the state object as <code>store.state</code>, and trigger a state change with the <code>store.commit</code> method:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">store.commit(<span class="string">'increment'</span>)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(store.state.count) <span class="comment">// -&gt; 1</span></div></pre></td></tr></table></figure>
+<p>Again, the reason we are committing a mutation instead of changing <code>store.state.count</code> directly, is because we want to explicitly track it. This simple convention makes your intention more explicit, so that you can reason about state changes in your app better when reading the code. In addition, this gives us the opportunity to implement tools that can log every mutation, take state snapshots, or even perform time travel debugging.</p>
+<p>Using store state in a component simply involves returning the state within a computed property, because the store state is reactive. Triggering changes simply means committing mutations in component methods.</p>
+<p>Here’s an example of the <a href="https://jsfiddle.net/yyx990803/n9jmu5v7/" target="_blank" rel="external">most basic Vuex counter app</a>.</p>
+<p>Next, we will discuss each core concept in much finer details and let’s start with <a href="state.md">State</a>.</p>
+
+    
+    <div class="footer">
+      发现错误？想参与编辑？
+      <a href="https://github.com/dingyiming/vuejs.org/tree/2.0-cn/src/vuex/getting-started.md" target="_blank">
+        在 Github 上编辑此页！
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>

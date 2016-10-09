@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>什么是 Vuex - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "vuex"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Vue.js v2.0 中文</span>
+  </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与:427447379
+  </span>
+  <ul id="nav">
+    <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link current">vuex</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+        
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link current">vuex</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/images/patreon.png">
+              <a href="/support-vuejs">支持 Vue.js</a>
+            </span>
+        </div>
+        <h2>
+            
+            
+            <select class="version-select">
+                <option value="SELF" selected>2.0</option>
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/index.html" class="sidebar-link">Vuex 目录</a>
+                </li>
+            
+                
+                
+                  <li><h3>基础</h3></li>
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/installation.html" class="sidebar-link">安装</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/intro.html" class="sidebar-link current">什么是 Vuex</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/getting-started.html" class="sidebar-link">起步</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/state.html" class="sidebar-link">State</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/getters.html" class="sidebar-link">Getters</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/mutations.html" class="sidebar-link">Mutations</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/actions.html" class="sidebar-link">Actions</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/modules.html" class="sidebar-link">Modules</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/structure.html" class="sidebar-link">应用结构</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/plugins.html" class="sidebar-link">插件</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/strict.html" class="sidebar-link">严格模式</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/forms.html" class="sidebar-link">表单处理</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/testing.html" class="sidebar-link">测试</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/hot-reload.html" class="sidebar-link">热加载</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuex/api.html" class="sidebar-link">API</a>
+                </li>
+            
+             
+        </ul>
+    </div>
+</div>
+
+
+<div class="content vuex with-sidebar ">
+    	
+    <h1>什么是 Vuex</h1>
+    <h1 id="What-is-Vuex"><a href="#What-is-Vuex" class="headerlink" title="What is Vuex?"></a>What is Vuex?</h1><p>Vuex is a <strong>state management pattern + library</strong> for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion. It also integrates with Vue’s official <a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="external">devtools extension</a> to provide advanced features such as zero-config time-travel debugging and state snapshot export / import.</p>
+<h3 id="What-is-a-“State-Management-Pattern”"><a href="#What-is-a-“State-Management-Pattern”" class="headerlink" title="What is a “State Management Pattern”?"></a>What is a “State Management Pattern”?</h3><p>Let’s start with a simple Vue counter app:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="comment">// state</span></div><div class="line">  data () &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">count</span>: <span class="number">0</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// view</span></div><div class="line">  template: <span class="string">`</span></div><div class="line">    &lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;</div><div class="line">  `,</div><div class="line">  <span class="comment">// actions</span></div><div class="line">  methods: &#123;</div><div class="line">    increment () &#123;</div><div class="line">      <span class="keyword">this</span>.count++</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>It is a self-contained app with the following parts:</p>
+<ul>
+<li>The <strong>state</strong>, which is the source of truth that drives our app;</li>
+<li>The <strong>view</strong>, which is just a declarative mapping of the <strong>state</strong>;</li>
+<li>The <strong>actions</strong>, which are the possible ways the state could change in reaction to user inputs from the <strong>view</strong>.</li>
+</ul>
+<p>This is an extremely simple representation of the concept of “one-way data flow”:</p>
+<p style="text-align: center; margin: 2em"><br>  <img style="max-width:450px;" src="./images/flow.png"><br></p>
+
+<p>However, the simplicity quickly breaks down when we have <strong>multiple components that share common state</strong>:</p>
+<ul>
+<li>Multiple views may depend on the same piece of state.</li>
+<li>Actions from different views may need to mutate the same piece of state.</li>
+</ul>
+<p>For problem one, passing props can be tedious for deeply nested components, and simply doesn’t work for sibling components. For problem two, we often find ourselves resorting to solutions such as reaching for direct parent/child instance references or trying to mutate and synchronize multiple copies of the state via events. Both of these patterns are brittle and quickly leads to unmaintainable code.</p>
+<p>So why don’t we extract the shared state out of the components, and manage it in a global singleton? With this, our component tree becomes a big “view”, and any component can access the state or trigger actions, no matter where they are in the tree!</p>
+<p>In addition, by defining and separating the concepts involved in state management and enforcing certain rules, we also give our code more structure and maintainability.</p>
+<p>This is the basic idea behind Vuex, inspired by <a href="https://facebook.github.io/flux/docs/overview.html" target="_blank" rel="external">Flux</a>, <a href="http://redux.js.org/" target="_blank" rel="external">Redux</a> and <a href="https://guide.elm-lang.org/architecture/" target="_blank" rel="external">The Elm Architecture</a>. Unlike the other patterns, Vuex is also a library implementation tailored specifically for Vue.js to take advantage of its granular reactivity system for efficient updates.</p>
+<p><img src="./images/vuex.png" alt="vuex"></p>
+<h3 id="When-Should-I-Use-It"><a href="#When-Should-I-Use-It" class="headerlink" title="When Should I Use It?"></a>When Should I Use It?</h3><p>Although Vuex helps us deal with shared state management, it also comes with the cost of more concepts and boilerplate. It’s a trade-off between short term and long term productivity.</p>
+<p>If you’ve never built a large-scale SPA and jump right into Vuex, it may feel verbose and daunting. That’s perfectly normal - if your app is simple, you will most likely be fine without Vuex. A simple <a href="http://vuejs.org/guide/components.html#Non-Parent-Child-Communication" target="_blank" rel="external">global event bus</a> may be all you need. But if you are building a medium-to-large-scale SPA, chances are you have run into situations that make you think about how to better handle state outside of your Vue components, and Vuex will be natural next step for you. There’s a good quote from Dan Abramov, the author of Redux:</p>
+<blockquote>
+<p>Flux libraries are like glasses: you’ll know when you need them.</p>
+</blockquote>
+
+    
+    <div class="footer">
+      发现错误？想参与编辑？
+      <a href="https://github.com/dingyiming/vuejs.org/tree/2.0-cn/src/vuex/intro.md" target="_blank">
+        在 Github 上编辑此页！
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>
