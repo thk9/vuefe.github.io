@@ -258,15 +258,15 @@
 <div class="content vuex with-sidebar ">
     	
     <h1>安装</h1>
-    <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h3 id="Direct-Download-CDN"><a href="#Direct-Download-CDN" class="headerlink" title="Direct Download / CDN"></a>Direct Download / CDN</h3><p><a href="https://unpkg.com/vuex" target="_blank" rel="external">https://unpkg.com/vuex</a></p>
-<p><a href="https://unpkg.com" target="_blank" rel="external">Unpkg.com</a> provides NPM-based CDN links. The above link will always point to the latest release on NPM. You can also use a specific version/tag via URLs like <code>https://unpkg.com/vuex@2.0.0</code>.</p>
-<p>Include <code>vuex</code> after Vue and it will install itself automatically:</p>
+    <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h3 id="直接下载-CDN"><a href="#直接下载-CDN" class="headerlink" title="直接下载 / CDN"></a>直接下载 / CDN</h3><p><a href="https://unpkg.com/vuex" target="_blank" rel="external">https://unpkg.com/vuex</a></p>
+<p><a href="https://unpkg.com" target="_blank" rel="external">Unpkg.com</a> 提供基于 NPM 的 CDN 链接。以上链接总是保持在 NPM 上的最新版本。你也可以通过类似于这样的 URL <code>https://unpkg.com/vuex@2.0.0</code> 使用特殊的 版本/标签。</p>
+<p>在包含 Vue 之后包含 <code>vuex</code>，它会自动安装：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/path/to/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/path/to/vuex.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">npm install vuex</div></pre></td></tr></table></figure>
-<p>When used with a module system, you must explicitly install the router via <code>Vue.use()</code>:</p>
+<p>当配合模块系统一起使用时，你必须通过 <code>Vue.use()</code> 显式安装到路由上：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></div><div class="line"></div><div class="line">Vue.use(Vuex)</div></pre></td></tr></table></figure>
-<p>You don’t need to do this when using global script tags.</p>
-<h3 id="Dev-Build"><a href="#Dev-Build" class="headerlink" title="Dev Build"></a>Dev Build</h3><p>You will have to clone directly from GitHub and build <code>vuex</code> yourself if<br>you want to use the latest dev build.</p>
+<p>当你使用全局脚本标签时不需要这样做。</p>
+<h3 id="使用开发版"><a href="#使用开发版" class="headerlink" title="使用开发版"></a>使用开发版</h3><p>你如果想使用最新的开发版，请直接去 GitHub 克隆，然后构建你自己的 <code>vuex</code>。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/vuejs/vuex.git node_modules/vuex</div><div class="line"><span class="built_in">cd</span> node_modules/vuex</div><div class="line">npm install</div><div class="line">npm run build</div></pre></td></tr></table></figure>
 
     
