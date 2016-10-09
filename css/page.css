@@ -112,7 +112,7 @@ strong {
 }
 code,
 pre {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Roboto Mono', Monaco, courier, monospace;
   font-size: 0.9em;
   background-color: #f8f8f8;
   -webkit-font-smoothing: initial;
@@ -363,7 +363,7 @@ a.button.white {
   font-size: 1.5em;
   line-height: 40px;
   color: #2c3e50;
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Roboto Mono', Monaco, courier, monospace;
   font-weight: 500;
 }
 #logo img {
@@ -837,7 +837,7 @@ ul.demo li {
   text-align: center;
   line-height: 20px;
   font-weight: bold;
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Roboto Mono', Monaco, courier, monospace;
   font-size: 14px;
 }
 .content p.tip em {
