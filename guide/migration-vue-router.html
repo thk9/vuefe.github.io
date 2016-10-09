@@ -22,7 +22,7 @@
         <div id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png">
-    <span>Vue.js v2.0正式版</span>
+    <span>Vue.js v2.0 中文</span>
   </a>
   <span style="
     position: absolute;
@@ -45,6 +45,7 @@
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/ssr/" class="nav-link">SSR</a></li>
 <li><a href="/awesome/" class="nav-link">资源</a></li>
 <li><a href="/changelog/" class="nav-link">更新日志</a></li>
@@ -73,6 +74,7 @@
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/ssr/" class="nav-link">SSR</a></li>
 <li><a href="/awesome/" class="nav-link">资源</a></li>
 <li><a href="/changelog/" class="nav-link">更新日志</a></li>
@@ -558,7 +560,7 @@
 </div>
 
 <h3 id="loadingRouteData-弃用"><a href="#loadingRouteData-弃用" class="headerlink" title="$loadingRouteData 弃用"></a><code>$loadingRouteData</code> <sup>弃用</sup></h3><p>定义你自己的属性(举例说明<code>isLoading</code>),然后在路由上的观察者中更新加载状态.举例说明，如果使用<a href="https://github.com/mzabriskie/axios" target="_blank" rel="external">axios</a>获取数据:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">posts</span>: [],</div><div class="line">    <span class="attr">isLoading</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">fetchError</span>: <span class="literal">null</span></div><div class="line">  &#125;</div><div class="line">&#125;,</div><div class="line"><span class="attr">watch</span>: &#123;</div><div class="line">  <span class="string">'$route'</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.isLoading = <span class="literal">true</span></div><div class="line">    <span class="keyword">this</span>.fetchData().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.isLoading = <span class="literal">false</span></div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;,</div><div class="line"><span class="attr">methods</span>: &#123;</div><div class="line">  <span class="attr">fetchData</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> axios.get(<span class="string">'/api/posts'</span>)</div><div class="line">      .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.posts = response.data.posts</div><div class="line">      &#125;)</div><div class="line">      .catch(funciton (error) &#123;</div><div class="line">        <span class="keyword">this</span>.fetchError = error</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">posts</span>: [],</div><div class="line">    <span class="attr">isLoading</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">fetchError</span>: <span class="literal">null</span></div><div class="line">  &#125;</div><div class="line">&#125;,</div><div class="line"><span class="attr">watch</span>: &#123;</div><div class="line">  <span class="string">'$route'</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.isLoading = <span class="literal">true</span></div><div class="line">    <span class="keyword">this</span>.fetchData().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.isLoading = <span class="literal">false</span></div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;,</div><div class="line"><span class="attr">methods</span>: &#123;</div><div class="line">  <span class="attr">fetchData</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> axios.get(<span class="string">'/api/posts'</span>)</div><div class="line">      .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.posts = response.data.posts</div><div class="line">      &#125;)</div><div class="line">      .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.fetchError = error</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 <div class="upgrade-path">
   <h4>升级路径</h4>

@@ -22,7 +22,7 @@
         <div id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png">
-    <span>Vue.js v2.0正式版</span>
+    <span>Vue.js v2.0 中文</span>
   </a>
   <span style="
     position: absolute;
@@ -45,6 +45,7 @@
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/ssr/" class="nav-link">SSR</a></li>
 <li><a href="/awesome/" class="nav-link">资源</a></li>
 <li><a href="/changelog/" class="nav-link">更新日志</a></li>
@@ -73,6 +74,7 @@
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/ssr/" class="nav-link">SSR</a></li>
 <li><a href="/awesome/" class="nav-link">资源</a></li>
 <li><a href="/changelog/" class="nav-link">更新日志</a></li>
@@ -324,7 +326,7 @@
 </tr>
 </tbody>
 </table>
-<p>除了 <code>$route.params</code> 外，<code>$route</code> 对象还提供了其它有用的信息，例如，<code>$route.query</code>（如果 URL 中有查询参数）、<code>$route.hash</code> 等等。你可以查看 <a href="../api/route-object.md">API 文档</a> 的详细说明。</p>
+<p>除了 <code>$route.params</code> 外，<code>$route</code> 对象还提供了其它有用的信息，例如，<code>$route.query</code>（如果 URL 中有查询参数）、<code>$route.hash</code> 等等。你可以查看 <a href="../api/route-object.html">API 文档</a> 的详细说明。</p>
 <h3 id="响应路由参数的变化"><a href="#响应路由参数的变化" class="headerlink" title="响应路由参数的变化"></a>响应路由参数的变化</h3><p>提醒一下，当使用路由参数时，例如从 <code>/user/foo</code> 导航到 <code>user/bar</code>，<strong>原来的组件实例会被复用</strong>。因为两个路由都渲染同个组件，比起销毁再创建，复用则显得更加高效。<strong>不过，这也意味着组件的生命周期钩子不会再被调用</strong>。</p>
 <p>复用组件时，想对路由参数的变化作出响应的话，你可以简单地 watch（监测变化） <code>$route</code> 对象：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> User = &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'...'</span>,</div><div class="line">  <span class="attr">watch</span>: &#123;</div><div class="line">    <span class="string">'$route'</span> (to, <span class="keyword">from</span>) &#123;</div><div class="line">      <span class="comment">// 对路由变化作出响应...</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>

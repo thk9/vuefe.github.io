@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>HackerNews Clone - vue.js</title>
+        <title>HackerNews 克隆 - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -22,7 +22,7 @@
         <div id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png">
-    <span>Vue.js v2.0正式版</span>
+    <span>Vue.js v2.0 中文</span>
   </a>
   <span style="
     position: absolute;
@@ -45,6 +45,7 @@
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/examples/" class="nav-link current">示例</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/ssr/" class="nav-link">SSR</a></li>
 <li><a href="/awesome/" class="nav-link">资源</a></li>
 <li><a href="/changelog/" class="nav-link">更新日志</a></li>
@@ -73,6 +74,7 @@
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/examples/" class="nav-link current">示例</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/ssr/" class="nav-link">SSR</a></li>
 <li><a href="/awesome/" class="nav-link">资源</a></li>
 <li><a href="/changelog/" class="nav-link">更新日志</a></li>
@@ -111,7 +113,7 @@
                 
                 
                 <li>
-                    <a href="/examples/index.html" class="sidebar-link">Markdown Editor</a>
+                    <a href="/examples/index.html" class="sidebar-link">Markdown 编辑器</a>
                 </li>
             
                 
@@ -120,7 +122,7 @@
                 
                 
                 <li>
-                    <a href="/examples/commits.html" class="sidebar-link">GitHub Commits</a>
+                    <a href="/examples/commits.html" class="sidebar-link">GitHub 提交</a>
                 </li>
             
                 
@@ -129,7 +131,7 @@
                 
                 
                 <li>
-                    <a href="/examples/firebase.html" class="sidebar-link">Firebase + Validation</a>
+                    <a href="/examples/firebase.html" class="sidebar-link">Firebase + 验证</a>
                 </li>
             
                 
@@ -138,7 +140,7 @@
                 
                 
                 <li>
-                    <a href="/examples/grid-component.html" class="sidebar-link">Grid Component</a>
+                    <a href="/examples/grid-component.html" class="sidebar-link">网格组件</a>
                 </li>
             
                 
@@ -147,7 +149,7 @@
                 
                 
                 <li>
-                    <a href="/examples/tree-view.html" class="sidebar-link">Tree View</a>
+                    <a href="/examples/tree-view.html" class="sidebar-link">树形视图</a>
                 </li>
             
                 
@@ -156,7 +158,7 @@
                 
                 
                 <li>
-                    <a href="/examples/svg.html" class="sidebar-link">SVG Graph</a>
+                    <a href="/examples/svg.html" class="sidebar-link">SVG 图表</a>
                 </li>
             
                 
@@ -165,7 +167,7 @@
                 
                 
                 <li>
-                    <a href="/examples/modal.html" class="sidebar-link">Modal Component</a>
+                    <a href="/examples/modal.html" class="sidebar-link">模式组件</a>
                 </li>
             
                 
@@ -174,7 +176,7 @@
                 
                 
                 <li>
-                    <a href="/examples/elastic-header.html" class="sidebar-link">Elastic Header</a>
+                    <a href="/examples/elastic-header.html" class="sidebar-link">具有伸缩性的 Header</a>
                 </li>
             
                 
@@ -183,7 +185,7 @@
                 
                 
                 <li>
-                    <a href="/examples/select2.html" class="sidebar-link">Wrapper Component</a>
+                    <a href="/examples/select2.html" class="sidebar-link">内嵌组件</a>
                 </li>
             
                 
@@ -201,7 +203,7 @@
                 
                 
                 <li>
-                    <a href="/examples/hackernews.html" class="sidebar-link current">HackerNews Clone</a>
+                    <a href="/examples/hackernews.html" class="sidebar-link current">HackerNews 克隆</a>
                 </li>
             
              
@@ -212,9 +214,9 @@
 
 <div class="content examples with-sidebar ">
     	
-    <h1>HackerNews Clone Example</h1>
+    <h1>HackerNews 克隆 Example</h1>
     <blockquote>
-<p>This is a HackerNews clone built upon HN’s official Firebase API, Vue 2.0 + vue-router + vuex, with server-side rendering.</p>
+<p>HackerNews 克隆是基于 HN 的官方 firebase API 、Vue 2.0 、vue-router 和 vuex 来构建的，使用服务器端渲染。</p>
 </blockquote>
 
 <div style="max-width:600px">
@@ -224,24 +226,24 @@
 </div>
 
 <blockquote>
-<p><a href="https://vue-hn.now.sh/" target="_blank" rel="external">Live Demo</a><br>Note: the demo may need some spin up time if nobody has accessed it for a certain period.</p>
+<p><a href="https://vue-hn.now.sh/" target="_blank" rel="external">Live Demo</a><br>笔记：如果没在特定时间段用到它，那么本示例需要一些加载时间。</p>
 <p>[<a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" rel="external">Source</a>]</p>
 </blockquote>
-<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><ul>
-<li>Server Side Rendering<ul>
-<li>Vue + vue-router + vuex working together</li>
-<li>Server-side data pre-fetching</li>
-<li>Client-side state &amp; DOM hydration</li>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>服务器端渲染<ul>
+<li>Vue + vue-router + vuex</li>
+<li>服务端数据提前获取</li>
+<li>客户端状态 &amp; DOM 合并</li>
 </ul>
 </li>
-<li>Single-file Vue Components<ul>
-<li>Hot-reload in development</li>
-<li>CSS extraction for production</li>
+<li>单文件 Vue 组件<ul>
+<li>开发时进行热加载</li>
+<li>生产时抽出 CSS</li>
 </ul>
 </li>
-<li>Real-time List Updates with FLIP Animation</li>
+<li>使用 FLIP 动画进行实时列表更新</li>
 </ul>
-<h2 id="Architecture-Overview"><a href="#Architecture-Overview" class="headerlink" title="Architecture Overview"></a>Architecture Overview</h2><p><img width="973" alt="Hackernew clone architecture overview" src="/images/hn-architecture.png"></p>
+<h2 id="结构概览"><a href="#结构概览" class="headerlink" title="结构概览"></a>结构概览</h2><p><img width="973" alt="Hackernew clone architecture overview" src="/images/hn-architecture.png"></p>
 
     
     <div class="footer">

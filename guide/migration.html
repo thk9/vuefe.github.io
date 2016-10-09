@@ -22,7 +22,7 @@
         <div id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png">
-    <span>Vue.js v2.0正式版</span>
+    <span>Vue.js v2.0 中文</span>
   </a>
   <span style="
     position: absolute;
@@ -45,6 +45,7 @@
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/ssr/" class="nav-link">SSR</a></li>
 <li><a href="/awesome/" class="nav-link">资源</a></li>
 <li><a href="/changelog/" class="nav-link">更新日志</a></li>
@@ -73,6 +74,7 @@
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/ssr/" class="nav-link">SSR</a></li>
 <li><a href="/awesome/" class="nav-link">资源</a></li>
 <li><a href="/changelog/" class="nav-link">更新日志</a></li>
@@ -366,7 +368,7 @@
     	
     <h1>从 Vue1.x 迁移</h1>
     <h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><blockquote>
-<p>哇，非常长的一页！是否意味着 Vue2.0 已经完全不同了呢，是否需要从头学起呢，Vue1.0 的项目是不是没法迁移了？ </p>
+<p>哇，非常长的一页！是否意味着 Vue2.0 已经完全不同了呢，是否需要从头学起呢，Vue1.0 的项目是不是没法迁移了？</p>
 </blockquote>
 <p>非常开心地告诉你，并不是！ 几乎90%的 API 和核心概念都没有变。因为本节包含了很多详尽的阐述以及许多迁移的例子，所以显得有点长。不用担心，<strong>你也不必从头到尾把本节读一遍！</strong></p>
 <blockquote>
@@ -416,7 +418,7 @@
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 工具找到所有使用这个钩子的实例</p>
 </div>
 
-<h3 id="compiled-弃用d"><a href="#compiled-弃用d" class="headerlink" title="compiled 弃用d"></a><code>compiled</code> <sup>弃用d</sup></h3><p>用 <code>mounted</code> 钩子来代替。</p>
+<h3 id="compiled-弃用"><a href="#compiled-弃用" class="headerlink" title="compiled 弃用"></a><code>compiled</code> <sup>弃用</sup></h3><p>用 <code>mounted</code> 钩子来代替。</p>
 
 <div class="upgrade-path">
   <h4>升级方式</h4>
@@ -433,7 +435,7 @@
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 工具找到所有使用这个钩子的实例</p>
 </div>
 
-<h3 id="detached-deprecated"><a href="#detached-deprecated" class="headerlink" title="detached deprecated"></a><code>detached</code> <sup>deprecated</sup></h3><p>用自定义的 dom 内部的其他钩子代替，例如：</p>
+<h3 id="detached-弃用"><a href="#detached-弃用" class="headerlink" title="detached 弃用"></a><code>detached</code> <sup>弃用</sup></h3><p>用自定义的 dom 内部的其他钩子代替，例如：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">detached: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  doSomething()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>可以用以下方式代替：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">destroyed: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    doSomething()</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -443,14 +445,14 @@
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 工具找到所有使用这个钩子的实例</p>
 </div>
 
-<h3 id="init-deprecated"><a href="#init-deprecated" class="headerlink" title="init deprecated"></a><code>init</code> <sup>deprecated</sup></h3><p>用新的 <code>beforeCreate</code> 钩子代替，他们本质上是一样的。为了与其他生命周期的钩子命名保持一致性，所以重新命名了这个钩子。</p>
+<h3 id="init-弃用"><a href="#init-弃用" class="headerlink" title="init 弃用"></a><code>init</code> <sup>弃用</sup></h3><p>用新的 <code>beforeCreate</code> 钩子代替，他们本质上是一样的。为了与其他生命周期的钩子命名保持一致性，所以重新命名了这个钩子。</p>
 
 <div class="upgrade-path">
   <h4>升级方式</h4>
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 工具找到所有使用这个钩子的实例</p>
 </div>
 
-<h3 id="ready-deprecated"><a href="#ready-deprecated" class="headerlink" title="ready deprecated"></a><code>ready</code> <sup>deprecated</sup></h3><p>使用新的 <code>mounted</code> 钩子代替，. 应该注意的是，通过使用 <code>mounted</code> 钩子，并不能保证该实例已经插入文档。所以还应该在钩子函数中包含 <code>Vue.nextTick</code>/<code>vm.$nextTick</code> 例如：</p>
+<h3 id="ready-弃用"><a href="#ready-弃用" class="headerlink" title="ready 弃用"></a><code>ready</code> <sup>弃用</sup></h3><p>使用新的 <code>mounted</code> 钩子代替，应该注意的是，通过使用 <code>mounted</code> 钩子，并不能保证该实例已经插入文档。所以还应该在钩子函数中包含 <code>Vue.nextTick</code>/<code>vm.$nextTick</code> 例如：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">mounted: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// 保证 this.$el 已经插入文档</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 <div class="upgrade-path">
@@ -469,10 +471,10 @@
 
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 来找到使用弃用参数顺序的实例。注意，该工具将不会标记以 </p><code>name</code> 或者 <code>property</code> 来命名 key 参数。<p></p>
+  <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 来找到使用弃用参数顺序的实例。注意，该工具将不会标记以 <code>name</code> 或者 <code>property</code> 来命名 key 参数。</p>
 </div>
 
-<h3 id="index-and-key-deprecated"><a href="#index-and-key-deprecated" class="headerlink" title="$index and $key deprecated"></a><code>$index</code> and <code>$key</code> <sup>deprecated</sup></h3><p>隐式申明的 <code>$index</code> 的 <code>$key</code> 两个变量在新版里面已经弃用了，取代的是在 <code>v-for</code> 中显式地申明。这可以使无经验的 Vue 开发者更好地理解代码，同样也可以使得在处理嵌套循环时更加清晰。<br>
+<h3 id="index-and-key-弃用"><a href="#index-and-key-弃用" class="headerlink" title="$index and $key 弃用"></a><code>$index</code> and <code>$key</code> <sup>弃用</sup></h3><p>隐式申明的 <code>$index</code> 的 <code>$key</code> 两个变量在新版里面已经弃用了，取代的是在 <code>v-for</code> 中显式地申明。这可以使无经验的 Vue 开发者更好地理解代码，同样也可以使得在处理嵌套循环时更加清晰。<br>
 <div class="upgrade-path">
   <h4>升级方式</h4>
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 来找到使用弃用变量的实例。如果有些没有找到，也可以参考<strong>控制台警告信息</strong> 比如 <code>Uncaught ReferenceError: $index is not defined</code></p>
@@ -534,7 +536,7 @@
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 工具找到使用 <code>.once</code> 和 <code>.sync</code> 修饰符的实例。</p>
 </div>
 
-<h3 id="修改-Props-deprecated"><a href="#修改-Props-deprecated" class="headerlink" title="修改 Props deprecated"></a>修改 Props <sup>deprecated</sup></h3><p>组件内修改prop是反模式（不推荐的）的。比如，先申明一个prop，然后在组件中通过 <code>this.myProp = &#39;someOtherValue&#39;</code> 改变prop的值。根据渲染机制，当父组件重新渲染时，子组件的内部prop<br>值也将被覆盖。</p>
+<h3 id="修改-Props-弃用"><a href="#修改-Props-弃用" class="headerlink" title="修改 Props 弃用"></a>修改 Props <sup>弃用</sup></h3><p>组件内修改prop是反模式（不推荐的）的。比如，先申明一个prop，然后在组件中通过 <code>this.myProp = &#39;someOtherValue&#39;</code> 改变prop的值。根据渲染机制，当父组件重新渲染时，子组件的内部prop值也将被覆盖。</p>
 <p>大多数情况下，改变prop值可以用以下选项代替：</p>
 <ul>
 <li>通过 data 属性，用prop去设置一个data属性的默认值。//todu</li>
@@ -550,7 +552,7 @@
 
 <div class="upgrade-path">
   <h4>升级方式</h4>
-  <p>运行端对端测试，将会弹出 <strong>failed tests</strong> 来通知你使用 `props` 的根实例已经失效。</p>
+  <p>运行端对端测试，将会弹出 <strong>failed tests</strong> 来通知你使用 <code>props</code> 的根实例已经失效。</p>
 </div>
 
 <h2 id="Built-In-指令"><a href="#Built-In-指令" class="headerlink" title="Built-In 指令"></a>Built-In 指令</h2><h3 id="v-bind-真-假值"><a href="#v-bind-真-假值" class="headerlink" title="v-bind 真/假值"></a><code>v-bind</code> 真/假值</h3><p>在2.0中使用 <code>v-bind</code> 时, 只有 <code>null</code>, <code>undefined</code>, 和 <code>false</code>被看作是假。这意味着，<code>0</code> 和空字符串将被作为真值渲染。比如 <code>v-bind:draggable=&quot;&#39;&#39;&quot;</code> 将被渲染为 <code>draggable=&quot;true&quot;</code>。</p>
@@ -636,8 +638,7 @@ new Vue({
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a>工具找到这些弃用参数。</p>
 </div>
 
-<p>###使用内联 <code>value</code>的<code>v-model</code>  <sup>弃用</sup></p>
-<p><code>v-model</code> 不再以内联 <code>value</code> 方式初始化的初值了，显然他将以实例的data相应的属性作为真正的初值。</p>
+<h3 id="使用内联-value的v-model-弃用"><a href="#使用内联-value的v-model-弃用" class="headerlink" title="使用内联 value的v-model  弃用"></a>使用内联 <code>value</code>的<code>v-model</code>  <sup>弃用</sup></h3><p><code>v-model</code> 不再以内联 <code>value</code> 方式初始化的初值了，显然他将以实例的data相应的属性作为真正的初值。</p>
 <p>这意味着以下元素：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"foo"</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>在data选项中有下面写法的：</p>
@@ -651,9 +652,9 @@ new Vue({
   <p>升级后运行端对端测试，注意关于<code>v-model</code>内联参数的 <strong>console warnings</strong></p>
 </div>
 
-<h3 id="v-model-with-v-for-Iterated-Primitive-Values-deprecated"><a href="#v-model-with-v-for-Iterated-Primitive-Values-deprecated" class="headerlink" title="v-model with v-for Iterated Primitive Values deprecated"></a><code>v-model</code> with <code>v-for</code> Iterated Primitive Values <sup>deprecated</sup></h3><p>像这样的写法将失效：</p>
+<h3 id="v-model-with-v-for-Iterated-Primitive-Values-弃用"><a href="#v-model-with-v-for-Iterated-Primitive-Values-弃用" class="headerlink" title="v-model with v-for Iterated Primitive Values 弃用"></a><code>v-model</code> with <code>v-for</code> Iterated Primitive Values <sup>弃用</sup></h3><p>像这样的写法将失效：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-for</span>=<span class="string">"str in strings"</span> <span class="attr">v-model</span>=<span class="string">"str"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>因为 <code>&lt;input&gt;</code> 将被便宜成类似下面的js代码：</p>
+<p>因为 <code>&lt;input&gt;</code> 将被编译成类似下面的js代码：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">strings.map(<span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> createElement(<span class="string">'input'</span>, ...)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>这样，<code>v-model</code> 的双向绑定在这里就失效了。把 <code>str</code> 赋值给迭代器里的另一个值也没有用，因为它仅仅是函数内部的一个变量。</p>
 <p>替代方案是，你可以使用对象数组，这样<code>v-model</code> 就可以同步更新对象里面的字段了，例如：</p>
@@ -699,7 +700,7 @@ new Vue({
 <h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h2><p>在新版中，指令的使用范围已经大大减小了：现在指令仅仅被用于低级的 DOM 操作。大多数情况下，最好是把模板作为代码复用的抽象层。</p>
 <p>显要的改变有如下几点：</p>
 <ul>
-<li>指令不在拥有实例。意思是，在指令的钩子函数中不再拥有实例的<code>this</code>。替代的是，你可以在参数中接受你需要的任何数据。如果确实需要，可以通过<code>el</code>来访问实例。</li>
+<li>指令不再拥有实例。意思是，在指令的钩子函数中不再拥有实例的<code>this</code>。替代的是，你可以在参数中接受你需要的任何数据。如果确实需要，可以通过<code>el</code>来访问实例。</li>
 <li>类似 <code>acceptStatement</code>， <code>deep</code>， <code>priority</code>等都已被弃用。为了替换<code>双向</code>指令，见 <a href="#Two-Way-Filters-deprecated">示例</a>。</li>
 <li>现在有些钩子的意义和以前不一样了，并且多了两个钩子函数。</li>
 </ul>
@@ -710,7 +711,7 @@ new Vue({
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 找到定义指令的地方。在helper 工具会把这些地方标记出来，因为很有可能这些地方需要重构。</p>
 </div>
 
-<h3 id="指令-literal-修饰符-废弃"><a href="#指令-literal-修饰符-废弃" class="headerlink" title="指令 .literal 修饰符 废弃"></a>指令 <code>.literal</code> 修饰符 <sup>废弃</sup></h3><p><code>.literal</code> 修饰符已经被移除，为了获取一样的功能，可以简单地提供字符串修饰符作为值。</p>
+<h3 id="指令-literal-修饰符-弃用"><a href="#指令-literal-修饰符-弃用" class="headerlink" title="指令 .literal 修饰符 弃用"></a>指令 <code>.literal</code> 修饰符 <sup>弃用</sup></h3><p><code>.literal</code> 修饰符已经被移除，为了获取一样的功能，可以简单地提供字符串修饰符作为值。</p>
 <p>示例，如下更改：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;p v-my-directive.literal=<span class="string">"foo bar baz"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <p>to just:</p>
@@ -735,7 +736,7 @@ new Vue({
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 工具找到使用 <code>transition</code> 属性的地方。</p>
 </div>
 
-<h3 id="过渡的-stagger-参数-deprecated"><a href="#过渡的-stagger-参数-deprecated" class="headerlink" title="过渡的 stagger 参数 deprecated"></a>过渡的 <code>stagger</code> 参数 <sup>deprecated</sup></h3><p>如果希望在列表渲染中使用渐近过渡，可以通过设置元素的<code>data-index</code> （或类似属性）来控制时间。 请参考<a href="transitions.html#Staggering-List-Transitions">这个例子</a>。</p>
+<h3 id="过渡的-stagger-参数-弃用"><a href="#过渡的-stagger-参数-弃用" class="headerlink" title="过渡的 stagger 参数 弃用"></a>过渡的 <code>stagger</code> 参数 <sup>弃用</sup></h3><p>如果希望在列表渲染中使用渐近过渡，可以通过设置元素的<code>data-index</code> （或类似属性）来控制时间。 请参考<a href="transitions.html#Staggering-List-Transitions">这个例子</a>。</p>
 
 <div class="upgrade-path">
   <h4>升级方式</h4>
@@ -871,14 +872,14 @@ new Vue({
   <p>更新后运行测试，查看 <strong>控制台警告信息</strong> 关于重名slots的提示 <code>v-model</code>。</p>
 </div>
 
-<h3 id="slot-样式参数-deprecated"><a href="#slot-样式参数-deprecated" class="headerlink" title="slot 样式参数 deprecated"></a><code>slot</code> 样式参数 <sup>deprecated</sup></h3><p>通过具名 <code>&lt;slot&gt;</code> 插入的片段不再保持 <code>slot</code> 的参数。请用一个包裹元素来控制样式。或者用更高级方法：通过编程方式修改内容 ：<a href="render-function.html">render functions</a>.</p>
+<h3 id="slot-样式参数-弃用"><a href="#slot-样式参数-弃用" class="headerlink" title="slot 样式参数 弃用"></a><code>slot</code> 样式参数 <sup>弃用</sup></h3><p>通过具名 <code>&lt;slot&gt;</code> 插入的片段不再保持 <code>slot</code> 的参数。请用一个包裹元素来控制样式。或者用更高级方法：通过编程方式修改内容 ：<a href="render-function.html">render functions</a>.</p>
 
 <div class="upgrade-path">
   <h4>升级方式</h4>
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 找到选择slots标签CSS选择器(例如： <code>[slot="my-slot-name"]</code>).</p>
 </div>
 
-<h2 id="特殊属性"><a href="#特殊属性" class="headerlink" title="特殊属性"></a>特殊属性</h2><h3 id="keep-alive-属性-deprecated"><a href="#keep-alive-属性-deprecated" class="headerlink" title="keep-alive 属性 deprecated"></a><code>keep-alive</code> 属性 <sup>deprecated</sup></h3><p><code>keep-alive</code> 不再是一个特殊属性而是一个包裹组件，类似于  <code>&lt;transition&gt;</code>比如：</p>
+<h2 id="特殊属性"><a href="#特殊属性" class="headerlink" title="特殊属性"></a>特殊属性</h2><h3 id="keep-alive-属性-弃用"><a href="#keep-alive-属性-弃用" class="headerlink" title="keep-alive 属性 弃用"></a><code>keep-alive</code> 属性 <sup>弃用</sup></h3><p><code>keep-alive</code> 不再是一个特殊属性而是一个包裹组件，类似于  <code>&lt;transition&gt;</code>比如：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">component</span> <span class="attr">v-bind:is</span>=<span class="string">"view"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>这样可以在含多种状态子组件中使用 <code>&lt;keep-alive&gt;</code> ：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">todo-list</span> <span class="attr">v-if</span>=<span class="string">"todos.length &gt; 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-list</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">no-todos-gif</span> <span class="attr">v-else</span>&gt;</span><span class="tag">&lt;/<span class="name">no-todos-gif</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -912,7 +913,7 @@ new Vue({
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 找到 HTML 计算插值。</p>
 </div>
 
-<h3 id="单次绑定sup-gt-弃用"><a href="#单次绑定sup-gt-弃用" class="headerlink" title="单次绑定sup&gt;弃用"></a>单次绑定sup&gt;弃用</h3><p>单次绑定 (<code>{{* foo }}</code>) 已经弃用取代的是 <a href="/api/#v-once"><code>v-once</code> directive</a>.</p>
+<h3 id="单次绑定弃用"><a href="#单次绑定弃用" class="headerlink" title="单次绑定弃用"></a>单次绑定<sup>弃用</sup></h3><p>单次绑定 (<code>{{* foo }}</code>) 已经弃用取代的是 <a href="/api/#v-once"><code>v-once</code> directive</a>.</p>
 
 <div class="upgrade-path">
   <h4>升级方式</h4>
@@ -996,7 +997,7 @@ new Vue({
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a>工具找到 <code>vm.$before</code>。如有遗漏，请参考 <strong>控制台错误信息</strong>。</p>
 </div>
 
-<h3 id="vm-after-deprecated"><a href="#vm-after-deprecated" class="headerlink" title="vm.$after deprecated"></a><code>vm.$after</code> <sup>deprecated</sup></h3><p>使用 DOM 原生方法：</p>
+<h3 id="vm-after-弃用"><a href="#vm-after-弃用" class="headerlink" title="vm.$after 弃用"></a><code>vm.$after</code> <sup>弃用</sup></h3><p>使用 DOM 原生方法：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">myElement.parentNode.insertBefore(vm.$el, myElement.nextSibling)</div></pre></td></tr></table></figure>
 <p>如果 <code>myElement</code> 是最后一个节点也可以这样写：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">myElement.parentNode.appendChild(vm.$el)</div></pre></td></tr></table></figure>
@@ -1006,7 +1007,7 @@ new Vue({
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 找到<code>vm.$after</code>。如有遗漏，请参考<strong>控制台错误信息</strong>.</p>
 </div>
 
-<h3 id="vm-remove-deprecated"><a href="#vm-remove-deprecated" class="headerlink" title="vm.$remove deprecated"></a><code>vm.$remove</code> <sup>deprecated</sup></h3><p>使用 DOM 原生方法：</p>
+<h3 id="vm-remove-弃用"><a href="#vm-remove-弃用" class="headerlink" title="vm.$remove 弃用"></a><code>vm.$remove</code> <sup>弃用</sup></h3><p>使用 DOM 原生方法：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">vm.$el.remove()</div></pre></td></tr></table></figure>
 
 <div class="upgrade-path">
@@ -1052,7 +1053,7 @@ new Vue({
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 找到包含<code>Vue.config.debug</code>的地方。</p>
 </div>
 
-<h3 id="Vue-config-async-deprecated"><a href="#Vue-config-async-deprecated" class="headerlink" title="Vue.config.async deprecated"></a><code>Vue.config.async</code> <sup>deprecated</sup></h3><p>Async is now required for rendering performance.</p>
+<h3 id="Vue-config-async-弃用"><a href="#Vue-config-async-弃用" class="headerlink" title="Vue.config.async 弃用"></a><code>Vue.config.async</code> <sup>弃用</sup></h3><p>Async is now required for rendering performance.</p>
 
 <div class="upgrade-path">
   <h4>升级方式</h4>
@@ -1073,7 +1074,7 @@ new Vue({
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> 工具找到 <code>Vue.config.unsafeDelimiters</code>。然后 helper 工具也会找到HTML插入的实例，可以用`v-HTML`来替换。</p>
 </div>
 
-<h2 id="Global-API"><a href="#Global-API" class="headerlink" title="Global API"></a>Global API</h2><h3 id="Vue-extend-with-el-deprecated"><a href="#Vue-extend-with-el-deprecated" class="headerlink" title="Vue.extend with el deprecated"></a><code>Vue.extend</code> with <code>el</code> <sup>deprecated</sup></h3><p>el 选项不再在 <code>Vue.extend</code>中使用。仅在实例创建参数中可用。</p>
+<h2 id="Global-API"><a href="#Global-API" class="headerlink" title="Global API"></a>Global API</h2><h3 id="Vue-extend-with-el-弃用"><a href="#Vue-extend-with-el-弃用" class="headerlink" title="Vue.extend with el 弃用"></a><code>Vue.extend</code> with <code>el</code> <sup>弃用</sup></h3><p>el 选项不再在 <code>Vue.extend</code>中使用。仅在实例创建参数中可用。</p>
 
 <div class="upgrade-path">
   <h4>升级方式</h4>
