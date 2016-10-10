@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -246,7 +248,7 @@
                 
                 
                 <li>
-                    <a href="/vuex/api.html" class="sidebar-link">API</a>
+                    <a href="/vuex/api.html" class="sidebar-link">API 参考</a>
                 </li>
             
              
@@ -258,28 +260,28 @@
 <div class="content vuex with-sidebar ">
     	
     <h1>插件</h1>
-    <h1 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h1><p>Vuex stores accept the <code>plugins</code> option that exposes hooks for each mutation. A Vuex plugin is simply a function that receives the store as the only argument:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> myPlugin = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</div><div class="line">  <span class="comment">// called when the store is initialized</span></div><div class="line">  store.subscribe(<span class="function">(<span class="params">mutation, state</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">// called after every mutation.</span></div><div class="line">    <span class="comment">// The mutation comes in the format of &#123; type, payload &#125;.</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>And can be used like this:</p>
+    <p>Vuex 的 store 接收 <code>plugins</code> 选项，这个选项暴露出每个 mutation 的钩子。一个 Vuex 的插件就是一个简单的方法，接收 sotre 作为唯一参数：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> myPlugin = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</div><div class="line">  <span class="comment">// 当 store 在被初始化完成时被调用</span></div><div class="line">  store.subscribe(<span class="function">(<span class="params">mutation, state</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">// mutation 之后被调用</span></div><div class="line">    <span class="comment">// mutation 的格式为 &#123;type, payload&#125;。</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后像这样使用：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  plugins: [myPlugin]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="Committing-Mutations-Inside-Plugins"><a href="#Committing-Mutations-Inside-Plugins" class="headerlink" title="Committing Mutations Inside Plugins"></a>Committing Mutations Inside Plugins</h3><p>Plugins are not allowed to directly mutate state - similar to your components, they can only trigger changes by committing mutations.</p>
-<p>By committing mutations, a plugin can be used to sync a data source to the store. For example, to sync a websocket data source to the store (this is just a contrived example, in reality the <code>createPlugin</code> function can take some additional options for more complex tasks):</p>
+<h3 id="在插件内提交-Mutations"><a href="#在插件内提交-Mutations" class="headerlink" title="在插件内提交 Mutations"></a>在插件内提交 Mutations</h3><p>插件不能直接修改状态 - 这就像你的组件，它们只能被 mutations 来触发改变。</p>
+<p>通过提交 mutations，插件可以用来同步数据源到 store。例如， 为了同步 websocket 数据源到 store (这只是为说明用法的例子，在实际中，<code>createPlugin</code> 方法会附加更多的可选项，来完成复杂的任务)。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">createWebSocketPlugin</span> (<span class="params">socket</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="params">store</span> =&gt;</span> &#123;</div><div class="line">    socket.on(<span class="string">'data'</span>, data =&gt; &#123;</div><div class="line">      store.commit(<span class="string">'receiveData'</span>, data)</div><div class="line">    &#125;)</div><div class="line">    store.subscribe(<span class="function"><span class="params">mutation</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">if</span> (mutation.type === <span class="string">'UPDATE_DATA'</span>) &#123;</div><div class="line">        socket.emit(<span class="string">'update'</span>, mutation.payload)</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> plugin = createWebSocketPlugin(socket)</div><div class="line"></div><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  state,</div><div class="line">  mutations,</div><div class="line">  <span class="attr">plugins</span>: [plugin]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="Taking-State-Snapshots"><a href="#Taking-State-Snapshots" class="headerlink" title="Taking State Snapshots"></a>Taking State Snapshots</h3><p>Sometimes a plugin may want to receive “snapshots” of the state, and also compare the post-mutation state with pre-mutation state. To achieve that, you will need to perform a deep-copy on the state object:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> myPluginWithSnapshot = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">let</span> prevState = _.cloneDeep(store.state)</div><div class="line">  store.subscribe(<span class="function">(<span class="params">mutation, state</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> nextState = _.cloneDeep(state)</div><div class="line"></div><div class="line">    <span class="comment">// compare prevState and nextState...</span></div><div class="line"></div><div class="line">    <span class="comment">// save state for next mutation</span></div><div class="line">    prevState = nextState</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>Plugins that take state snapshots should be used only during development.</strong> When using Webpack or Browserify, we can let our build tools handle that for us:</p>
+<h3 id="生成状态快照"><a href="#生成状态快照" class="headerlink" title="生成状态快照"></a>生成状态快照</h3><p>有时候插件想获取状态 “快照” 和状态的改变前后的变化。为了实现这些功能，需要对状态对象进行深拷贝：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> myPluginWithSnapshot = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">let</span> prevState = _.cloneDeep(store.state)</div><div class="line">  store.subscribe(<span class="function">(<span class="params">mutation, state</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> nextState = _.cloneDeep(state)</div><div class="line"></div><div class="line">    <span class="comment">// 对比 prevState 和 nextState...</span></div><div class="line"></div><div class="line">    <span class="comment">// 保存状态，用于下一次 mutation</span></div><div class="line">    prevState = nextState</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>** 生成状态快照的插件只能在开发阶段使用，使用 Webpack 或 Browserify，让构建工具帮我们处理：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  plugins: process.env.NODE_ENV !== <span class="string">'production'</span></div><div class="line">    ? [myPluginWithSnapshot]</div><div class="line">    : []</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>The plugin will be used by default. For production, you will need <a href="https://webpack.github.io/docs/list-of-plugins.html#defineplugin" target="_blank" rel="external">DefinePlugin</a> for Webpack or <a href="https://github.com/hughsk/envify" target="_blank" rel="external">envify</a> for Browserify to convert the value of <code>process.env.NODE_ENV !== &#39;production&#39;</code> to <code>false</code> for the final build.</p>
-<h3 id="Built-in-Logger-Plugin"><a href="#Built-in-Logger-Plugin" class="headerlink" title="Built-in Logger Plugin"></a>Built-in Logger Plugin</h3><blockquote>
-<p>If you are using <a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="external">vue-devtools</a> you probably don’t need this.</p>
+<p>插件默认会被起用。为了发布产品，你需要用 Webpack 的 <a href="https://webpack.github.io/docs/list-of-plugins.html#defineplugin" target="_blank" rel="external">DefinePlugin</a> 或者 Browserify 的 <a href="https://github.com/hughsk/envify" target="_blank" rel="external">envify</a> 来转换 <code>process.env.NODE_ENV !== &#39;production&#39;</code> 的值为 <code>false</code>。</p>
+<h3 id="内置-Logger-插件"><a href="#内置-Logger-插件" class="headerlink" title="内置 Logger 插件"></a>内置 Logger 插件</h3><blockquote>
+<p>如果你正在使用 <a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="external">vue-devtools</a>，你可能不需要。</p>
 </blockquote>
-<p>Vuex comes with a logger plugin for common debugging usage:</p>
+<p>Vuex 带来一个日志插件用于一般的调试:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> createLogger <span class="keyword">from</span> <span class="string">'vuex/dist/logger'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="attr">plugins</span>: [createLogger()]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>The <code>createLogger</code> function takes a few options:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> logger = createLogger(&#123;</div><div class="line">  <span class="attr">collapsed</span>: <span class="literal">false</span>, <span class="comment">// auto-expand logged mutations</span></div><div class="line">  transformer (state) &#123;</div><div class="line">    <span class="comment">// transform the state before logging it.</span></div><div class="line">    <span class="comment">// for example return only a specific sub-tree</span></div><div class="line">    <span class="keyword">return</span> state.subTree</div><div class="line">  &#125;,</div><div class="line">  mutationTransformer (mutation) &#123;</div><div class="line">    <span class="comment">// mutations are logged in the format of &#123; type, payload &#125;</span></div><div class="line">    <span class="comment">// we can format it any way we want.</span></div><div class="line">    <span class="keyword">return</span> mutation.type</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>The logger file can also be included directly via a <code>&lt;script&gt;</code> tag, and will expose the <code>createVuexLogger</code> function globally.</p>
-<p>Note the logger plugin takes state snapshots, so use it only during development.</p>
+<p><code>createLogger</code> 方法有几个配置项：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> logger = createLogger(&#123;</div><div class="line">  <span class="attr">collapsed</span>: <span class="literal">false</span>, <span class="comment">// 自动展开记录 mutation</span></div><div class="line">  transformer (state) &#123;</div><div class="line">    <span class="comment">// 在记录之前前进行转换</span></div><div class="line">    <span class="comment">// 例如，只返回指定的子树</span></div><div class="line">    <span class="keyword">return</span> state.subTree</div><div class="line">  &#125;,</div><div class="line">  mutationTransformer (mutation) &#123;</div><div class="line">    <span class="comment">// mutation 格式 &#123; type, payload &#125;</span></div><div class="line">    <span class="comment">// 我们可以按照想要的方式进行格式化</span></div><div class="line">    <span class="keyword">return</span> mutation.type</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>日志插件还可以直接通过 <code>&lt;script&gt;</code> 标签, 然后它会提供全局方法 <code>createVuexLogger</code> 。</p>
+<p>要注意，logger 插件会生成状态快照，所以仅在开发环境使用。</p>
 
     
     <div class="footer">

@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -246,7 +248,7 @@
                 
                 
                 <li>
-                    <a href="/vuex/api.html" class="sidebar-link">API</a>
+                    <a href="/vuex/api.html" class="sidebar-link">API 参考</a>
                 </li>
             
              
@@ -258,7 +260,7 @@
 <div class="content vuex with-sidebar ">
     	
     <h1>Mutations</h1>
-    <h1 id="Mutations"><a href="#Mutations" class="headerlink" title="Mutations"></a>Mutations</h1><p>The only way to actually change state in a Vuex store is by committing a mutation. Vuex mutations are very similar to events: each mutation has a string <strong>type</strong> and a <strong>handler</strong>. The handler function is where we perform actual state modifications, and it will receive the state as the first argument:</p>
+    <p>The only way to actually change state in a Vuex store is by committing a mutation. Vuex mutations are very similar to events: each mutation has a string <strong>type</strong> and a <strong>handler</strong>. The handler function is where we perform actual state modifications, and it will receive the state as the first argument:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="attr">state</span>: &#123;</div><div class="line">    <span class="attr">count</span>: <span class="number">1</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">mutations</span>: &#123;</div><div class="line">    increment (state) &#123;</div><div class="line">      <span class="comment">// mutate state</span></div><div class="line">      state.count++</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>You cannot directly call a mutation handler. The options here is more like event registration: “When a mutation with type <code>increment</code> is triggered, call this handler.” To invoke a mutation handler, you need to call <strong>store.commit</strong> with its type:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">store.commit(<span class="string">'increment'</span>)</div></pre></td></tr></table></figure>

@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -294,7 +296,7 @@
 <div class="content router with-sidebar ">
     	
     <h1>编程式的导航</h1>
-    <h1 id="编程式的导航"><a href="#编程式的导航" class="headerlink" title="编程式的导航"></a>编程式的导航</h1><p>除了使用 <code>&lt;router-link&gt;</code> 创建 a 标签来定义导航链接，我们还可以借助 router 的实例方法，通过编写代码来实现。</p>
+    <p>除了使用 <code>&lt;router-link&gt;</code> 创建 a 标签来定义导航链接，我们还可以借助 router 的实例方法，通过编写代码来实现。</p>
 <h4 id="router-push-location"><a href="#router-push-location" class="headerlink" title="router.push(location)"></a><code>router.push(location)</code></h4><p>想要导航到不同的 URL，则使用 <code>router.push</code> 方法。这个方法会向 history 栈添加一个新的记录，所以，当用户点击浏览器后退按钮时，则回到之前的 URL。</p>
 <p>当你点击 <code>&lt;router-link&gt;</code> 时，这个方法会在内部调用，所以说，点击 <code>&lt;router-link :to=&quot;...&quot;&gt;</code> 等同于调用 <code>router.push(...)</code>。</p>
 <table>

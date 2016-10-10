@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -294,7 +296,7 @@
 <div class="content router with-sidebar ">
     	
     <h1>动态路由匹配</h1>
-    <h1 id="动态路由匹配"><a href="#动态路由匹配" class="headerlink" title="动态路由匹配"></a>动态路由匹配</h1><p>我们经常需要把某种模式匹配到的所有路由，全都映射到同个组件。例如，我们有一个 <code>User</code> 组件，对于所有 ID 各不相同的用户，都要使用这个组件来渲染。那么，我们可以在  <code>vue-router</code> 的路由路径中使用『动态路径参数』（dynamic segment）来达到这个效果：</p>
+    <p>我们经常需要把某种模式匹配到的所有路由，全都映射到同个组件。例如，我们有一个 <code>User</code> 组件，对于所有 ID 各不相同的用户，都要使用这个组件来渲染。那么，我们可以在  <code>vue-router</code> 的路由路径中使用『动态路径参数』（dynamic segment）来达到这个效果：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> User = &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;div&gt;User&lt;/div&gt;'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [</div><div class="line">    <span class="comment">// 动态路径参数 以冒号开头</span></div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/user/:id'</span>, <span class="attr">component</span>: User &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>现在呢，像 <code>/user/foo</code> 和 <code>/user/bar</code> 都将映射到相同的路由。</p>
 <p>一个『路径参数』使用冒号 <code>:</code> 标记。当匹配到一个路由时，参数值会被设置到<br> <code>this.$route.params</code>，可以在每个组件内使用。于是，我们可以更新 <code>User</code> 的模板，输出当前用户的 ID：</p>

@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTTP 请求/响应 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "vue-resource"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Vue.js v2.0 中文</span>
+  </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与:427447379
+  </span>
+  <ul id="nav">
+    <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link current">vue-resource</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+        
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link current">vue-resource</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/images/patreon.png">
+              <a href="/support-vuejs">支持 Vue.js</a>
+            </span>
+        </div>
+        <h2>
+            
+            
+            <select class="version-select">
+                <option value="SELF" selected>2.0</option>
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/index.html" class="sidebar-link">Vue-resource</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/docs/README.html" class="sidebar-link">目录</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/docs/config.html" class="sidebar-link">配置</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/docs/http.html" class="sidebar-link current">HTTP 请求/响应</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/docs/resource.html" class="sidebar-link">创建资源</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/docs/recipes.html" class="sidebar-link">模板代码</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/docs/api.html" class="sidebar-link">API 参考</a>
+                </li>
+            
+             
+        </ul>
+    </div>
+</div>
+
+
+<div class="content vue-resource with-sidebar ">
+    	
+    <h1>HTTP 请求/响应</h1>
+    <h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><p>The http service can be used globally <code>Vue.http</code> or in a Vue instance <code>this.$http</code>.</p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>A Vue instance provides the <code>this.$http</code> service which can send HTTP requests. A request method call returns a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="external">Promise</a> that resolves to the response. Also the Vue instance will be automatically bound to <code>this</code> in all function callbacks.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="comment">// GET /someUrl</span></div><div class="line">  <span class="keyword">this</span>.$http.get(<span class="string">'/someUrl'</span>).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">// success callback</span></div><div class="line">  &#125;, (response) =&gt; &#123;</div><div class="line">    <span class="comment">// error callback</span></div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><p>Shortcut methods are available for all request types. These methods work globally or in a Vue instance.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// global Vue object</span></div><div class="line">Vue.http.get(<span class="string">'/someUrl'</span>, [options]).then(successCallback, errorCallback);</div><div class="line">Vue.http.post(<span class="string">'/someUrl'</span>, [body], [options]).then(successCallback, errorCallback);</div><div class="line"></div><div class="line"><span class="comment">// in a Vue instance</span></div><div class="line"><span class="keyword">this</span>.$http.get(<span class="string">'/someUrl'</span>, [options]).then(successCallback, errorCallback);</div><div class="line"><span class="keyword">this</span>.$http.post(<span class="string">'/someUrl'</span>, [body], [options]).then(successCallback, errorCallback);</div></pre></td></tr></table></figure>
+<p>List of shortcut methods:</p>
+<ul>
+<li><code>get(url, [options])</code></li>
+<li><code>head(url, [options])</code></li>
+<li><code>delete(url, [options])</code></li>
+<li><code>jsonp(url, [options])</code></li>
+<li><code>post(url, [body], [options])</code></li>
+<li><code>put(url, [body], [options])</code></li>
+<li><code>patch(url, [body], [options])</code></li>
+</ul>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td><code>string</code></td>
+<td>URL to which the request is sent</td>
+</tr>
+<tr>
+<td>body</td>
+<td><code>Object</code>, <code>FormData</code>, <code>string</code></td>
+<td>Data to be sent as the request body</td>
+</tr>
+<tr>
+<td>headers</td>
+<td><code>Object</code></td>
+<td>Headers object to be sent as HTTP request headers</td>
+</tr>
+<tr>
+<td>params</td>
+<td><code>Object</code></td>
+<td>Parameters object to be sent as URL parameters</td>
+</tr>
+<tr>
+<td>method</td>
+<td><code>string</code></td>
+<td>HTTP method (e.g. GET, POST, …)</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td><code>number</code></td>
+<td>Request timeout in milliseconds (<code>0</code> means no timeout)</td>
+</tr>
+<tr>
+<td>before</td>
+<td><code>function(request)</code></td>
+<td>Callback function to modify the request options before it is sent</td>
+</tr>
+<tr>
+<td>progress</td>
+<td><code>function(event)</code></td>
+<td>Callback function to handle the <a href="https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent" target="_blank" rel="external">ProgressEvent</a> of uploads</td>
+</tr>
+<tr>
+<td>credentials</td>
+<td><code>boolean</code></td>
+<td>Indicates whether or not cross-site Access-Control requests should be made using credentials</td>
+</tr>
+<tr>
+<td>emulateHTTP</td>
+<td><code>boolean</code></td>
+<td>Send PUT, PATCH and DELETE requests with a HTTP POST and set the <code>X-HTTP-Method-Override</code> header</td>
+</tr>
+<tr>
+<td>emulateJSON</td>
+<td><code>boolean</code></td>
+<td>Send request body as <code>application/x-www-form-urlencoded</code> content type</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h2><p>A request resolves to a response object with the following properties and methods:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td><code>string</code></td>
+<td>Response URL origin</td>
+</tr>
+<tr>
+<td>body</td>
+<td><code>Object</code>, <code>Blob</code>, <code>string</code></td>
+<td>Response body data</td>
+</tr>
+<tr>
+<td>headers</td>
+<td><code>Header</code></td>
+<td>Response Headers object</td>
+</tr>
+<tr>
+<td>ok</td>
+<td><code>boolean</code></td>
+<td>HTTP status code between 200 and 299</td>
+</tr>
+<tr>
+<td>status</td>
+<td><code>number</code></td>
+<td>HTTP status code of the response</td>
+</tr>
+<tr>
+<td>statusText</td>
+<td><code>string</code></td>
+<td>HTTP status text of the response</td>
+</tr>
+<tr>
+<td><strong>Method</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>text()</td>
+<td><code>Promise</code></td>
+<td>Resolves the body as string</td>
+</tr>
+<tr>
+<td>json()</td>
+<td><code>Promise</code></td>
+<td>Resolves the body as parsed JSON object</td>
+</tr>
+<tr>
+<td>blob()</td>
+<td><code>Promise</code></td>
+<td>Resolves the body as Blob object</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="comment">// POST /someUrl</span></div><div class="line">  <span class="keyword">this</span>.$http.post(<span class="string">'/someUrl'</span>, &#123;<span class="attr">foo</span>: <span class="string">'bar'</span>&#125;).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</div><div class="line"></div><div class="line">    <span class="comment">// get status</span></div><div class="line">    response.status;</div><div class="line"></div><div class="line">    <span class="comment">// get status text</span></div><div class="line">    response.statusText;</div><div class="line"></div><div class="line">    <span class="comment">// get 'Expires' header</span></div><div class="line">    response.headers.get(<span class="string">'Expires'</span>);</div><div class="line"></div><div class="line">    <span class="comment">// set data on vm</span></div><div class="line">    <span class="keyword">this</span>.$set(<span class="string">'someData'</span>, response.body);</div><div class="line"></div><div class="line">  &#125;, (response) =&gt; &#123;</div><div class="line">    <span class="comment">// error callback</span></div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Fetch an image and use the blob() method to extract the image body content from the response.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="comment">// GET /image.jpg</span></div><div class="line">  <span class="keyword">this</span>.$http.get(<span class="string">'/image.jpg'</span>).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</div><div class="line"></div><div class="line">    <span class="comment">// resolve to Blob</span></div><div class="line">    <span class="keyword">return</span> response.blob();</div><div class="line"></div><div class="line">  &#125;).then(blob) =&gt; &#123;</div><div class="line">    <span class="comment">// use image Blob</span></div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Interceptors"><a href="#Interceptors" class="headerlink" title="Interceptors"></a>Interceptors</h2><p>Interceptors can be defined globally and are used for pre- and postprocessing of a request.</p>
+<h3 id="Request-processing"><a href="#Request-processing" class="headerlink" title="Request processing"></a>Request processing</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.http.interceptors.push(<span class="function">(<span class="params">request, next</span>) =&gt;</span> &#123;</div><div class="line"></div><div class="line">  <span class="comment">// modify request</span></div><div class="line">  request.method = <span class="string">'POST'</span>;</div><div class="line"></div><div class="line">  <span class="comment">// continue to next interceptor</span></div><div class="line">  next();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="Request-and-Response-processing"><a href="#Request-and-Response-processing" class="headerlink" title="Request and Response processing"></a>Request and Response processing</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.http.interceptors.push(<span class="function">(<span class="params">request, next</span>)  =&gt;</span> &#123;</div><div class="line"></div><div class="line">  <span class="comment">// modify request</span></div><div class="line">  request.method = <span class="string">'POST'</span>;</div><div class="line"></div><div class="line">  <span class="comment">// continue to next interceptor</span></div><div class="line">  next(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</div><div class="line"></div><div class="line">    <span class="comment">// modify response</span></div><div class="line">    response.body = <span class="string">'...'</span>;</div><div class="line"></div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="Return-a-Response-and-stop-processing"><a href="#Return-a-Response-and-stop-processing" class="headerlink" title="Return a Response and stop processing"></a>Return a Response and stop processing</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.http.interceptors.push(<span class="function">(<span class="params">request, next</span>) =&gt;</span> &#123;</div><div class="line"></div><div class="line">  <span class="comment">// modify request ...</span></div><div class="line"></div><div class="line">  <span class="comment">// stop and return response</span></div><div class="line">  next(request.respondWith(body, &#123;</div><div class="line">    <span class="attr">status</span>: <span class="number">404</span>,</div><div class="line">    <span class="attr">statusText</span>: <span class="string">'Not found'</span></div><div class="line">  &#125;));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+    
+    <div class="footer">
+      发现错误？想参与编辑？
+      <a href="https://github.com/dingyiming/vuejs.org/tree/2.0-cn/src/vue-resource/docs/http.md" target="_blank">
+        在 Github 上编辑此页！
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>

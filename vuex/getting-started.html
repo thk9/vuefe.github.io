@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -246,7 +248,7 @@
                 
                 
                 <li>
-                    <a href="/vuex/api.html" class="sidebar-link">API</a>
+                    <a href="/vuex/api.html" class="sidebar-link">API 参考</a>
                 </li>
             
              
@@ -258,24 +260,24 @@
 <div class="content vuex with-sidebar ">
     	
     <h1>起步</h1>
-    <h1 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h1><p>At the center of every Vuex application is the <strong>store</strong>. A “store” is basically a container that holds your application <strong>state</strong>. There are two things that makes a Vuex store different from a plain global object:</p>
+    <p>所有 Vuex 应用的中心就是 store（状态存储）。”store” 本质上是一个保存应用状态的容器。这里有两件要点，让 Vuex store 区别于普通全局对象：</p>
 <ol>
-<li><p>Vuex stores are reactive. When Vue components retrieve state from it, they will reactively and efficiently update if the store’s state changes.</p>
+<li><p>Vuex store 是响应式的。当 Vue 组件从 store 读取状态，如果 store 中的状态更新，它们也会高效地响应更新。</p>
 </li>
-<li><p>You cannot directly mutate the store’s state. The only way to change a store’s state is by explicitly <strong>committing mutations</strong>. This ensures every state change leaves a track-able record, and enables tooling that helps us better understand our applications.</p>
+<li><p>你不能直接更改 store 中的状态。更改状态的唯一的方法就是显式 <strong>提交更改 (committing mutations)</strong>。这样可以确保每次状态更改都留有可追踪的记录，并且可以使用工具帮助我们更好地理解我们的应用。</p>
 </li>
 </ol>
-<h3 id="The-Simplest-Store"><a href="#The-Simplest-Store" class="headerlink" title="The Simplest Store"></a>The Simplest Store</h3><blockquote>
-<p><strong>NOTE:</strong> We will be using ES2015 syntax for code examples for the rest of the docs. If you haven’t picked it up, <a href="https://babeljs.io/docs/learn-es2015/" target="_blank" rel="external">you should</a>!</p>
+<h3 id="最简单的-Store"><a href="#最简单的-Store" class="headerlink" title="最简单的 Store"></a>最简单的 Store</h3><blockquote>
+<p><strong>NOTE:</strong> 我们将会在以后的示例代码中使用 ES2015 语法。如果你还没有用过，<a href="https://babeljs.io/docs/learn-es2015/" target="_blank" rel="external">你应该看看</a>！</p>
 </blockquote>
-<p>After <a href="installation.md">installing</a> Vuex, let’s create a store. It is pretty straightforward - just provide an initial state object, and some mutations:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Make sure to call Vue.use(Vuex) first if using a module system</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="attr">state</span>: &#123;</div><div class="line">    <span class="attr">count</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">mutations</span>: &#123;</div><div class="line">    increment (state) &#123;</div><div class="line">      state.count++</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>Now, you can access the state object as <code>store.state</code>, and trigger a state change with the <code>store.commit</code> method:</p>
+<p><a href="installation.html">安装</a> Vuex 之后，我们来创建一个 store。这是一个非常易懂的例子 - 只含有一个初始化状态对象，以及一些更改：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 如果使用模块系统，确保之前调用过 Vue.use(Vuex)</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="attr">state</span>: &#123;</div><div class="line">    <span class="attr">count</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">mutations</span>: &#123;</div><div class="line">    increment (state) &#123;</div><div class="line">      state.count++</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>现在，你可以通过 <code>store.state</code> 访问状态对象，以及通过 <code>store.commit</code> 触发状态的更改：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">store.commit(<span class="string">'increment'</span>)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(store.state.count) <span class="comment">// -&gt; 1</span></div></pre></td></tr></table></figure>
-<p>Again, the reason we are committing a mutation instead of changing <code>store.state.count</code> directly, is because we want to explicitly track it. This simple convention makes your intention more explicit, so that you can reason about state changes in your app better when reading the code. In addition, this gives us the opportunity to implement tools that can log every mutation, take state snapshots, or even perform time travel debugging.</p>
-<p>Using store state in a component simply involves returning the state within a computed property, because the store state is reactive. Triggering changes simply means committing mutations in component methods.</p>
-<p>Here’s an example of the <a href="https://jsfiddle.net/yyx990803/n9jmu5v7/" target="_blank" rel="external">most basic Vuex counter app</a>.</p>
-<p>Next, we will discuss each core concept in much finer details and let’s start with <a href="state.md">State</a>.</p>
+<p>再次说明，我们提交 mutation 而不是直接更改 <code>store.state.count</code>，是想要显式地追踪它。这个简单的转换使你的意图更加明显。当你阅读代码时，可以更好地了解应用中的状态更改。另外，这也让我们有机会去实现一些工具，记录修改日志、保存状态快照、甚至是进行基于时间轴的调试。</p>
+<p>因为 store 的状态是响应式的，要在组件中使用 store 的状态，只需在 computed 属性中返回 store 的状态就行。而触发状态改变可以简单的理解为在组件方法中提交 mutation。</p>
+<p>这是一个 <a href="https://jsfiddle.net/yyx990803/n9jmu5v7/" target="_blank" rel="external">最基本的 Vuex 计数应用</a> 的例子。</p>
+<p>接下来，我们将在更多的细微细节中讨论每个核心思想，让我们从 <a href="state.html">State</a> 开始吧。</p>
 
     
     <div class="footer">

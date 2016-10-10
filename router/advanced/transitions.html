@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -294,7 +296,7 @@
 <div class="content router with-sidebar ">
     	
     <h1>过渡动效</h1>
-    <h1 id="过渡动效"><a href="#过渡动效" class="headerlink" title="过渡动效"></a>过渡动效</h1><p><code>&lt;router-view&gt;</code> 是基本的动态组件，所以我们可以用 <code>&lt;transition&gt;</code> 组件给它添加一些过渡效果：</p>
+    <p><code>&lt;router-view&gt;</code> 是基本的动态组件，所以我们可以用 <code>&lt;transition&gt;</code> 组件给它添加一些过渡效果：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><a href="http://vuejs.org/guide/transitions.html" target="_blank" rel="external"><code>&lt;transition&gt;</code> 的所有功能</a> 在这里同样适用。</p>
 <h3 id="单个路由的过渡"><a href="#单个路由的过渡" class="headerlink" title="单个路由的过渡"></a>单个路由的过渡</h3><p>上面的用法会给所有路由设置一样的过渡效果，如果你想让每个路由组件有各自的过渡效果，可以在各路由组件内使用 <code>&lt;transition&gt;</code> 并设置不同的 name。</p>

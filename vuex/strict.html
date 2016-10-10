@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -246,7 +248,7 @@
                 
                 
                 <li>
-                    <a href="/vuex/api.html" class="sidebar-link">API</a>
+                    <a href="/vuex/api.html" class="sidebar-link">API 参考</a>
                 </li>
             
              
@@ -258,11 +260,13 @@
 <div class="content vuex with-sidebar ">
     	
     <h1>严格模式</h1>
-    <h1 id="Strict-Mode"><a href="#Strict-Mode" class="headerlink" title="Strict Mode"></a>Strict Mode</h1><p>To enable strict mode, simply pass in <code>strict: true</code> when creating a Vuex store:</p>
+    <h1 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h1><p>要启用严格模式，只需在创建 Vuex store 的时候简单地传入 <code>strict: true</code>。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  strict: <span class="literal">true</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>In strict mode, whenever Vuex state is mutated outside of mutation handlers, an error will be thrown. This ensures that all state mutations can be explicitly tracked by debugging tools.</p>
-<h3 id="Development-vs-Production"><a href="#Development-vs-Production" class="headerlink" title="Development vs. Production"></a>Development vs. Production</h3><p><strong>Do not enable strict mode when deploying for production!</strong> Strict mode runs a deep watch on the state tree for detecting inappropriate mutations - make sure to turn it off in production to avoid the performance cost.</p>
-<p>Similar to plugins, we can let the build tools handle that:</p>
+<p>在严格模式下，只要 Vuex 状态在 mutation 方法外被修改就会抛出错误。这确保了所有状态修改都会明确的被调试工具跟踪。</p>
+<h3 id="开发阶段-vs-发布阶段"><a href="#开发阶段-vs-发布阶段" class="headerlink" title="开发阶段 vs. 发布阶段"></a>开发阶段 vs. 发布阶段</h3><ul>
+<li>不要在发布阶段开启严格模式！ 严格模式会对状态树进行深度监测来检测不合适的修改 —— 确保在发布阶段关闭它避免性能损耗。</li>
+</ul>
+<p>跟处理插件的情况类似，我们可以让构建工具来处理：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  strict: process.env.NODE_ENV !== <span class="string">'production'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
     

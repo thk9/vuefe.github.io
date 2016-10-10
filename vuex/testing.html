@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -246,7 +248,7 @@
                 
                 
                 <li>
-                    <a href="/vuex/api.html" class="sidebar-link">API</a>
+                    <a href="/vuex/api.html" class="sidebar-link">API 参考</a>
                 </li>
             
              
@@ -258,7 +260,7 @@
 <div class="content vuex with-sidebar ">
     	
     <h1>测试</h1>
-    <h1 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h1><p>The main parts we want to unit test in Vuex are mutations and actions.</p>
+    <p>The main parts we want to unit test in Vuex are mutations and actions.</p>
 <h3 id="Testing-Mutations"><a href="#Testing-Mutations" class="headerlink" title="Testing Mutations"></a>Testing Mutations</h3><p>Mutations are very straightforward to test, because they are just functions that completely rely on their arguments. One trick is that if you are using ES2015 modules and put your mutations inside your <code>store.js</code> file, in addition to the default export, you can also export the mutations as a named export:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> state = &#123; ... &#125;</div><div class="line"></div><div class="line"><span class="comment">// export mutations as a named export</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> mutations = &#123; ... &#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  state,</div><div class="line">  mutations</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>Example testing a mutation using Mocha + Chai (you can use any framework/assertion libraries you like):</p>

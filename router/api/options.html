@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link current">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link current">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -294,7 +296,7 @@
 <div class="content router with-sidebar ">
     	
     <h1>Router 构造配置</h1>
-    <h1 id="Router-构造配置"><a href="#Router-构造配置" class="headerlink" title="Router 构造配置"></a>Router 构造配置</h1><h3 id="routes"><a href="#routes" class="headerlink" title="routes"></a>routes</h3><ul>
+    <h3 id="routes"><a href="#routes" class="headerlink" title="routes"></a>routes</h3><ul>
 <li><p>类型: <code>Array&lt;RouteConfig&gt;</code></p>
 <p><code>RouteConfig</code> 的类型定义：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">declare type RouteConfig = &#123;</div><div class="line">  <span class="attr">path</span>: string;</div><div class="line">  component?: Component;</div><div class="line">  name?: string; <span class="comment">// for named routes (命名路由)</span></div><div class="line">  components?: &#123; [name: string]: Component &#125;; <span class="comment">// for named views (命名视图组件)</span></div><div class="line">  redirect?: string | Location | <span class="built_in">Function</span>;</div><div class="line">  alias?: string | <span class="built_in">Array</span>&lt;string&gt;;</div><div class="line">  children?: <span class="built_in">Array</span>&lt;RouteConfig&gt;; <span class="comment">// for nested routes</span></div><div class="line">  beforeEnter?: <span class="function">(<span class="params">route: Route, redirect: <span class="built_in">Function</span>, next: <span class="built_in">Function</span></span>) =&gt;</span> <span class="keyword">void</span>;</div><div class="line">  meta?: any;</div><div class="line">&#125;</div></pre></td></tr></table></figure>

@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link current">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link current">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -525,7 +527,7 @@ new Vue({
 })
 </script>
 
-<h2 id="绑定-value"><a href="#绑定-value" class="headerlink" title="绑定 value"></a>绑定 value</h2><p>对于单选按钮，勾选框及选择列表选项，<code>v-model</code> 绑定的 value 通常是静态字符串（对于勾选框是逻辑值）：</p>
+<h2 id="绑定-value"><a href="#绑定-value" class="headerlink" title="绑定 value"></a>绑定 value</h2><p>对于单选按钮，勾选框及选择列表选项， <code>v-model</code> 绑定的 value 通常是静态字符串（对于勾选框是逻辑值）：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 当选中时，`picked` 为字符串 "a" --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">v-model</span>=<span class="string">"picked"</span> <span class="attr">value</span>=<span class="string">"a"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- `toggle` 为 true 或 false --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">v-model</span>=<span class="string">"toggle"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 当选中时，`selected` 为字符串 "abc" --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">v-model</span>=<span class="string">"selected"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"abc"</span>&gt;</span>ABC<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>但是有时我们想绑定 value 到 Vue 实例的一个动态属性上，这时可以用 <code>v-bind</code> 实现，并且这个属性的值可以不是字符串。</p>
 <h3 id="复选框-1"><a href="#复选框-1" class="headerlink" title="复选框"></a>复选框</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span></span></div><div class="line">  <span class="attr">type</span>=<span class="string">"checkbox"</span></div><div class="line">  <span class="attr">v-model</span>=<span class="string">"toggle"</span></div><div class="line">  <span class="attr">v-bind:true-value</span>=<span class="string">"a"</span></div><div class="line">  <span class="attr">v-bind:false-value</span>=<span class="string">"b"</span>&gt;</div></pre></td></tr></table></figure>
@@ -534,7 +536,7 @@ new Vue({
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 当选中时</span></div><div class="line">vm.pick === vm.a</div></pre></td></tr></table></figure>
 <h3 id="选择列表设置"><a href="#选择列表设置" class="headerlink" title="选择列表设置"></a>选择列表设置</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">v-model</span>=<span class="string">"selected"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 内联对象字面量 --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">v-bind:value</span>=<span class="string">"&#123; number: 123 &#125;"</span>&gt;</span>123<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 当选中时</span></div><div class="line"><span class="keyword">typeof</span> vm.selected <span class="comment">// -&gt; 'object'</span></div><div class="line">vm.selected.number <span class="comment">// -&gt; 123</span></div></pre></td></tr></table></figure>
-<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><h3 id="lazy"><a href="#lazy" class="headerlink" title=".lazy"></a><code>.lazy</code></h3><p>在默认情况下，<code>v-model</code> 在 <code>input</code> 事件中同步输入框值与数据，但你可以添加一个修饰符 <code>lazy</code>，从而转变为在 <code>change</code> 事件中同步：</p>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><h3 id="lazy"><a href="#lazy" class="headerlink" title=".lazy"></a><code>.lazy</code></h3><p>在默认情况下， <code>v-model</code> 在 <code>input</code> 事件中同步输入框值与数据，但你可以添加一个修饰符 <code>lazy</code> ，从而转变为在 <code>change</code> 事件中同步：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 在 "change" 而不是 "input" 事件中更新 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.lazy</span>=<span class="string">"msg"</span> &gt;</span></div></pre></td></tr></table></figure>
 <h3 id="number"><a href="#number" class="headerlink" title=".number"></a><code>.number</code></h3><p>如果想自动将用户的输入值转为 Number 类型（如果原值的转换结果为 NaN 则返回原值），可以添加一个修饰符 <code>number</code> 给 <code>v-model</code> 来处理输入值：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.number</span>=<span class="string">"age"</span> <span class="attr">type</span>=<span class="string">"number"</span>&gt;</span></div></pre></td></tr></table></figure>

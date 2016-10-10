@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>创建资源 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "vue-resource"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Vue.js v2.0 中文</span>
+  </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与:427447379
+  </span>
+  <ul id="nav">
+    <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link current">vue-resource</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+        
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link current">vue-resource</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/images/patreon.png">
+              <a href="/support-vuejs">支持 Vue.js</a>
+            </span>
+        </div>
+        <h2>
+            
+            
+            <select class="version-select">
+                <option value="SELF" selected>2.0</option>
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/index.html" class="sidebar-link">Vue-resource</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/docs/README.html" class="sidebar-link">目录</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/docs/config.html" class="sidebar-link">配置</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/docs/http.html" class="sidebar-link">HTTP 请求/响应</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/docs/resource.html" class="sidebar-link current">创建资源</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/docs/recipes.html" class="sidebar-link">模板代码</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-resource/docs/api.html" class="sidebar-link">API 参考</a>
+                </li>
+            
+             
+        </ul>
+    </div>
+</div>
+
+
+<div class="content vue-resource with-sidebar ">
+    	
+    <h1>创建资源</h1>
+    <h1 id="Resource"><a href="#Resource" class="headerlink" title="Resource"></a>Resource</h1><p>The resource service can be used globally <code>Vue.resource</code> or in a Vue instance <code>this.$resource</code>.</p>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ul>
+<li><code>resource(url, [params], [actions], [options])</code></li>
+</ul>
+<h2 id="Default-Actions"><a href="#Default-Actions" class="headerlink" title="Default Actions"></a>Default Actions</h2><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">get: &#123;<span class="attr">method</span>: <span class="string">'GET'</span>&#125;,</div><div class="line"><span class="attr">save</span>: &#123;<span class="attr">method</span>: <span class="string">'POST'</span>&#125;,</div><div class="line"><span class="attr">query</span>: &#123;<span class="attr">method</span>: <span class="string">'GET'</span>&#125;,</div><div class="line"><span class="attr">update</span>: &#123;<span class="attr">method</span>: <span class="string">'PUT'</span>&#125;,</div><div class="line"><span class="attr">remove</span>: &#123;<span class="attr">method</span>: <span class="string">'DELETE'</span>&#125;,</div><div class="line"><span class="attr">delete</span>: &#123;<span class="attr">method</span>: <span class="string">'DELETE'</span>&#125;</div></pre></td></tr></table></figure>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> resource = <span class="keyword">this</span>.$resource(<span class="string">'someItem&#123;/id&#125;'</span>);</div><div class="line"></div><div class="line">  <span class="comment">// GET someItem/1</span></div><div class="line">  resource.get(&#123;<span class="attr">id</span>: <span class="number">1</span>&#125;).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">this</span>.$set(<span class="string">'item'</span>, response.json())</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// POST someItem/1</span></div><div class="line">  resource.save(&#123;<span class="attr">id</span>: <span class="number">1</span>&#125;, &#123;<span class="attr">item</span>: <span class="keyword">this</span>.item&#125;).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">// success callback</span></div><div class="line">  &#125;, (response) =&gt; &#123;</div><div class="line">    <span class="comment">// error callback</span></div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// DELETE someItem/1</span></div><div class="line">  resource.delete(&#123;<span class="attr">id</span>: <span class="number">1</span>&#125;).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">// success callback</span></div><div class="line">  &#125;, (response) =&gt; &#123;</div><div class="line">    <span class="comment">// error callback</span></div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Custom-Actions"><a href="#Custom-Actions" class="headerlink" title="Custom Actions"></a>Custom Actions</h2><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> customActions = &#123;</div><div class="line">    <span class="attr">foo</span>: &#123;<span class="attr">method</span>: <span class="string">'GET'</span>, <span class="attr">url</span>: <span class="string">'someItem/foo&#123;/id&#125;'</span>&#125;,</div><div class="line">    <span class="attr">bar</span>: &#123;<span class="attr">method</span>: <span class="string">'POST'</span>, <span class="attr">url</span>: <span class="string">'someItem/bar&#123;/id&#125;'</span>&#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> resource = <span class="keyword">this</span>.$resource(<span class="string">'someItem&#123;/id&#125;'</span>, &#123;&#125;, customActions);</div><div class="line"></div><div class="line">  <span class="comment">// GET someItem/foo/1</span></div><div class="line">  resource.foo(&#123;<span class="attr">id</span>: <span class="number">1</span>&#125;).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">this</span>.$set(<span class="string">'item'</span>, response.json())</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// POST someItem/bar/1</span></div><div class="line">  resource.bar(&#123;<span class="attr">id</span>: <span class="number">1</span>&#125;, &#123;<span class="attr">item</span>: <span class="keyword">this</span>.item&#125;).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">// success callback</span></div><div class="line">  &#125;, (response) =&gt; &#123;</div><div class="line">    <span class="comment">// error callback</span></div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+    
+    <div class="footer">
+      发现错误？想参与编辑？
+      <a href="https://github.com/dingyiming/vuejs.org/tree/2.0-cn/src/vue-resource/docs/resource.md" target="_blank">
+        在 Github 上编辑此页！
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>

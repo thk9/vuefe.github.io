@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -246,7 +248,7 @@
                 
                 
                 <li>
-                    <a href="/vuex/api.html" class="sidebar-link">API</a>
+                    <a href="/vuex/api.html" class="sidebar-link">API 参考</a>
                 </li>
             
              
@@ -258,19 +260,19 @@
 <div class="content vuex with-sidebar ">
     	
     <h1>应用结构</h1>
-    <h1 id="Application-Structure"><a href="#Application-Structure" class="headerlink" title="Application Structure"></a>Application Structure</h1><p>Vuex doesn’t really restrict how you structure your code. Rather, it enforces a set of high-level principles:</p>
+    <p>实际上，Vuex 在怎么组织你的代码结构上面没有任何限制，相反，它强制规定了一系列高级的原则：</p>
 <ol>
-<li><p>Application-level state is centralized in the store.</p>
+<li><p>应用级的状态集中放在 store 中。</p>
 </li>
-<li><p>The only way to mutate the state is by committing <strong>mutations</strong>, which are synchronous transactions.</p>
+<li><p>改变状态的唯一方式是提交<strong>mutations</strong>，这是个同步的事务。</p>
 </li>
-<li><p>Asynchronous logic should be encapsulated in, and can be composed with <strong>actions</strong>.</p>
+<li><p>异步逻辑应该封装在<strong>action</strong> 中。</p>
 </li>
 </ol>
-<p>As long as you follow these rules, it’s up to you how to structure your project. If your store file gets too big, simply start splitting the actions, mutations and getters into separate files.</p>
-<p>For any non-trivial app, we will likely need to leverage modules. Here’s an example project structure:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">├── index.html</div><div class="line">├── main.js</div><div class="line">├── api</div><div class="line">│   └── ... <span class="comment"># abstractions for making API requests</span></div><div class="line">├── components</div><div class="line">│   ├── App.vue</div><div class="line">│   └── ...</div><div class="line">└── store</div><div class="line">    ├── index.js          <span class="comment"># where we assemble modules and export the store</span></div><div class="line">    ├── actions.js        <span class="comment"># root actions</span></div><div class="line">    ├── mutations.js      <span class="comment"># root mutations</span></div><div class="line">    └── modules</div><div class="line">        ├── cart.js       <span class="comment"># cart module</span></div><div class="line">        └── products.js   <span class="comment"># products module</span></div></pre></td></tr></table></figure>
-<p>As a reference, check out the <a href="https://github.com/vuejs/vuex/tree/dev/examples/shopping-cart" target="_blank" rel="external">Shopping Cart Example</a>.</p>
+<p>只要你遵循这些规则，怎么构建你的项目的结构就取决于你了。如果你的 store 文件非常大，仅仅拆分成 action、mutation 和 getter 多个文件即可。</p>
+<p>对于稍微复杂点的应用，我们可能都需要用到模块。下面是一个简单的项目架构：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">├── index.html</div><div class="line">├── main.js</div><div class="line">├── api</div><div class="line">│   └── ... <span class="comment"># 这里发起 API 请求</span></div><div class="line">├── components</div><div class="line">│   ├── App.vue</div><div class="line">│   └── ...</div><div class="line">└── store</div><div class="line">    ├── index.js          <span class="comment"># 组合 modules 、export store</span></div><div class="line">    ├── actions.js        <span class="comment"># 根 action</span></div><div class="line">    ├── mutations.js      <span class="comment"># 根 mutations</span></div><div class="line">    └── modules</div><div class="line">        ├── cart.js       <span class="comment"># cart 模块</span></div><div class="line">        └── products.js   <span class="comment"># products 模块</span></div></pre></td></tr></table></figure>
+<p>关于更多，查看 <a href="https://github.com/vuejs/vuex/tree/dev/examples/shopping-cart" target="_blank" rel="external">购物车实例</a>。</p>
 
     
     <div class="footer">

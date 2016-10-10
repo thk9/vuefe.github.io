@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link current">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -294,7 +296,7 @@
 <div class="content router with-sidebar ">
     	
     <h1>嵌套路由</h1>
-    <h1 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h1><p>实际生活中的应用界面，通常由多层嵌套的组件组合而成。同样地，URL 中各段动态路径也按某种结构对应嵌套的各层组件，例如：</p>
+    <p>实际生活中的应用界面，通常由多层嵌套的组件组合而成。同样地，URL 中各段动态路径也按某种结构对应嵌套的各层组件，例如：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/user/foo/profile                     /user/foo/posts</div><div class="line">+------------------+                  +-----------------+</div><div class="line">| User             |                  | User            |</div><div class="line">| +--------------+ |                  | +-------------+ |</div><div class="line">| | Profile      | |  +------------&gt;  | | Posts       | |</div><div class="line">| |              | |                  | |             | |</div><div class="line">| +--------------+ |                  | +-------------+ |</div><div class="line">+------------------+                  +-----------------+</div></pre></td></tr></table></figure>
 <p>借助 <code>vue-router</code>，使用嵌套路由配置，就可以很简单地表达这种关系。</p>
 <p>接着上节创建的 app：</p>

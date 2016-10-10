@@ -44,6 +44,7 @@
     <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -71,6 +72,7 @@
         <li><a href="/guide/" class="nav-link">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
 <li><a href="/router/" class="nav-link">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link current">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
@@ -246,7 +248,7 @@
                 
                 
                 <li>
-                    <a href="/vuex/api.html" class="sidebar-link">API</a>
+                    <a href="/vuex/api.html" class="sidebar-link">API 参考</a>
                 </li>
             
              
@@ -258,7 +260,7 @@
 <div class="content vuex with-sidebar ">
     	
     <h1>表单处理</h1>
-    <h1 id="Form-Handling"><a href="#Form-Handling" class="headerlink" title="Form Handling"></a>Form Handling</h1><p>When using Vuex in strict mode, it could be a bit tricky to use <code>v-model</code> on a piece of state that belongs to Vuex:</p>
+    <p>When using Vuex in strict mode, it could be a bit tricky to use <code>v-model</code> on a piece of state that belongs to Vuex:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"obj.message"</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Assuming <code>obj</code> is a computed property that returns an Object from the store, the <code>v-model</code> here will attempt to directly mutate <code>obj.message</code> when the user types in the input. In strict mode, this will result in an error because the mutation is not performed inside an explicit Vuex mutation handler.</p>
 <p>The “Vuex way” to deal with it is binding the <code>&lt;input&gt;</code>‘s value and call an action on the <code>input</code> or <code>change</code> event:</p>
