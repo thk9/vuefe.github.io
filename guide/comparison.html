@@ -6,22 +6,12 @@
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
-        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
         <link rel="icon" href="/images/logo.png" type="image/x-icon">
         <script>
             window.PAGE_TYPE = "guide"
         </script>
         <link rel="stylesheet" href="/css/page.css">
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-46852172-1', 'org.vuefe.cn');
-  ga('send', 'pageview');
-</script>
+        
         <script src="/js/vue.js"></script>
     </head>
     <body>
@@ -32,18 +22,33 @@
         <div id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png">
-    <span>Vue.js</span>
+    <span>Vue.js v2.0 中文</span>
   </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与:427447379
+  </span>
   <ul id="nav">
-    <li>
-  <form id="search-form">
-    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
-  </form>
-</li>
-<li><a href="/guide/" class="nav-link current">教程</a></li>
+    <li><a href="/guide/" class="nav-link current">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
-<li><a href="https://medium.com/the-vue-point" target="_blank" class="nav-link">Blog</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">社区</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -53,6 +58,8 @@
     <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
   </ul>
 </li>
+
+
   </ul>
 </div>
 
@@ -62,15 +69,14 @@
                     
     <div class="sidebar">
     <ul class="main-menu">
-        <li>
-  <form id="search-form">
-    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
-  </form>
-</li>
-<li><a href="/guide/" class="nav-link current">教程</a></li>
+        <li><a href="/guide/" class="nav-link current">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
-<li><a href="https://medium.com/the-vue-point" target="_blank" class="nav-link">Blog</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">社区</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -80,6 +86,8 @@
     <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
   </ul>
 </li>
+
+
     </ul>
     <div class="list">
         <div id="donate" style="margin-bottom: 20px">
@@ -93,9 +101,6 @@
             教程
             <select class="version-select">
                 <option value="SELF" selected>2.0</option>
-                <option value="v1">1.0</option>
-                <option value="012">0.12</option>
-                <option value="011">0.11</option>
             </select>
         </h2>
         <ul class="menu-root">
@@ -351,14 +356,14 @@
                     <a href="/guide/join.html" class="sidebar-link">加入Vue.js社区</a>
                 </li>
             
+             
         </ul>
     </div>
 </div>
 
+
 <div class="content guide with-sidebar comparison-guide">
-    <div id="ad">
-  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script>
-</div>
+    	
     <h1>对比其他框架</h1>
     <p>这个页面无疑是最难编写的，但也是非常重要的。或许你遇到了一些问题并且先前用其他的框架解决了。来这里的目的是看看Vue是否有更好的解决方案。那么你就来对了。</p>
 <p>客观来说，作为核心团队成员，显然我们会更偏爱Vue，对于某些问题用Vue来解决会更好，如果没有这点信念，我们也就不会整天为此忙活了。但是，我们想尽可能地公平和准确地来讲述。其他的框架也有显著的优点，比如 Rect 的生态系统，或者 Knockout 对浏览器支持到 IE6 。我们把这些也都会全列出来。</p>
@@ -422,7 +427,7 @@
 </table>
 
 <h4 id="更新性能"><a href="#更新性能" class="headerlink" title="更新性能"></a>更新性能</h4><p>在React中，你需要在每个地方去实现 <code>shouldComponentUpdate</code> ，并且用immutable数据结构才能实现完全完全优化的 re-renders 。在 Vue 中，组件的依赖被自动追踪，所以当这些依赖项变动时，它才会更新。在长列表中，有时候需要进一步优化的话，只需要在每项上添加 <code>key</code> 属性。</p>
-<p>这意味着，由于Vue内改进过的渲染性能，更新未经优化的Vue回避未经优化的React要快的多。甚至全面优化过的React通常也会慢于未加处理的Vue。</p>
+<p>这意味着，由于Vue内改进过的渲染性能，更新未经优化的Vue会比未经优化的React要快的多。甚至全面优化过的React通常也会慢于未加处理的Vue。</p>
 <h4 id="开发中"><a href="#开发中" class="headerlink" title="开发中"></a>开发中</h4><p>显然，在生产中的性能是最重要的，并且也是到目前为止我们所讨论的。开发过程中的表现也是很重要的。好消息是用 Vue 和 React 开发大多数应用的速度都是足够快的。</p>
 <p>然而，假如你要开发一个对性能要求比较高的数据可视化或者动画的应用时，这将会很有用。在开发中， Vue 每秒最高处理10帧，而 React 每秒最高处理不到1帧。</p>
 <p>这是由于 React 有大量的检查机制，这能让它提供许多有用的警告和错误提示信息。我们同意那些很重要的，但在我们实现这些检查时候，也更加密切地关注着性能。</p>
@@ -447,13 +452,13 @@
 </ul>
 <p>这样，不仅开发人员更容易编写代码，设计人员和开发人员也可以更容易的分析代码和贡献代码。</p>
 <p>还没有结束。Vue拥抱HTML，而不是用JavaScript重塑它。在模板内，Vue也允许你用预处理器比如Pub（原名 Jade） 。</p>
-<p>React 生态也有一个<a href="https://wix.github.io/react-templates/" target="_blank" rel="external">项目</a>允许你写摸吧，但是有一些缺点：</p>
+<p>React 生态也有一个<a href="https://wix.github.io/react-templates/" target="_blank" rel="external">项目</a>允许你写模板，但是有一些缺点：</p>
 <ul>
 <li>功能远没有 Vue 模板系统的丰富。</li>
 <li>需要从组件文件中分离出HTML代码。</li>
 <li>这是个第三方库，而非官方支持，可能未来核心库更新就不再支持。</li>
 </ul>
-<h4 id="CSS的组件作用域"><a href="#CSS的组件作用域" class="headerlink" title="CSS的组件作用域"></a>CSS的组件作用域</h4><p>除非你把组件分布在多个文件上(例如 <a href="https://github.com/gajus/react-css-modules" target="_blank" rel="external">CSS Modules</a>),要不作用域内的CSS就会暴警告。非常简单的CSS还可以工作，但是稍微复杂点的，比如悬停状态、媒体查询、伪类选择符要么会被修改要么就不能用。</p>
+<h4 id="CSS的组件作用域"><a href="#CSS的组件作用域" class="headerlink" title="CSS的组件作用域"></a>CSS的组件作用域</h4><p>除非你把组件分布在多个文件上(例如 <a href="https://github.com/gajus/react-css-modules" target="_blank" rel="external">CSS Modules</a>),要不作用域内的CSS就会报警告。非常简单的CSS还可以工作，但是稍微复杂点的，比如悬停状态、媒体查询、伪类选择符要么会被修改要么就不能用。</p>
 <p>Vue让你可以完全访问<a href="single-file-components.html"> 单文件组件 </a>。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">    @<span class="keyword">media</span> (min-width: <span class="number">250px</span>) &#123;</div><div class="line">        <span class="selector-class">.list-container</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">            <span class="attribute">background</span>: orange;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>这个可选 <code>scoped</code> 属性自动添加一个唯一的属性（比如 <code>data-v-1</code> ）为组件内CSS指定作用范围，编译的时候 <code>.list-container:hover</code> 会被编译成类似<code>.list-container[data-v-1]:hover</code>。</p>
@@ -468,17 +473,17 @@
 </ul>
 <p>注意这些限制是故意设计的，这有它的优势。例如，如果你的项目需求非常简单，你就不需要自定义生成过程。你能把它作为一个依赖来更新。如果阅读更多关于<a href="">不同的设计理念</a>。</p>
 <h4 id="缩小"><a href="#缩小" class="headerlink" title="缩小"></a>缩小</h4><p>React学习曲线陡峭，在你开始学 React 前，你需要知道 JSX 和 ES2015，因为许多示例用的是这些语法。你需要学习构建系统，虽然你可以在技术上可以用 Babel Standalone 来编译代码，但是不推荐用于生产。</p>
-<p>Vue样扩大后就像React，缩小后就像 Jquery。你需要做的就是把如下标签放到页面就行：</p>
+<p>Vue扩大后就像React，缩小后就像 Jquery。你需要做的就是把如下标签放到页面就行：</p>
 <p><code>&lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</code></p>
 <p>然后就可编写Vue代码并应用到生产中，而不用担心性能问题。</p>
 <p>由于起步阶段不需学JSX，ES2015 或构建系统，所以建立应用花的时间会更少。</p>
 <h3 id="本地渲染"><a href="#本地渲染" class="headerlink" title="本地渲染"></a>本地渲染</h3><p>ReactNative能使你用相同的组件模型编写有本地渲染能力的APP（IOS或Android）。能同时跨多平台开发，对开发者是非常棒的。相应地，Vue和Weex会进行官方合作，Weex是阿里的跨平台用户界面开发框架，Weex 的 JavaScript 框架运行时用的就是Vue。这意味着在借助Weex的情况下，你使用Vue语法开发的组件不仅仅可以运行在浏览器端，还能被用于开发 IOS 和 Android 上的原生应用。</p>
 <p>在现在，Weex 还在积极发展，成熟度也不能和 ReactNative 相抗衡。但是，Weex的发展是由世界上最大的电子商务企业的需求在驱动，Vue 团队也会和 Weex 团队积极合作确保为开发者带来良好的开发体验。</p>
-<h3 id="MobX"><a href="#MobX" class="headerlink" title="MobX"></a>MobX</h3><p>Mobx 在 React 社区很流行，实际上在Vue也采用了几乎相同的反应系统。在有限程度上，React + Mobx 也可以被认为是更繁琐的 Vue，所以如果你习惯组合使用它们，那么选择 Vue 会更合理。</p>
-<h2 id="Angular-1"><a href="#Angular-1" class="headerlink" title="Angular 1"></a>Angular 1</h2><p>Vue的一些语法和Angular的很相似（例如 <code>v-if</code> vs  <code>ng-if</code>）。因为Angular是Vue早期开发的灵感来源。然而，Augular中存在许多问题，在Vue中已经得到解决。</p>
+<h3 id="MobX"><a href="#MobX" class="headerlink" title="MobX"></a>MobX</h3><p>Mobx 在 React 社区很流行，实际上Vue也采用了几乎相同的反应系统。在有限程度上，React + Mobx 也可以被认为是更繁琐的 Vue，所以如果你习惯组合使用它们，那么选择 Vue 会更合理。</p>
+<h2 id="Angular-1"><a href="#Angular-1" class="headerlink" title="Angular 1"></a>Angular 1</h2><p>Vue的一些语法和Angular的很相似（例如 <code>v-if</code> vs  <code>ng-if</code>）。因为Angular是Vue早期开发的灵感来源。然而，Augular中存在的许多问题，在Vue中已经得到解决。</p>
 <h3 id="复杂性"><a href="#复杂性" class="headerlink" title="复杂性"></a>复杂性</h3><p>在 API 与设计两方面上 Vue.js 都比 Angular 1 简单得多，因此你可以快速地掌握它的全部特性并投入开发。</p>
 <h3 id="灵活性和模块化"><a href="#灵活性和模块化" class="headerlink" title="灵活性和模块化"></a>灵活性和模块化</h3><p>Vue.js 是一个更加灵活开放的解决方案。它允许你以希望的方式组织应用程序，而不是在任何时候都必须遵循 Angular 1 制定的规则，这使让Vue能适用于各种项目。我们知道把决定权交给你，是非常必要的，就是是为什么提供<a href="https://github.com/vuejs-templates/webpack" target="_blank" rel="external">Webpack template</a>，让你用几分钟，去选择是否用高级特性，比如热模块加载、linting 、<br> Css extraction 等等。</p>
-<h3 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h3><p>Angular 1 使用双向绑定，Vue在不同组件间强制适用单向数据流。这使应用中的数据流清晰易懂。</p>
+<h3 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h3><p>Angular 1 使用双向绑定，Vue在不同组件间强制使用单向数据流。这使应用中的数据流清晰易懂。</p>
 <h3 id="指令与组件"><a href="#指令与组件" class="headerlink" title="指令与组件"></a>指令与组件</h3><p>在 Vue 中指令和组件分得更清晰。指令只封装 DOM 操作，而组件代表一个自给自足的独立单元 —— 有自己的视图和数据逻辑。在 Angular 中两者有不少相混的地方。 </p>
 <h3 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h3><p>Vue.js 有更好的性能，并且非常非常容易优化，因为它不使用脏检查。</p>
 <p>在Angular 1中，当 watcher 越来越多时会变得越来越慢，因为作用域内的每一次变化，所有 watcher 都要重新计算。并且，如果一些 watcher 触发另一个更新，脏检查循环（digest cycle）可能要运行多次。 Angular 用户常常要使用深奥的技术，以解决脏检查循环的问题。有时没有简单的办法来优化有大量 watcher 的作用域。</p>
@@ -500,7 +505,7 @@
 </li>
 <li><p>Vue 的模板语法可以用全功能的 JavaScript 表达式，而 Handlebars 的语法和帮助函数语法相比之下非常受限。</p>
 </li>
-<li><p>在性能上，Vue 甩开 Ember 几条街，即使是 Ember2.0 的最新Glimmer引擎。Vue自动批量更新，Ember 当性能关键处需要手动管理。</p>
+<li><p>在性能上，Vue 甩开 Ember 几条街，即使是 Ember2.0 的最新Glimmer引擎。Vue自动批量更新，Ember 在性能关键处需要手动管理。</p>
 </li>
 </ul>
 <h2 id="Knockout"><a href="#Knockout" class="headerlink" title="Knockout"></a>Knockout</h2><p>Knockout 是MVVM领域内的先驱，并且追踪依赖。它的响应系统和Vue相似。它对<a href="http://knockoutjs.com/documentation/browser-support.html" target="_blank" rel="external">浏览器支持</a>以及所有的表现也是让人印象深刻的。它能最低支持到IE6，而Vue最低只能支持到IE9。</p>
@@ -508,7 +513,7 @@
 <p>如果你有兴趣研究，会发现它们在接口设计的构思理念上是不同的。这些通过各自创建的 <a href="https://gist.github.com/chrisvfritz/9e5f2d6826af00fcbace7be8f6dccb89" target="_blank" rel="external"> simple Todo List </a>可以体现出来。或许有点主观，但是很多人认为Vue的API接口更简单结构更优雅。</p>
 <h2 id="Polymer"><a href="#Polymer" class="headerlink" title="Polymer"></a>Polymer</h2><p>Polymer 是另一个由谷歌赞助的项目，事实上也是Vue的一个灵感来源。Vue的组件可以粗略的类比于Polymer的自定义元素，并且两者具有相似的开发风格。最大的不同之处在于，Polymer是构建于最新版的Web Components标准之上的，并且需要非凡的polyfills来工作（性能下降），浏览器本身不支持这些功能。相比而言，Vue不需要依赖polyfills来工作，最低到IE9。</p>
 <p>在 Polymer 1.0版本中，为了弥补性能，团队非常有限的使用数据绑定系统。例如，在Ploymer中支持的唯一表达式只有布尔值否定和单一的方法的调用，它的computed方法的实现也不是很灵活。</p>
-<p>Polymer 自定义的元素是用HTML文件来创建的，这回限制你的普通的JavaScript/CSS（和被现代浏览器普遍支持的语言特性）。相比之下，Vue的单文件允许你非常容易的使用ES2015和你想用的Css的预编译处理器。</p>
+<p>Polymer 自定义的元素是用HTML文件来创建的，这会限制你的普通的JavaScript/CSS（和被现代浏览器普遍支持的语言特性）。相比之下，Vue的单文件允许你非常容易的使用ES2015和你想用的CSS的预编译处理器。</p>
 <p>当部署到生产环境的时候，Polymer建议使用HTML Imports加载所有资源。而这要求服务器和客户端都支持Http 2.0协议，且浏览器实现了标准。这是否可行就取决于你的目标用户和部署环境了。如果状况不佳，你必须用Vulcanizer工具来来打包Polymer元素。在这方面，Vue 可以结合异步组件的特性和Webpack的代码分割特性来实现懒加载（lazy-loaded）。这同时确保了对旧浏览器的兼容且又能更快加载。 </p>
 <p>在部署生产环境时， Polymer 推荐假定浏览器实现规范以及 HTTP/2 支持所有服务器和客户端，用 HTML 引入所有动态资源。根据你的目标受众和部署环境，这可能是不可行的。这种情况是不可取的，你不得不使用一个叫作 Vulcanizer 的特殊工具来构建你的 Polymer 元素。在这方面， Vue 结合 Webpack 代码分割功能实现异步加载组件，轻松地拆分部分延迟加载应用。这样可以确保兼容老版本浏览器,同时保留好应用加载性能。</p>
 <p>对Vue和Web Component标准之间进行深层次的整合，也是完全可行的，比如Custom Elements、Shadow DOM的样式封装。然而现在在我们做出严肃的承诺之前，我们仍在等待标准成熟，进而广泛应用于主流的浏览器中。</p>
@@ -546,12 +551,11 @@
 
                 
             </div>
-            <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
             <script src="/js/smooth-scroll.min.js"></script>
             <script src="/js/common.js"></script>
         
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 FastClick.attach(document.body);

@@ -6,22 +6,12 @@
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
-        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
         <link rel="icon" href="/images/logo.png" type="image/x-icon">
         <script>
             window.PAGE_TYPE = "guide"
         </script>
         <link rel="stylesheet" href="/css/page.css">
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-46852172-1', 'org.vuefe.cn');
-  ga('send', 'pageview');
-</script>
+        
         <script src="/js/vue.js"></script>
     </head>
     <body>
@@ -32,18 +22,33 @@
         <div id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png">
-    <span>Vue.js</span>
+    <span>Vue.js v2.0 中文</span>
   </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与:427447379
+  </span>
   <ul id="nav">
-    <li>
-  <form id="search-form">
-    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
-  </form>
-</li>
-<li><a href="/guide/" class="nav-link current">教程</a></li>
+    <li><a href="/guide/" class="nav-link current">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
-<li><a href="https://medium.com/the-vue-point" target="_blank" class="nav-link">Blog</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">社区</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -53,6 +58,8 @@
     <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
   </ul>
 </li>
+
+
   </ul>
 </div>
 
@@ -62,15 +69,14 @@
                     
     <div class="sidebar">
     <ul class="main-menu">
-        <li>
-  <form id="search-form">
-    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
-  </form>
-</li>
-<li><a href="/guide/" class="nav-link current">教程</a></li>
+        <li><a href="/guide/" class="nav-link current">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
-<li><a href="https://medium.com/the-vue-point" target="_blank" class="nav-link">Blog</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">社区</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -80,6 +86,8 @@
     <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
   </ul>
 </li>
+
+
     </ul>
     <div class="list">
         <div id="donate" style="margin-bottom: 20px">
@@ -93,9 +101,6 @@
             教程
             <select class="version-select">
                 <option value="SELF" selected>2.0</option>
-                <option value="v1">1.0</option>
-                <option value="012">0.12</option>
-                <option value="011">0.11</option>
             </select>
         </h2>
         <ul class="menu-root">
@@ -351,22 +356,22 @@
                     <a href="/guide/join.html" class="sidebar-link">加入Vue.js社区</a>
                 </li>
             
+             
         </ul>
     </div>
 </div>
 
+
 <div class="content guide with-sidebar index-guide">
-    <div id="ad">
-  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script>
-</div>
+    	
     <h1>介绍</h1>
-    <h2 id="Vue-js-是什么"><a href="#Vue-js-是什么" class="headerlink" title="Vue.js 是什么"></a>Vue.js 是什么</h2><p>Vue.js（读音 /vjuː/, 类似于 <strong>view</strong>） 是一套构建用户界面的 <strong>先进框架</strong>。与其他单层框架（ monolithic frameworks）不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整合。另一方面，Vue 完全有能力驱动采用<a href="single-file-components.html">单文件组件</a>和<a href="//github.com/vuejs/awesome-vue#libraries--plugins">Vue生态系统支持的库</a>开发的复杂单页应用。 </p>
+    <h2 id="Vue-js-是什么"><a href="#Vue-js-是什么" class="headerlink" title="Vue.js 是什么"></a>Vue.js 是什么</h2><p>Vue.js（读音 /vjuː/, 类似于 <strong>view</strong>） 是一套构建用户界面的 <strong>先进框架</strong>。与其他单层框架（ monolithic frameworks）不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整合。另一方面，Vue 完全有能力驱动采用<a href="single-file-components.html">单文件组件</a>和<a href="//github.com/vuejs/awesome-vue#libraries--plugins">Vue生态系统支持的库</a>开发的复杂单页应用。</p>
 <p>Vue.js 的目标是通过尽可能简单的 API 实现<strong>响应的数据绑定</strong>和<strong>组合的视图组件</strong>。</p>
 <p>如果你是有经验的前端开发者，想知道 Vue.js 与其它库/框架的区别，查看<a href="comparison.html">对比其它框架</a>。</p>
 <h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><p>尝试 Vue.js 最简单的方法是使用 <a href="//jsfiddle.net/chrisvfritz/4tpzm3e1/">JSFiddle Hello World 例子</a>。请在浏览器新标签页中打开它，跟着我们查看一些基础示例。如果你喜欢用包管理器下载/安装，查看<a href="/guide/installation.html">安装</a>教程。</p>
 <h2 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h2><p>Vue.js 的核心是一个允许你采用简洁的模板语法来声明式的将数据渲染进 DOM 的系统：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  &#123;&#123; message &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">message</span>: <span class="string">'Hello Vue.js!'</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">message</span>: <span class="string">'Hello Vue.js!'</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
 <div id="app" class="demo">
   {{ message }}
@@ -493,7 +498,8 @@ var app6 = new Vue({
 <p>但是这样会为每个 todo 渲染同样的文本，这看起来并不是很酷。我们应该将数据从父作用域传到子组件。让我们来修改一下组件的定义，使得它能够接受一个 <a href="/guide/components.html#Props"><code>prop</code></a> 字段：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'todo'</span>, &#123;</div><div class="line">  <span class="attr">props</span>: [<span class="string">'todo'</span>],</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;li&gt;&#123;&#123; todo.text &#125;&#125;&lt;/li&gt;'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>现在，我们可以使用 <code>v-bind</code> 指令将 todo 传到每一个重复的组件中：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-7"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">todo</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span> <span class="attr">v-bind:todo</span>=<span class="string">"todo"</span>&gt;</span><span class="tag">&lt;/<span class="name">todo</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">``` </div><div class="line">``` js</div><div class="line">var app7 = new Vue(&#123;</div><div class="line">  el: '#app-7',</div><div class="line">  data: &#123;</div><div class="line">    todos: [/* ... */]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-7"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">todo</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span> <span class="attr">v-bind:todo</span>=<span class="string">"todo"</span>&gt;</span><span class="tag">&lt;/<span class="name">todo</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> app7 = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#app-7'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">todos</span>: [<span class="comment">/* ... */</span>]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
 <div id="app-7" class="demo">
   <ol>
@@ -517,7 +523,7 @@ var app7 = new Vue({
 })
 </script>
 
-<p>这只是一个人为的例子，但是我们已经将我们的应用分割成了两小的单元，子元素通过 <code>props</code> 接口实现了与父亲元素很好的解耦。我们现在可以在不影响到父应用的基础上，进一步为我们的 <code>todo</code> 组件改进更多复杂的模板和逻辑。</p>
+<p>这只是一个人为的例子，但是我们已经将我们的应用分割成了两个更小的单元，子元素通过 <code>props</code> 接口实现了与父亲元素很好的解耦。我们现在可以在不影响到父应用的基础上，进一步为我们的 <code>todo</code> 组件改进更多复杂的模板和逻辑。</p>
 <p>在一个大型应用中，为了使得开发过程可控，有必要将应用整体分割成一个个的组件。在<a href="/guide/components.html">后面的教程</a>中我们将详述组件，不过这里有一个（假想）的例子，看看使用了组件的应用模板是什么样的：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">app-nav</span>&gt;</span><span class="tag">&lt;/<span class="name">app-nav</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">app-view</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">app-sidebar</span>&gt;</span><span class="tag">&lt;/<span class="name">app-sidebar</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">app-content</span>&gt;</span><span class="tag">&lt;/<span class="name">app-content</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">app-view</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="与自定义元素的关系"><a href="#与自定义元素的关系" class="headerlink" title="与自定义元素的关系"></a>与自定义元素的关系</h2><p>你可能已经注意到 Vue.js 组件非常类似于<strong>自定义元素</strong>——它是 <a href="//www.w3.org/wiki/WebComponents/">Web 组件规范</a>的一部分。实际上 Vue.js 的组件语法参考了该规范。例如 Vue 组件实现了 <a href="//github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md">Slot API</a> 与 <code>is</code> 特性。但是，有几个关键的不同：</p>
@@ -554,12 +560,11 @@ var app7 = new Vue({
 
                 
             </div>
-            <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
             <script src="/js/smooth-scroll.min.js"></script>
             <script src="/js/common.js"></script>
         
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 FastClick.attach(document.body);

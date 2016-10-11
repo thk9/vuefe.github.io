@@ -6,22 +6,12 @@
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
-        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
         <link rel="icon" href="/images/logo.png" type="image/x-icon">
         <script>
             window.PAGE_TYPE = "guide"
         </script>
         <link rel="stylesheet" href="/css/page.css">
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-46852172-1', 'org.vuefe.cn');
-  ga('send', 'pageview');
-</script>
+        
         <script src="/js/vue.js"></script>
     </head>
     <body>
@@ -32,18 +22,33 @@
         <div id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png">
-    <span>Vue.js</span>
+    <span>Vue.js v2.0 中文</span>
   </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与:427447379
+  </span>
   <ul id="nav">
-    <li>
-  <form id="search-form">
-    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
-  </form>
-</li>
-<li><a href="/guide/" class="nav-link current">教程</a></li>
+    <li><a href="/guide/" class="nav-link current">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
-<li><a href="https://medium.com/the-vue-point" target="_blank" class="nav-link">Blog</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">社区</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -53,6 +58,8 @@
     <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
   </ul>
 </li>
+
+
   </ul>
 </div>
 
@@ -62,15 +69,14 @@
                     
     <div class="sidebar">
     <ul class="main-menu">
-        <li>
-  <form id="search-form">
-    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
-  </form>
-</li>
-<li><a href="/guide/" class="nav-link current">教程</a></li>
+        <li><a href="/guide/" class="nav-link current">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
-<li><a href="https://medium.com/the-vue-point" target="_blank" class="nav-link">Blog</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">社区</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -80,6 +86,8 @@
     <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
   </ul>
 </li>
+
+
     </ul>
     <div class="list">
         <div id="donate" style="margin-bottom: 20px">
@@ -93,9 +101,6 @@
             教程
             <select class="version-select">
                 <option value="SELF" selected>2.0</option>
-                <option value="v1">1.0</option>
-                <option value="012">0.12</option>
-                <option value="011">0.11</option>
             </select>
         </h2>
         <ul class="menu-root">
@@ -351,14 +356,14 @@
                     <a href="/guide/join.html" class="sidebar-link">加入Vue.js社区</a>
                 </li>
             
+             
         </ul>
     </div>
 </div>
 
+
 <div class="content guide with-sidebar computed-guide">
-    <div id="ad">
-  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script>
-</div>
+    	
     <h1>计算属性</h1>
     <h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><p>在模板中绑定表达式是非常便利的，但是它们实际上只用于简单的操作。模板是为了描述视图的结构。在模板中放入太多的逻辑会让模板过重且难以维护。例如：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  &#123;&#123; message.split('').reverse().join('') &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -413,7 +418,7 @@ var vm = new Vue({
 <h2 id="观察-Watchers"><a href="#观察-Watchers" class="headerlink" title="观察 Watchers"></a>观察 Watchers</h2><p>当计算属性使用在大多数场景下时，有时候也很需要一个自定义的 watcher 。这是为什么 Vue 提供一个更通用的方法通过 <code>watch</code> 的设置，来反应数据的变化。在你想要执行异步操作或需要响应不断变化昂贵的数据操作时这很有用。</p>
 <p>例如：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"watch-example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">    Ask a yes/no question:</div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"question"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; answer &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Since there is already a rich ecosystem of ajax libraries    --&gt;</span></div><div class="line"><span class="comment">&lt;!-- and collections of general-purpose utility methods, Vue core --&gt;</span></div><div class="line"><span class="comment">&lt;!-- is able to remain small by not reinventing them. This also   --&gt;</span></div><div class="line"><span class="comment">&lt;!-- gives you the freedom to just use what you're familiar with. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/axios@0.12.0/dist/axios.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/lodash@4.13.1/lodash.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> watchExampleVM = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#watch-example'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">question</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">answer</span>: <span class="string">'I cannot give you an answer until you ask a question!'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">watch</span>: &#123;</div><div class="line">    <span class="comment">// 如果 question 发生改变，这个函数就会运行</span></div><div class="line">    question: <span class="function"><span class="keyword">function</span> (<span class="params">newQuestion</span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.answer = <span class="string">'Waiting for you to stop typing...'</span></div><div class="line">      <span class="keyword">this</span>.getAnswer()</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="comment">// _.debounce 是一个通过 lodash 限制操作频率的函数。</span></div><div class="line">    <span class="comment">// 在这个例子中，我们希望限制访问yesno.wtf/api的频率</span></div><div class="line">    <span class="comment">// 一直等待直到用户发出ajax请求之前</span></div><div class="line">    <span class="comment">// 学习更多关于 _.debounce function (and its cousin</span></div><div class="line">    <span class="comment">// _.throttle), 参考: https://lodash.com/docs#debounce</span></div><div class="line">    getAnswer: _.debounce(</div><div class="line">      <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> vm = <span class="keyword">this</span></div><div class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.question.indexOf(<span class="string">'?'</span>) === <span class="number">-1</span>) &#123;</div><div class="line">          vm.answer = <span class="string">'Questions usually contain a question mark. ;-)'</span></div><div class="line">          <span class="keyword">return</span></div><div class="line">        &#125;</div><div class="line">        vm.answer = <span class="string">'Thinking...'</span></div><div class="line">        axios.get(<span class="string">'https://yesno.wtf/api'</span>)</div><div class="line">          .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">            vm.answer = _.capitalize(response.data.answer)</div><div class="line">          &#125;)</div><div class="line">          .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">            vm.answer = <span class="string">'Error! Could not reach the API. '</span> + error</div><div class="line">          &#125;)</div><div class="line">      &#125;,</div><div class="line">      <span class="comment">// 这是我们为用户停止输入等待的毫秒数</span></div><div class="line">      <span class="number">500</span></div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Since there is already a rich ecosystem of ajax libraries    --&gt;</span></div><div class="line"><span class="comment">&lt;!-- and collections of general-purpose utility methods, Vue core --&gt;</span></div><div class="line"><span class="comment">&lt;!-- is able to remain small by not reinventing them. This also   --&gt;</span></div><div class="line"><span class="comment">&lt;!-- gives you the freedom to just use what you're familiar with. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/axios@0.12.0/dist/axios.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/lodash@4.13.1/lodash.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> watchExampleVM = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#watch-example'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">question</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">answer</span>: <span class="string">'I cannot give you an answer until you ask a question!'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">watch</span>: &#123;</div><div class="line">    <span class="comment">// 如果 question 发生改变，这个函数就会运行</span></div><div class="line">    question: <span class="function"><span class="keyword">function</span> (<span class="params">newQuestion</span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.answer = <span class="string">'Waiting for you to stop typing...'</span></div><div class="line">      <span class="keyword">this</span>.getAnswer()</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="comment">// _.debounce 是一个通过 lodash 限制操作频率的函数。</span></div><div class="line">    <span class="comment">// 在这个例子中，我们希望限制访问yesno.wtf/api的频率</span></div><div class="line">    <span class="comment">// ajax请求直到用户输入完毕才会发出</span></div><div class="line">    <span class="comment">// 学习更多关于 _.debounce function (and its cousin</span></div><div class="line">    <span class="comment">// _.throttle), 参考: https://lodash.com/docs#debounce</span></div><div class="line">    getAnswer: _.debounce(</div><div class="line">      <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> vm = <span class="keyword">this</span></div><div class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.question.indexOf(<span class="string">'?'</span>) === <span class="number">-1</span>) &#123;</div><div class="line">          vm.answer = <span class="string">'Questions usually contain a question mark. ;-)'</span></div><div class="line">          <span class="keyword">return</span></div><div class="line">        &#125;</div><div class="line">        vm.answer = <span class="string">'Thinking...'</span></div><div class="line">        axios.get(<span class="string">'https://yesno.wtf/api'</span>)</div><div class="line">          .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">            vm.answer = _.capitalize(response.data.answer)</div><div class="line">          &#125;)</div><div class="line">          .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">            vm.answer = <span class="string">'Error! Could not reach the API. '</span> + error</div><div class="line">          &#125;)</div><div class="line">      &#125;,</div><div class="line">      <span class="comment">// 这是我们为用户停止输入等待的毫秒数</span></div><div class="line">      <span class="number">500</span></div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>结果：</p>
 
 <div id="watch-example">
@@ -491,12 +496,11 @@ var watchExampleVM = new Vue({
 
                 
             </div>
-            <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
             <script src="/js/smooth-scroll.min.js"></script>
             <script src="/js/common.js"></script>
         
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 FastClick.attach(document.body);
