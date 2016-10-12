@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>路由信息对象 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "vue-router"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Vue.js v2.0 中文</span>
+  </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与:427447379
+  </span>
+  <ul id="nav">
+    <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link current">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
+<li><a href="/vue-router/" class="nav-link current">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+        
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link">教程</a></li>
+<li><a href="/api/" class="nav-link current">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
+<li><a href="/vue-router/" class="nav-link current">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/images/patreon.png">
+              <a href="/support-vuejs">支持 Vue.js</a>
+            </span>
+        </div>
+        <h2>
+            
+            
+            <select class="version-select">
+                <option value="SELF" selected>2.0</option>
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/index.html" class="sidebar-link">目录</a>
+                </li>
+            
+                
+                
+                  <li><h3>基础</h3></li>
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/installation.html" class="sidebar-link">安装</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/essentials/getting-started.html" class="sidebar-link">起步</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/essentials/dynamic-matching.html" class="sidebar-link">动态路由匹配</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/essentials/nested-routes.html" class="sidebar-link">嵌套路由</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/essentials/navigation.html" class="sidebar-link">编程式的导航</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/essentials/named-routes.html" class="sidebar-link">命名路由</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/essentials/named-views.html" class="sidebar-link">命名视图</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/essentials/redirect-and-alias.html" class="sidebar-link">重定向 和 别名</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/essentials/history-mode.html" class="sidebar-link">HTML5 History 模式</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/advanced/navigation-guards.html" class="sidebar-link">导航钩子</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/advanced/meta.html" class="sidebar-link">路由元信息</a>
+                </li>
+            
+                
+                
+                
+                  <li><h3>进阶</h3></li>
+                
+                
+                
+                <li>
+                    <a href="/vue-router/advanced/transitions.html" class="sidebar-link">过渡动效</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/advanced/data-fetching.html" class="sidebar-link">数据获取</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/advanced/scroll-behavior.html" class="sidebar-link">滚动行为</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/advanced/lazy-loading.html" class="sidebar-link">路由懒加载</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/api/router-link.html" class="sidebar-link">router-link</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/api/router-view.html" class="sidebar-link">router-view</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/api/route-object.html" class="sidebar-link current">路由信息对象</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/api/options.html" class="sidebar-link">Router 构造配置</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/api/router-instance.html" class="sidebar-link">Router 实例</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/api/component-injections.html" class="sidebar-link">对组件注入</a>
+                </li>
+            
+             
+        </ul>
+    </div>
+</div>
+
+
+<div class="content vue-router with-sidebar ">
+    	
+    <h1>路由信息对象</h1>
+    <p>一个 <strong>route object（路由信息对象）</strong> 表示当前激活的路由的状态信息，包含了当前 URL 解析得到的信息，还有 URL 匹配到的 <strong>route records（路由记录）</strong>。</p>
+<p>route object 是 immutable（不可变） 的，每次成功的导航后都会产生一个新的对象。</p>
+<p>route object 出现在多个地方:</p>
+<ul>
+<li><p>组件内的 <code>this.$route</code> 和 <code>$route</code> watcher 回调（监测变化处理）;</p>
+</li>
+<li><p><code>router.match(location)</code> 的返回值</p>
+</li>
+<li><p>导航钩子的参数：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</div><div class="line">  <span class="comment">// to 和 from 都是 路由信息对象</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>scrollBehavior</code> 方法的参数:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</div><div class="line">    <span class="comment">// to 和 from 都是 路由信息对象</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="路由信息对象的属性"><a href="#路由信息对象的属性" class="headerlink" title="路由信息对象的属性"></a>路由信息对象的属性</h3><ul>
+<li><p><strong>$route.path</strong></p>
+<ul>
+<li><p>类型: <code>string</code></p>
+<p>字符串，对应当前路由的路径，总是解析为绝对路径，如 <code>&quot;/foo/bar&quot;</code>。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>$route.params</strong></p>
+<ul>
+<li>类型: <code>Object</code></li>
+</ul>
+<p>一个 key/value 对象，包含了 动态片段 和 全匹配片段，如果没有路由参数，就是一个空对象。</p>
+</li>
+<li><p><strong>$route.query</strong></p>
+<ul>
+<li><p>类型: <code>Object</code></p>
+<p>一个 key/value 对象，表示 URL 查询参数。例如，对于路径 <code>/foo?user=1</code>，则有 <code>$route.query.user == 1</code>，如果没有查询参数，则是个空对象。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>$route.hash</strong></p>
+<ul>
+<li><p>类型: <code>string</code></p>
+<p>当前路由的 hash 值 (不带 <code>#</code>) ，如果没有 hash 值，则为空字符串。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>$route.fullPath</strong></p>
+<ul>
+<li><p>类型: <code>string</code></p>
+<p>完成解析后的 URL，包含查询参数和 hash 的完整路径。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>$route.matched</strong></p>
+<ul>
+<li>类型: <code>Array&lt;RouteRecord&gt;</code></li>
+</ul>
+<p>一个数组，包含当前路由的所有嵌套路径片段的 <strong>路由记录</strong> 。路由记录就是 <code>routes</code> 配置数组中的对象副本（还有在 <code>children</code> 数组）。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [</div><div class="line">    <span class="comment">// 下面的对象就是 route record</span></div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/foo'</span>, <span class="attr">component</span>: Foo,</div><div class="line">      <span class="attr">children</span>: [</div><div class="line">        <span class="comment">// 这也是个 route record</span></div><div class="line">        &#123; <span class="attr">path</span>: <span class="string">'bar'</span>, <span class="attr">component</span>: Bar &#125;</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>当 URL 为 <code>/foo/bar</code>，<code>$route.matched</code> 将会是一个包含从上到下的所有对象（副本）。</p>
+</li>
+<li><p><strong>$route.name</strong></p>
+<p>当前路由的名称，如果有的话。（查看 <a href="../essentials/named-routes.md">命名路由</a>）</p>
+</li>
+</ul>
+
+    
+    <div class="footer">
+      发现错误？想参与编辑？
+      <a href="https://github.com/dingyiming/vuejs.org/tree/2.0-cn/src/vue-router/api/route-object.md" target="_blank">
+        在 Github 上编辑此页！
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>

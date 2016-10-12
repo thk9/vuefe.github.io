@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Router 构造配置 - vue.js</title>
+        <title>命名视图 - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="icon" href="/images/logo.png" type="image/x-icon">
         <script>
-            window.PAGE_TYPE = "router"
+            window.PAGE_TYPE = "vue-router"
         </script>
         <link rel="stylesheet" href="/css/page.css">
         
@@ -42,10 +42,10 @@
   </span>
   <ul id="nav">
     <li><a href="/guide/" class="nav-link">教程</a></li>
-<li><a href="/api/" class="nav-link current">API</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
 <li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
-<li><a href="/router/" class="nav-link current">vue-router</a></li>
+<li><a href="/vue-router/" class="nav-link current">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
 <li><a href="/more/" class="nav-link">更多</a></li>
@@ -70,10 +70,10 @@
     <div class="sidebar">
     <ul class="main-menu">
         <li><a href="/guide/" class="nav-link">教程</a></li>
-<li><a href="/api/" class="nav-link current">API</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
 <li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
-<li><a href="/router/" class="nav-link current">vue-router</a></li>
+<li><a href="/vue-router/" class="nav-link current">vue-router</a></li>
 <li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
 <li><a href="/more/" class="nav-link">更多</a></li>
@@ -105,21 +105,13 @@
         </h2>
         <ul class="menu-root">
             
-             
                 
-                
-                
-                
-                <li>
-                    <a href="/router/index.html" class="sidebar-link">目录</a>
-                </li>
-            
                 
                 
                 
                 
                 <li>
-                    <a href="/router/installation.html" class="sidebar-link">安装</a>
+                    <a href="/vue-router/index.html" class="sidebar-link">目录</a>
                 </li>
             
                 
@@ -128,64 +120,99 @@
                 
                 
                 
+                
                 <li>
-                    <a href="/router/essentials/getting-started.html" class="sidebar-link">起步</a>
+                    <a href="/vue-router/installation.html" class="sidebar-link">安装</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/essentials/dynamic-matching.html" class="sidebar-link">动态路由匹配</a>
+                    <a href="/vue-router/essentials/getting-started.html" class="sidebar-link">起步</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/essentials/nested-routes.html" class="sidebar-link">嵌套路由</a>
+                    <a href="/vue-router/essentials/dynamic-matching.html" class="sidebar-link">动态路由匹配</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/essentials/navigation.html" class="sidebar-link">编程式的导航</a>
+                    <a href="/vue-router/essentials/nested-routes.html" class="sidebar-link">嵌套路由</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/essentials/named-routes.html" class="sidebar-link">命名路由</a>
+                    <a href="/vue-router/essentials/navigation.html" class="sidebar-link">编程式的导航</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/essentials/named-views.html" class="sidebar-link">命名视图</a>
+                    <a href="/vue-router/essentials/named-routes.html" class="sidebar-link">命名路由</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/essentials/redirect-and-alias.html" class="sidebar-link">重定向 和 别名</a>
+                    <a href="/vue-router/essentials/named-views.html" class="sidebar-link current">命名视图</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/essentials/history-mode.html" class="sidebar-link">HTML5 History 模式</a>
+                    <a href="/vue-router/essentials/redirect-and-alias.html" class="sidebar-link">重定向 和 别名</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/essentials/history-mode.html" class="sidebar-link">HTML5 History 模式</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/advanced/navigation-guards.html" class="sidebar-link">导航钩子</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vue-router/advanced/meta.html" class="sidebar-link">路由元信息</a>
                 </li>
             
                 
@@ -194,157 +221,111 @@
                   <li><h3>进阶</h3></li>
                 
                 
+                
                 <li>
-                    <a href="/router/advanced/navigation-guards.html" class="sidebar-link">导航钩子</a>
+                    <a href="/vue-router/advanced/transitions.html" class="sidebar-link">过渡动效</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/advanced/meta.html" class="sidebar-link">路由元信息</a>
+                    <a href="/vue-router/advanced/data-fetching.html" class="sidebar-link">数据获取</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/advanced/transitions.html" class="sidebar-link">过渡动效</a>
+                    <a href="/vue-router/advanced/scroll-behavior.html" class="sidebar-link">滚动行为</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/advanced/data-fetching.html" class="sidebar-link">数据获取</a>
+                    <a href="/vue-router/advanced/lazy-loading.html" class="sidebar-link">路由懒加载</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/advanced/scroll-behavior.html" class="sidebar-link">滚动行为</a>
+                    <a href="/vue-router/api/router-link.html" class="sidebar-link">router-link</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/advanced/lazy-loading.html" class="sidebar-link">路由懒加载</a>
+                    <a href="/vue-router/api/router-view.html" class="sidebar-link">router-view</a>
                 </li>
             
                 
                 
                 
                 
-                  <li><h3>API</h3></li>
                 
                 <li>
-                    <a href="/router/api/router-link.html" class="sidebar-link">router-link</a>
+                    <a href="/vue-router/api/route-object.html" class="sidebar-link">路由信息对象</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/api/router-view.html" class="sidebar-link">router-view</a>
+                    <a href="/vue-router/api/options.html" class="sidebar-link">Router 构造配置</a>
                 </li>
             
                 
                 
                 
                 
+                
                 <li>
-                    <a href="/router/api/route-object.html" class="sidebar-link">路由信息对象</a>
+                    <a href="/vue-router/api/router-instance.html" class="sidebar-link">Router 实例</a>
                 </li>
             
                 
                 
                 
                 
-                <li>
-                    <a href="/router/api/options.html" class="sidebar-link current">Router 构造配置</a>
-                </li>
-            
-                
-                
-                
                 
                 <li>
-                    <a href="/router/api/router-instance.html" class="sidebar-link">Router 实例</a>
+                    <a href="/vue-router/api/component-injections.html" class="sidebar-link">对组件注入</a>
                 </li>
             
-                
-                
-                
-                
-                <li>
-                    <a href="/router/api/component-injections.html" class="sidebar-link">对组件注入</a>
-                </li>
-            
+             
         </ul>
     </div>
 </div>
 
 
-<div class="content router with-sidebar ">
+<div class="content vue-router with-sidebar ">
     	
-    <h1>Router 构造配置</h1>
-    <h3 id="routes"><a href="#routes" class="headerlink" title="routes"></a>routes</h3><ul>
-<li><p>类型: <code>Array&lt;RouteConfig&gt;</code></p>
-<p><code>RouteConfig</code> 的类型定义：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">declare type RouteConfig = &#123;</div><div class="line">  <span class="attr">path</span>: string;</div><div class="line">  component?: Component;</div><div class="line">  name?: string; <span class="comment">// for named routes (命名路由)</span></div><div class="line">  components?: &#123; [name: string]: Component &#125;; <span class="comment">// for named views (命名视图组件)</span></div><div class="line">  redirect?: string | Location | <span class="built_in">Function</span>;</div><div class="line">  alias?: string | <span class="built_in">Array</span>&lt;string&gt;;</div><div class="line">  children?: <span class="built_in">Array</span>&lt;RouteConfig&gt;; <span class="comment">// for nested routes</span></div><div class="line">  beforeEnter?: <span class="function">(<span class="params">route: Route, redirect: <span class="built_in">Function</span>, next: <span class="built_in">Function</span></span>) =&gt;</span> <span class="keyword">void</span>;</div><div class="line">  meta?: any;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="mode"><a href="#mode" class="headerlink" title="mode"></a>mode</h3><ul>
-<li><p>类型: <code>string</code></p>
-</li>
-<li><p>默认值: <code>&quot;hash&quot; (浏览器环境) | &quot;abstract&quot; (Node.js 环境)</code></p>
-</li>
-<li><p>可选值: <code>&quot;hash&quot; | &quot;history&quot; | &quot;abstract&quot;</code></p>
-<p>配置路由模式:</p>
-<ul>
-<li><p><code>hash</code>: 使用 URL hash 值来作路由。支持所有浏览器，包括不支持 HTML5 History Api 的浏览器。</p>
-</li>
-<li><p><code>history</code>: 依赖 HTML5 History API 和服务器配置。查看 <a href="../essentials/history-mode.md">HTML5 History 模式</a>.</p>
-</li>
-<li><p><code>abstract</code>: 支持所有 JavaScript 运行环境，如 Node.js 服务器端。<strong>如果发现没有浏览器的 API，路由会自动强制进入这个模式。</strong></p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="base"><a href="#base" class="headerlink" title="base"></a>base</h3><ul>
-<li><p>类型: <code>string</code></p>
-</li>
-<li><p>默认值: <code>&quot;/&quot;</code></p>
-<p>应用的基路径。例如，如果整个单页应用服务在 <code>/app/</code> 下，然后 <code>base</code> 就应该设为 <code>&quot;/app/&quot;</code>。</p>
-</li>
-</ul>
-<h3 id="linkActiveClass"><a href="#linkActiveClass" class="headerlink" title="linkActiveClass"></a>linkActiveClass</h3><ul>
-<li><p>类型: <code>string</code></p>
-</li>
-<li><p>默认值: <code>&quot;router-link-active&quot;</code></p>
-<p>全局配置 <code>&lt;router-link&gt;</code> 的默认『激活 class 类名』。参考 <a href="router-link.md">router-link</a>.</p>
-</li>
-</ul>
-<h3 id="scrollBehavior"><a href="#scrollBehavior" class="headerlink" title="scrollBehavior"></a>scrollBehavior</h3><ul>
-<li><p>类型: <code>Function</code></p>
-<p>签名:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">(</div><div class="line">  to: Route,</div><div class="line">  from: Route,</div><div class="line">  savedPosition?: &#123; x: number, y: number &#125;</div><div class="line">) =&gt; &#123; x: number, y: number &#125; | &#123; selector: string &#125; | ?&#123;&#125;</div></pre></td></tr></table></figure>
-<p>更多详情参考 <a href="../advanced/scroll-behavior.md">滚动行为</a>.</p>
-</li>
-</ul>
+    <h1>命名视图</h1>
+    <p>有时候想同时（同级）展示多个视图，而不是嵌套展示，例如创建一个布局，有 <code>sidebar</code>（侧导航） 和 <code>main</code>（主内容） 两个视图，这个时候命名视图就派上用场了。你可以在界面中拥有多个单独命名的视图，而不是只有一个单独的出口。如果 <code>router-view</code> 没有设置名字，那么默认为 <code>default</code>。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">router-view</span> <span class="attr">class</span>=<span class="string">"view one"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-view</span> <span class="attr">class</span>=<span class="string">"view two"</span> <span class="attr">name</span>=<span class="string">"a"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-view</span> <span class="attr">class</span>=<span class="string">"view three"</span> <span class="attr">name</span>=<span class="string">"b"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>一个视图使用一个组件渲染，因此对于同个路由，多个视图就需要多个组件。确保正确使用 <code>components</code> 配置（带上 s）：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">path</span>: <span class="string">'/'</span>,</div><div class="line">      <span class="attr">components</span>: &#123;</div><div class="line">        <span class="attr">default</span>: Foo,</div><div class="line">        <span class="attr">a</span>: Bar,</div><div class="line">        <span class="attr">b</span>: Baz</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>以上案例相关的可运行代码，在<br><a href="https://jsfiddle.net/posva/9b80nxx1/" target="_blank" rel="external">这里</a>.</p>
 
     
     <div class="footer">
       发现错误？想参与编辑？
-      <a href="https://github.com/dingyiming/vuejs.org/tree/2.0-cn/src/router/api/options.md" target="_blank">
+      <a href="https://github.com/dingyiming/vuejs.org/tree/2.0-cn/src/vue-router/essentials/named-views.md" target="_blank">
         在 Github 上编辑此页！
       </a>
     </div>
