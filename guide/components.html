@@ -6,22 +6,12 @@
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
-        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
         <link rel="icon" href="/images/logo.png" type="image/x-icon">
         <script>
             window.PAGE_TYPE = "guide"
         </script>
         <link rel="stylesheet" href="/css/page.css">
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-46852172-1', 'org.vuefe.cn');
-  ga('send', 'pageview');
-</script>
+        
         <script src="/js/vue.js"></script>
     </head>
     <body>
@@ -32,18 +22,33 @@
         <div id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png">
-    <span>Vue.js</span>
+    <span>Vue.js v2.0 中文</span>
   </a>
+  <span style="
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    padding: 0 10px;
+    background: #ef9f00;
+    border-radius: 3px;
+    margin-top: -15px;
+    line-height: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  ">
+  进群参与:427447379
+  </span>
   <ul id="nav">
-    <li>
-  <form id="search-form">
-    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
-  </form>
-</li>
-<li><a href="/guide/" class="nav-link current">教程</a></li>
+    <li><a href="/guide/" class="nav-link current">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
-<li><a href="https://medium.com/the-vue-point" target="_blank" class="nav-link">Blog</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">社区</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -53,6 +58,8 @@
     <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
   </ul>
 </li>
+
+
   </ul>
 </div>
 
@@ -62,15 +69,14 @@
                     
     <div class="sidebar">
     <ul class="main-menu">
-        <li>
-  <form id="search-form">
-    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
-  </form>
-</li>
-<li><a href="/guide/" class="nav-link current">教程</a></li>
+        <li><a href="/guide/" class="nav-link current">教程</a></li>
 <li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
+<li><a href="/vue-resource/" class="nav-link">vue-resource</a></li>
+<li><a href="/router/" class="nav-link">vue-router</a></li>
+<li><a href="/vuex/" class="nav-link">vuex</a></li>
 <li><a href="/examples/" class="nav-link">示例</a></li>
-<li><a href="https://medium.com/the-vue-point" target="_blank" class="nav-link">Blog</a></li>
+<li><a href="/more/" class="nav-link">更多</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">社区</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -80,6 +86,8 @@
     <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
   </ul>
 </li>
+
+
     </ul>
     <div class="list">
         <div id="donate" style="margin-bottom: 20px">
@@ -93,9 +101,6 @@
             教程
             <select class="version-select">
                 <option value="SELF" selected>2.0</option>
-                <option value="v1">1.0</option>
-                <option value="012">0.12</option>
-                <option value="011">0.11</option>
             </select>
         </h2>
         <ul class="menu-root">
@@ -351,14 +356,14 @@
                     <a href="/guide/join.html" class="sidebar-link">加入Vue.js社区</a>
                 </li>
             
+             
         </ul>
     </div>
 </div>
 
+
 <div class="content guide with-sidebar components-guide">
-    <div id="ad">
-  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script>
-</div>
+    	
     <h1>组件</h1>
     <h2 id="什么是组件？"><a href="#什么是组件？" class="headerlink" title="什么是组件？"></a>什么是组件？</h2><p>组件（Component）是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素， Vue.js 的编译器为它添加特殊功能。在有些情况下，组件也可以是原生 HTML 元素的形式，以 is 特性扩展。</p>
 <h2 id="使用组件"><a href="#使用组件" class="headerlink" title="使用组件"></a>使用组件</h2><h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>之前说过，我们可以通过以下方式创建一个Vue实例:</p>
@@ -637,7 +642,7 @@ new Vue({
 <h3 id="非父子组件通信"><a href="#非父子组件通信" class="headerlink" title="非父子组件通信"></a>非父子组件通信</h3><p>有时候非父子关系的组件也需要通信。在简单的场景下，使用一个空的 Vue 实例作为中央事件总线：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> bus = <span class="keyword">new</span> Vue()</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 触发组件 A 中的事件</span></div><div class="line">bus.$emit(<span class="string">'id-selected'</span>, <span class="number">1</span>)</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 在组件 B 创建的钩子中监听事件</span></div><div class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; cuiyongjian<span class="number">-2.0</span>-cn</div><div class="line">bus.$on(<span class="string">'id-selected'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 在组件 B 创建的钩子中监听事件</span></div><div class="line">bus.$on(<span class="string">'id-selected'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>在更多复杂的情况下，你应该考虑使用专门的 <a href="/guide/state-management.html">状态管理模式</a>.</p>
 <h2 id="使用-Slots-分发内容"><a href="#使用-Slots-分发内容" class="headerlink" title="使用 Slots 分发内容"></a>使用 Slots 分发内容</h2><p>在使用组件时，常常要像这样组合它们：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">app</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">app-header</span>&gt;</span><span class="tag">&lt;/<span class="name">app-header</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">app-footer</span>&gt;</span><span class="tag">&lt;/<span class="name">app-footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">app</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -757,12 +762,11 @@ new Vue({
 
                 
             </div>
-            <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
             <script src="/js/smooth-scroll.min.js"></script>
             <script src="/js/common.js"></script>
         
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 FastClick.attach(document.body);
