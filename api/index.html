@@ -871,7 +871,7 @@
 </ul>
 </li>
 <li><p><strong>用法：</strong></p>
-<p>监听一个自定义事件，但是只触发一次，在第一次触发之后删除监听器。</p>
+<p>监听一个自定义事件，但是只触发一次，在第一次触发之移除除监听器。</p>
 </li>
 </ul>
 <h3 id="vm-off">vm.$off( [event, callback] )</h3>
@@ -884,13 +884,13 @@
 </ul>
 </li>
 <li><p><strong>用法：</strong></p>
-<p>删除事件监听器。</p>
+<p>移除事件监听器。</p>
 <ul>
-<li><p>如果没有参数，则删除所有的事件监听器；</p>
+<li><p>如果没有提供参数，则移除所有的事件监听器；</p>
 </li>
-<li><p>如果只提供了事件，则删除这个事件所有的监听器；</p>
+<li><p>如果只提供了事件，则移除该事件所有的监听器；</p>
 </li>
-<li><p>如果同时提供了事件与回调，则只删除这个回调。</p>
+<li><p>如果同时提供了事件与回调，则只移除这个回调的监听器。</p>
 </li>
 </ul>
 </li>
@@ -918,8 +918,8 @@
 <li><p><strong>返回值：</strong> <code>vm</code> - 实例自身</p>
 </li>
 <li><p><strong>用法：</strong></p>
-<p>如果 Vue 实例在实例化时没有收到 el 选项，则它处于“未挂载”状态，没有关联的 DOM 元素或片断。可以使用 <code>vm.$mount()</code> 手动地挂载一个未挂载的实例。</p>
-<p>如果没有 <code>elementOrSelector</code> 参数，模板将被渲染为文档之外的的元素，并且你必须使用原生DOM API把它插入文档中。</p>
+<p>如果 Vue 实例在实例化时没有收到 el 选项，则它处于“未挂载”状态，没有关联的 DOM 元素。可以使用 <code>vm.$mount()</code> 手动地挂载一个未挂载的实例。</p>
+<p>如果没有提供 <code>elementOrSelector</code> 参数，模板将被渲染为文档之外的的元素，并且你必须使用原生DOM API把它插入文档中。</p>
 <p>这个方法返回实例自身，因而可以链式调用其它实例方法。</p>
 </li>
 <li><p><strong>示例：</strong></p>
@@ -965,7 +965,7 @@
 <ul>
 <li><p><strong>用法：</strong></p>
 <p>完全销毁一个实例。清理它与其它实例的连接，解绑它的全部指令及事件监听器。</p>
-<p>在 <code>beforeDestroy</code> 和 <code>destroyed</code> 之间触发。</p>
+<p>触发 beforeDestroy 和 destroyed 的钩子。</p>
 <p class="tip">在大多数场景中你不应该调用这个方法。最好使用 <code>v-if</code> 和 <code>v-for</code> 指令以数据驱动的方式控制子组件的生命周期。</p>
 </li>
 <li><p><strong>另见：</strong> <a href="/guide/instance.html#Lifecycle-Diagram">生命周期图示</a></p>
@@ -975,7 +975,7 @@
 <li><p><strong>类型：</strong> <code>string</code></p>
 </li>
 <li><p><strong>详细：</strong></p>
-<p>更新元素的 <code>textContent</code>。如果要更新 <code>textContent</code> 部分，需要使用 <code>{{ Mustache }}</code> 插值。</p>
+<p>更新元素的 <code>textContent</code>。如果要更新部分的 <code>textContent</code> ，需要使用 <code>{{ Mustache }}</code> 插值。</p>
 </li>
 <li><p><strong>示例：</strong></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-text</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 和下面的一样 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -989,7 +989,7 @@
 <li><p><strong>详细：</strong></p>
 </li>
 </ul>
-<p>  更新元素的 <code>innerHTML</code> 。<strong>注意：内容按普通  HTML 插入 - 不会作为 Vue 模板进行编译</strong> 。如果试图使用 <code>v-html</code> 组合模板,可以重新思考通过是否通过使用组件来替代。</p>
+<p>  更新元素的 <code>innerHTML</code> 。<strong>注意：内容按普通 HTML 插入 - 不会作为 Vue 模板进行编译</strong> 。如果试图使用 <code>v-html</code> 组合模板,可以重新思考通过是否通过使用组件来替代。</p>
   <p class="tip">在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="external">XSS 攻击</a>。只在可信内容上使用 <code>v-html</code>，<strong>永不</strong>用在用户提交的内容上。</p>
 
 <ul>
@@ -1004,7 +1004,7 @@
 </li>
 <li><p><strong>用法：</strong></p>
 <p>根据表达式的值的真假条件渲染元素。在切换时元素及它的数据绑定 / 组件被销毁并重建。如果元素是 <code>&lt;template&gt;</code> ，将提出它的内容作为条件块。</p>
-<p>该指令在条件变化时触发改变。</p>
+<p>当条件变化时该指令触发过渡效果。</p>
 </li>
 <li><p><strong>另见</strong> <a href="/guide/conditional.html">条件渲染 - v-if</a></p>
 </li>
@@ -1013,8 +1013,8 @@
 <li><p><strong>类型：</strong> <code>any</code></p>
 </li>
 <li><p><strong>用法：</strong></p>
-<p>根据表达式的值的真假切换元素的 display CSS 属性，如果有过渡将触发它。</p>
-<p>该指令在条件变化时触发改变。</p>
+<p>根据表达式之真假值，切换元素的 display CSS 属性。</p>
+<p>当条件变化时该指令触发过渡效果。</p>
 </li>
 <li><p><strong>另见：</strong> <a href="/guide/conditional.html#v-show">条件渲染 - v-show</a></p>
 </li>
@@ -1038,7 +1038,7 @@
 <li><p><strong>类型：</strong> <code>Array | Object | number | string</code></p>
 </li>
 <li><p><strong>用法：</strong></p>
-<p>基于源数据将元素或模板块重复数次。指令的值必须使用特定语法 <code>alias in expression</code> ，为当前遍历的元素提供别名：</p>
+<p>基于源数据多次渲染元素或模板块。此指令之值，必须使用特定语法 <code>alias in expression</code> ，为当前遍历的元素提供别名：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">  &#123;&#123; item.text &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>另外也可以为数组索引指定别名（或者用于对象的键）：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in items"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(key, val) in object"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(key, val, index) in object"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -1065,7 +1065,7 @@
 <li><code>.stop</code> - 调用 <code>event.stopPropagation()</code>。</li>
 <li><code>.prevent</code> - 调用 <code>event.preventDefault()</code>。</li>
 <li><code>.capture</code> - 添加事件侦听器时使用 capture 模式。</li>
-<li><code>.self</code> - only trigger handler if event was dispatched from this element.</li>
+<li><code>.self</code> - 只当事件是从侦听器绑定的元素本身触发时才触发回调。</li>
 <li><code>.{keyCode | keyAlias}</code> - 只当事件是从侦听器绑定的元素本身触发时才触发回调。</li>
 <li><code>.native</code> - 监听组件根元素的原生事件。</li>
 </ul>
@@ -1100,13 +1100,13 @@
 </ul>
 </li>
 <li><p><strong>用法：</strong></p>
-<p>动态地绑定一个或多个 attribute，或一个组件 prop 到表达式。</p>
-<p>在绑定 <code>class</code> 或 <code>style</code> 属性时，支持其它类型的值，如数组或对象。可以通过下面的教程链接查看详情。</p>
+<p>动态地绑定一个或多个特性，或一个组件 prop 到表达式。</p>
+<p>在绑定 <code>class</code> 或 <code>style</code> 特性时，支持其它类型的值，如数组或对象。可以通过下面的教程链接查看详情。</p>
 <p>在绑定 prop 时，prop 必须在子组件中声明。可以用修饰符指定不同的绑定类型。</p>
-<p>没有参数时，可以绑定到一个包含 name-value 的对象。注意此时 <code>class</code> 和 <code>style</code> 绑定不支持数组和对象。</p>
+<p>没有参数时，可以绑定到一个包含键值对的对象。注意此时 <code>class</code> 和 <code>style</code> 绑定不支持数组和对象。</p>
 </li>
 <li><p><strong>示例：</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 绑定一个属性 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">"imageSrc"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 缩写 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"imageSrc"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- class 绑定 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"&#123; red: isRed &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, classB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, &#123; classB: isB, classC: isC &#125;]"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- style 绑定 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"&#123; fontSize: size + 'px' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"[styleObjectA, styleObjectB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 绑定一个对象属性 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind</span>=<span class="string">"&#123; id: someProp, 'other-attr': otherProp &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 通过 prop 修饰符绑定 DOM 属性 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:text-content.prop</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- prop 绑定. “prop” 必须在 my-component 中声明。 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">:prop</span>=<span class="string">"someThing"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- XLink --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">svg</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">:xlink:special</span>=<span class="string">"foo"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 绑定一个属性 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">"imageSrc"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 缩写 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"imageSrc"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- class 绑定 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"&#123; red: isRed &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, classB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, &#123; classB: isB, classC: isC &#125;]"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- style 绑定 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"&#123; fontSize: size + 'px' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"[styleObjectA, styleObjectB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 绑定一个有属性的对象 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind</span>=<span class="string">"&#123; id: someProp, 'other-attr': otherProp &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 通过 prop 修饰符绑定 DOM 属性 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:text-content.prop</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- prop 绑定. “prop” 必须在 my-component 中声明。 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">:prop</span>=<span class="string">"someThing"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- XLink --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">svg</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">:xlink:special</span>=<span class="string">"foo"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>另见：</strong></p>
 <ul>
@@ -1182,13 +1182,13 @@
 <h2 id="特殊元素"><a href="#特殊元素" class="headerlink" title="特殊元素"></a>特殊元素</h2><h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><ul>
 <li><p><strong>示例：</strong> <code>string</code></p>
 <p><code>key</code> 的特殊属性主要用在 Vue的虚拟DOM算法，在新旧nodes对比时辨识VNodes。如果不使用key，Vue会使用一种最大限度减少动态元素并且尽可能的尝试修复/再利用相同类型元素的算法。使用key，它会基于key的变化重新排列元素顺序，并且会移除key不存在的元素。</p>
-<p>相同公共父元素的子元素必须有<strong>独特的key</strong>。重复的key会造成渲染错误。</p>
+<p>有相同父元素的子元素必须有<strong>独特的key</strong>。重复的key会造成渲染错误。</p>
 <p>最常见的用例是结合 <code>v-for</code>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>它也可以用于强制替换元素/组件而不是重复使用它。当你遇到如下场景时它可能会很有用:</p>
 <ul>
-<li>正确的触发组件的生命周期hooks</li>
-<li>触发转换</li>
+<li>正确的触发组件的生命周期钩子</li>
+<li>触发过渡</li>
 </ul>
 <p>例如:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">:key</span>=<span class="string">"text"</span>&gt;</span>&#123;&#123; text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -1214,21 +1214,21 @@
 </li>
 </ul>
 <h2 id="内置的组件"><a href="#内置的组件" class="headerlink" title="内置的组件"></a>内置的组件</h2><h3 id="component"><a href="#component" class="headerlink" title="component"></a>component</h3><ul>
-<li><p><strong>特性：</strong></p>
+<li><p><strong>Props：</strong></p>
 <ul>
 <li><code>is</code> - string | ComponentDefinition | ComponentConstructor</li>
 <li><code>inline-template</code> - boolean</li>
 </ul>
 </li>
 <li><p><strong>用法：</strong></p>
-<p>动态渲染一个“元组件”。实际由 <code>is</code> 属性决定哪个渲染组件。</p>
+<p>渲染一个“元组件”为动态组件。依 <code>is</code> 的值, 来决定哪个组件被渲染。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 动态组件由 vm 实例的属性值 `componentId` 控制 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"componentId"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 也能够渲染注册过的组件或 prop 传入的组件 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"$options.components.child"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>另见：</strong> <a href="/guide/components.html#动态组件">动态组件</a></p>
 </li>
 </ul>
 <h3 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h3><ul>
-<li><p><strong>特性：</strong></p>
+<li><p><strong>Props：</strong></p>
 <ul>
 <li><code>name</code> - string, 用于自动生成 CSS 过渡类名。例如：<code>name: &#39;fade&#39;</code> 将自动拓展为<code>.fade-enter</code>，<code>.fade-enter-active</code>等。默认类名为 <code>&quot;v&quot;</code></li>
 <li><code>appear</code> - boolean, 是否在初始渲染时使用过渡。默认为 <code>false</code>。</li>
@@ -1265,7 +1265,7 @@
 </li>
 </ul>
 <h3 id="transition-group"><a href="#transition-group" class="headerlink" title="transition-group"></a>transition-group</h3><ul>
-<li><p><strong>特性：</strong></p>
+<li><p><strong>Props：</strong></p>
 <ul>
 <li><code>tag</code> - string, 默认为 <code>span</code></li>
 <li><code>move-class</code> - 覆盖移动过渡期间应用的 CSS 类。</li>
@@ -1298,14 +1298,14 @@
 </li>
 </ul>
 <h3 id="slot-1"><a href="#slot-1" class="headerlink" title="slot"></a>slot</h3><ul>
-<li><p><strong>特性：</strong></p>
+<li><p><strong>Props：</strong></p>
 <ul>
 <li><code>name</code> - string, 用于命名插槽。</li>
 </ul>
 </li>
 <li><p><strong>Usage:</strong></p>
 <p><code>&lt;slot&gt;</code> 元素作为组件模板之中的内容分发插槽。 <code>&lt;slot&gt;</code> 元素自身将被替换。</p>
-<p>详细用法，请参考下面 guide 部分的链接。<br>For detailed usage, see the guide section linked below.</p>
+<p>详细用法，请参考下面教程的链接。</p>
 </li>
 <li><p><strong>另见：</strong> <a href="/guide/components.html#使用Slots分发内容">使用Slots分发内容</a></p>
 </li>
